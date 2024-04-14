@@ -8,7 +8,7 @@
     <meta content="Discover the Adding Dynamic Values into Menu Links in Drupal to protect against vulnerabilities and ensure the safety of your website's data and users." name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
                     <h1 class="m-0">#Kite</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -106,7 +106,7 @@
           
             <h2>Defining Menu Links</h2>
             <p>Menu links in Drupal 8 are defined within module files following the convention `module_name.links.menu.yml`. Since menu links are plugins themselves, they are discovered using YAML.</p>
-            <img src="img/MenuAPIInDrupal_2.png" alt="Drupal Taxonomy Menu">
+            <img loading="lazy" src="img/MenuAPIInDrupal_2.png" alt="Drupal Taxonomy Menu">
             <h3>Sample Menu Link Definition</h3>
             <pre><code>
           title: Edit Country
@@ -118,14 +118,14 @@
           
             <h2>Adding Dynamic Values</h2>
             <p>Imagine a scenario where country admins can edit details. Countries are implemented as a vocabulary with terms. We want to create a dynamic menu link for each admin leading to their country's edit page.</p>
-            <img src="img/MenuAPIInDrupal_3.png" alt="Drupal Taxonomy Menu">
+            <img loading="lazy" src="img/MenuAPIInDrupal_3.png" alt="Drupal Taxonomy Menu">
           
             <h2>Providing Route Parameters (Technical)</h2>
             <p><i>(Note: This section assumes some familiarity with Drupal concepts)</i></p>
             <p>To make the link dynamic, we extend the `MenuLinkDefault` class and provide the term ID dynamically using the `getRouteParameters()` function. This function passes the term ID to the path, making it dynamic based on the logged-in user.</p>
-            <img src="img/MenuAPIInDrupal_4.png" alt="Drupal Taxonomy Menu">
+            <img loading="lazy" src="img/MenuAPIInDrupal_4.png" alt="Drupal Taxonomy Menu">
             <h2>Disabling Menu Links Dynamically</h2>
-            <img src="img/MenuAPIInDrupal_5.png" alt="Drupal Taxonomy Menu">
+            <img loading="lazy" src="img/MenuAPIInDrupal_5.png" alt="Drupal Taxonomy Menu">
             <p>In our example, we only want the link visible if a country value exists. The `isEnabled()` function can be overridden to check this condition. If not met, `FALSE` is returned, disabling the link for the user.</p>
           
             <p>This is just one approach to dynamic menu links. Other methods include hooks for static links and link parameter modification.</p>
@@ -197,7 +197,7 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/wow/wow.min.js"></script>
     <script src="../lib/easing/easing.min.js"></script>
