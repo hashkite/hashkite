@@ -1,0 +1,412 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginning Your Journey with Drupal 10 Theming</title>
+    <meta
+      content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
+      name="keywords">
+    <meta
+      content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
+      name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>.sclass{
+          
+    
+      margin-top: 20px;
+    
+      max-width: 100%;
+
+      }
+      </style>
+  </head>
+  <body>
+    <div class="container-fluid bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-fluid position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href class="navbar-brand p-0">
+            <h1 class="m-0">#Kite</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0 me-0">
+              <a href="/" class="nav-item nav-link">Home</a>
+              <a href="/#about-us" class="nav-item nav-link">About</a>
+              <a href="/#service" class="nav-item nav-link">Service</a>
+              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+              <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-fluid py-5 bg-primary hero-header">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+              <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">Beginning Your
+                  Journey with Drupal 10 Theming</h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white"
+                        href="/blogs">Blog</a></li>
+                    <li class="breadcrumb-item text-white active"
+                      aria-current="page">Beginning Your Journey with Drupal 10
+                      Theming</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Blog content-->
+
+      <div class="container">
+        
+        <div class="row mt-5 pt-6">
+          <nav class="col-md-3">
+            <!-- Navigation Links -->
+            <ul style="list-style: circle;">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#what-is-theming">Exploring Drupal Theming</a></li>
+              <li><a href="#drupal-10">All Things New - Drupal 10</a></li>
+              <li><a href="#benefits">Benefits of Theming with Drupal 10</a></li>
+              <li><a href="#ending-note">Conclusion</a></li>
+              <!-- Additional navigation links can be added here if required -->
+            </ul>
+          </nav>
+          <article class="col-md-9">
+
+            <section id="introduction">
+              <h2>Introduction to Drupal Theming</h2>
+              <p>Drupal theming is the art of personalizing the appearance and
+                layout of your website or web application. It's a creative
+                process that involves designing and customizing the visual
+                elements to reflect the unique identity and branding of your
+                site.</p>
+              <p>Whether you're tweaking an existing theme or creating one from
+                scratch, Drupal theming empowers you to shape the user
+                experience by manipulating HTML, CSS, JavaScript, and leveraging
+                Drupal's theming capabilities.</p>
+              <p>This introductory guide will delve into the fundamentals of
+                Drupal theming, exploring its importance, principles, and
+                practical application.</p>
+            </section>
+            <!-- What is Drupal Theming? Section -->
+            <section id="what-is-theming">
+              <h2>Exploring Drupal Theming</h2>
+              <p>Theming within the Drupal framework revolves around infusing
+                your website or web application with a distinctive identity. It
+                encompasses the intricate process of crafting and tailoring the
+                visual aesthetics and layout to resonate with your brand and
+                audience.</p>
+              <p>Whether you're refining an existing theme to align more closely
+                with your vision or embarking on the journey of creating a
+                completely unique design, theming invites exploration and
+                experimentation with various elements such as HTML, CSS,
+                JavaScript, and Drupal's versatile theming tools. This creative
+                endeavor often thrives on collaborative synergy, where designers
+                and developers join forces to harmonize aesthetics with
+                functionality, ensuring a cohesive and engaging user experience.</p>
+              <p>In essence, Drupal theming is not merely about superficial
+                embellishments; it's about crafting a digital environment that
+                speaks authentically to your brand's ethos while delivering a
+                seamless and intuitive browsing experience for your visitors.</p>
+
+            </section>
+
+            <!-- All Things New - Drupal 10 Section -->
+            <section id="drupal-10">
+              <h2>Exploring the Innovations of Drupal 10</h2>
+              <p>“<em>Enhancing Drupal for the benefit of its community</em>”
+                has long been a central objective of the Drupal project. With
+                the unveiling of Drupal 10, the platform takes a significant
+                leap forward, presenting an even more intuitive and
+                developer-friendly environment. Among the standout features of
+                this release are the Claro and Olivero themes, integration of
+                Symfony 6, the introduction of Theme Starterkit, enriched
+                JavaScript components, and the adoption of CKEditor 5.</p>
+              <h3>Introducing Claro Administration Theme</h3>
+              <p>Stepping into the spotlight with Drupal 10 is the Claro
+                administration theme, supplanting its predecessor, Seven. Claro
+                heralds a modern and user-centric interface for managing Drupal
+                sites. Prioritizing accessibility, it ensures seamless
+                navigation and usability for users with diverse needs.
+                Furthermore, Claro harmonizes with the Olivero default theme,
+                fostering consistency throughout the website. Notably, Claro
+                delivers swift performance, catering to users even on
+                bandwidth-constrained connections.</p>
+              <p>Claro's sleek design isn't just visually appealing; it's also
+                engineered for efficiency. With streamlined workflows and
+                intuitive navigation, managing your Drupal site has never been
+                easier. Whether you're a seasoned developer or a novice user,
+                Claro empowers you to make the most of Drupal's capabilities
+                with minimal effort.</p>
+              <h3>Meet Olivero: The New Default Theme</h3>
+              <p>Front and center in Drupal 10 is Olivero, the platform’s new
+                default theme. Olivero embodies a contemporary, responsive, and
+                accessible design ethos. Emphasizing simplicity, it offers a
+                clean canvas for customization while upholding stringent
+                accessibility standards. Its responsiveness guarantees an
+                optimal viewing experience across various devices. Moreover,
+                Olivero boasts an elegant aesthetic, featuring bespoke
+                typography, color palettes, and design elements.</p>
+              <p>Olivero isn't just a theme; it's a statement. Its clean lines
+                and modern design language set the stage for your content to
+                shine. Whether you're building a corporate website, a portfolio,
+                or an online store, Olivero provides the perfect backdrop for
+                your digital presence.</p>
+              <h3>Empowering Developers with Theme Starterkit</h3>
+              <p>Drupal 10 introduces the Theme Starterkit, an indispensable
+                resource for developers and designers venturing into theme
+                creation. Equipped with customizable templates, it streamlines
+                the initiation of bespoke themes. Supporting Sass, it simplifies
+                the management of CSS styles, enhancing developer productivity.
+                Notably, accessibility remains a focal point of the Theme
+                Starterkit, equipping creators with the tools and templates to
+                craft inclusive and user-friendly themes.</p>
+              <p>The Theme Starterkit isn't just a toolbox; it's a launchpad for
+                creativity. Whether you're building a theme from scratch or
+                customizing an existing one, the Starterkit provides the
+                building blocks you need to bring your vision to life. With its
+                emphasis on accessibility, you can ensure that your themes are
+                not just beautiful, but also inclusive, welcoming users of all
+                abilities.</p>
+
+            </section>
+
+            <!-- Benefits of Theming with Drupal 10 Section -->
+            <section id="benefits">
+              <h2>Maximizing the Advantages of Theming in Drupal 10</h2>
+              <p>Now that you've delved into the myriad theming enhancements of
+                Drupal 10, let's explore how leveraging its theming capabilities
+                can elevate your website:</p>
+              <h3>Revamped Theming Architecture</h3>
+              <p>At the forefront of Drupal 10's benefits is its overhauled
+                theming architecture. By embracing the Twig templating engine,
+                developers gain access to a framework that fosters highly
+                efficient and comprehensible themes. Twig's elegant syntax
+                simplifies code comprehension and maintenance, while its
+                logic-presentation segregation promotes a more structured and
+                coherent development workflow.</p>
+              <h3>Responsive Design Mastery</h3>
+              <p>In an era dominated by mobile browsing, responsive web design
+                is non-negotiable. Drupal 10 comes equipped with native support
+                for responsive design, empowering developers to craft themes
+                that seamlessly adapt to diverse screen sizes and devices. With
+                responsive theming, your website exhibits flawless functionality
+                and aesthetics across all platforms, enriching user engagement
+                and satisfaction.</p>
+              <h3>Diverse Theming Possibilities</h3>
+              <p>Drupal 10 boasts an extensive array of theming options,
+                enabling developers to sculpt unique and visually captivating
+                websites. From personalized layouts and color palettes to
+                intricate design elements, Drupal's theming toolkit offers
+                unparalleled flexibility and adaptability. Whether you're
+                fashioning a corporate portal, an online marketplace, or a
+                vibrant community hub, Drupal 10 furnishes the resources to
+                manifest your creative vision.</p>
+              <h3>Commitment to Accessibility</h3>
+              <p>Inclusivity lies at the heart of Drupal 10's ethos. By
+                prioritizing accessibility compliance, Drupal ensures that
+                websites constructed on its platform are accessible to all
+                users, including those with disabilities. With built-in
+                accessibility features adhering to WCAG 2.1 guidelines,
+                developers can fashion themes that cater to diverse needs,
+                enhancing usability and inclusivity while fulfilling legal
+                obligations.</p>
+              <h3>Seamless Third-party Integration</h3>
+              <p>Seamless integration with third-party tools and modules is a
+                hallmark of Drupal 10. Whether integrating with popular
+                marketing automation platforms, CRM systems, or social media
+                networks, Drupal 10's theming framework facilitates effortless
+                expansion of your website's capabilities. Harness the power of
+                integration to amplify functionality and deliver enriched user
+                experiences.</p>
+              <h3>Robust Community Support</h3>
+              <p>As an open-source CMS, Drupal thrives on its vibrant and
+                supportive community. With Drupal 10, developers gain access to
+                an extensive array of resources, including forums,
+                documentation, tutorials, and a global network of seasoned
+                professionals. Leveraging this active community ensures swift
+                resolution of challenges and fosters a collaborative environment
+                for continuous learning and innovation.</p>
+            </section>
+
+            <!-- Ending Note: The Surprise! Section -->
+            <section id="ending-note">
+              <h2>Conclusion</h2>
+              <p>As you conclude this chapter of your Drupal 10 theming journey,
+                remember that the path forward is illuminated by your passion
+                and creativity. With Drupal 10 as your canvas and your
+                imagination as your guide, there's no limit to what you can
+                achieve. So, step boldly into the world of Drupal theming, and
+                let your designs inspire, engage, and empower.</p>
+              <p>But your journey doesn't end here. It's merely the beginning of
+                an exciting adventure filled with discovery and growth. As you
+                continue to refine your skills and explore new horizons,
+                remember to stay curious, stay inspired, and never stop pushing
+                the boundaries of what's possible.</p>
+              <p>And always remember that the Drupal community is here to
+                support you every step of the way. Whether you're seeking
+                advice, troubleshooting a problem, or simply sharing your latest
+                creations, you'll find a welcoming community eager to help you
+                succeed.</p>
+              <p>So, as you set forth on your Drupal 10 theming journey, do so
+                with confidence, enthusiasm, and a sense of purpose. Your
+                creations have the power to make a difference in the digital
+                landscape, so embrace the challenge, unleash your creativity,
+                and let your imagination soar.</p>
+
+            </section>
+          </article>
+        </div>
+      </div>
+
+      <!-- End blog eontent-->
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-primary text-light footer wow fadeIn"
+        data-wow-delay="0.1s">
+        <div class="container py-5 px-lg-5">
+          <div class="row g-5">
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Address<span></span></p>
+              <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza,
+                office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+              <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550"
+                  style="color: #fff;">+919922611550</a></p>
+              <p><i class="fa fa-envelope me-3"></i><a
+                  href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+              <a class="btn btn-link" href>About Us</a>
+              <a class="btn btn-link" href>Contact Us</a>
+              <a class="btn btn-link" href>Privacy Policy</a>
+              <a class="btn btn-link" href>Terms & Condition</a>
+              <a class="btn btn-link" href>Career</a>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+              <p>Stay informed with our latest news, updates, and offerings
+                delivered straight to your inbox.</p>
+              <div class="position-relative w-100 mt-3">
+                <input
+                  class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                  type="text" placeholder="Your Email" style="height: 48px;">
+                <button type="button"
+                  class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+                Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href>Home</a>
+                  <a href>Cookies</a>
+                  <a href>Help</a>
+                  <a href>FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+          class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

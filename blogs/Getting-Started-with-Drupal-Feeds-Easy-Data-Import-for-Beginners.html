@@ -1,0 +1,495 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Drupal Feeds: Easy Data Import for Beginners</title>
+    <meta
+      content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
+      name="keywords">
+    <meta
+      content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
+      name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>.sclass{
+        height: auto  ;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 100%;
+
+      }
+      </style>
+  </head>
+  <body>
+    <div class="container-fluid bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-fluid position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href class="navbar-brand p-0">
+            <h1 class="m-0">#Kite</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0 me-0">
+              <a href="/" class="nav-item nav-link">Home</a>
+              <a href="/#about-us" class="nav-item nav-link">About</a>
+              <a href="/#service" class="nav-item nav-link">Service</a>
+              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+              <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-fluid py-5 bg-primary hero-header">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+              <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">Getting Started with
+                  Drupal Feeds: Easy Data Import for Beginners</h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white"
+                        href="/blogs">Blog</a></li>
+                    <li class="breadcrumb-item text-white active"
+                      aria-current="page">Getting Started with Drupal Feeds:
+                      Easy Data Import for Beginners</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Blog content-->
+
+      <div class="container">
+        <header>
+          <h1>Getting Started with Drupal Feeds: Easy Data Import for Beginners</h1>
+        </header>
+        <div class="row mt-5 pt-6">
+          <nav class="col-md-3">
+            <!-- Navigation Links -->
+            <ul style="list-style: circle;">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#why-use-feeds-module">Why Use the Drupal Feeds
+                  Module</a></li>
+              <li><a href="#installing-feeds-module">Setting Up the Feeds Module</a></li>
+              <li><a href="#configuring-import-feed">Configuring the Import Feed</a></li>
+              <li><a href="#adding-fields">Enhancing Feed Type with Additional Fields</a></li>
+              <li><a href="#importing-data">Initiating Data Import</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+              <!-- Additional navigation links can be added here if required -->
+            </ul>
+          </nav>
+          <article class="col-md-9">
+            <!-- Introduction Section -->
+            <section id="introduction">
+              <h2>Introduction</h2>
+              <p>Before diving into Drupal Feeds, it's crucial to understand the
+                significance of easy data import in Drupal projects. The Drupal
+                Feeds module simplifies the process of importing various types
+                of data into your Drupal site, making it an invaluable tool for
+                developers and site administrators.</p>
+            </section>
+
+            <!-- Why Use the Drupal Feeds Module Section -->
+            <section id="why-use-feeds-module">
+              <h2>Benefits of Using the Drupal Feeds Module</h2>
+              <p>If you're wondering why Drupal Feeds is a great choice for
+                importing data, here are some reasons:</p>
+              <ul>
+                <li>Easy Importing: Feeds makes it simple to bring in data
+                  without needing to know complicated coding.</li>
+                <li>Many Import Options: You can import data from different
+                  places like your computer, online, or even scheduled updates.</li>
+                <li>Manage Everything Easily: You can control all your imports
+                  right from your website, no need for extra setups.</li>
+                <li>Keep Data Fresh: Feeds lets you schedule updates, so your
+                  data is always current.</li>
+                <li>Use Multiple Sources: You're not stuck with just one place
+                  to get your data from.</li>
+              </ul>
+            </section>
+
+            <!-- Installing the Feeds Module Section -->
+            <section id="installing-feeds-module">
+              <h2>Setting Up the Feeds Module</h2>
+              <p>To get started with Drupal Feeds, follow these steps:</p>
+              <ol>
+                <li>Download and install the Feeds module from the Drupal.org
+                  website or using Composer.</li>
+                <li>Enable the Feeds module in your Drupal site's modules
+                  administration panel.</li>
+                <li>Ensure that all dependencies required by the Feeds module
+                  are met.</li>
+              </ol>
+            </section>
+
+            <!-- Configuring the Import Feed Section -->
+            <section id="configuring-import-feed">
+              <h2><strong>Configuring the Import Feed</strong></h2>
+              <p>To configure the Feeds module, go to <strong>admin &gt;
+                  structure &gt; feed types &gt; Add Feed Type</strong>.</p>
+              <div
+                class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                role="img" data-appearance="visible"
+                data-drupal-selector="animated">
+                <picture>
+                  <source srcset="/blogs/img/Add-to-feed.jpg" type="image/webp"
+                    width="683" height="887">
+                  <source
+                    srcset="/sites/default/files/styles/wide/public/2023-10/Add-to-feed.png?itok=73fOmxDL 1x"
+                    type="image/png" width="683" height="887">
+                  <img loading="lazy"
+                    srcset="/sites/default/files/styles/wide/public/2023-10/Add-to-feed.png?itok=73fOmxDL 1x"
+                    width="683" height="887" src="/blogs/img/Add-to-feed.jpg"
+                    alt="Add to feed">
+                </picture>
+              </div>
+              <p>&nbsp;</p>
+              <p>To start importing data, provide a name and description for the
+                importer, indicating its purpose.</p>
+              <p><strong>Here are the three options for Importers:</strong></p>
+              <h3><strong>Fetcher</strong></h3>
+              <p>This option determines the data source for importation. You
+                have three options:</p>
+              <ul>
+                <li><strong>Download</strong>: Import data via a URL.<br>&nbsp;</li>
+                <li><strong>Upload</strong>: Import data via file upload.<br>&nbsp;</li>
+                <li><strong>Directory</strong>: Select files from the system
+                  folder in the Drupal file system.<br>&nbsp;</li>
+              </ul>
+              <p>Once you choose the Fetcher option, you can configure import
+                settings within the <strong>Fetcher settings tab</strong>.</p>
+              <h3><strong>Parser</strong></h3>
+              <p>The parser manages the format of the source data. It offers
+                various format options, including RSS/ATOM, CSV, and XML. For
+                JSON format support, you can install the Feeds Extensible parser
+                module.</p>
+              <p>Once you select your preferred format, fine-tune the settings
+                within the <strong>Parser settings tab</strong>.</p>
+              <h3><strong>Processor</strong></h3>
+              <p>The processor generates appropriate content in Drupal using the
+                received data. This can include content types such as nodes,
+                users, taxonomy terms, files, URL aliases, and more.</p>
+              <p>The processor is configured in the <strong>Processor settings
+                  tab</strong>.</p>
+              <p><strong>Here are some important configurations:</strong></p>
+              <ul>
+                <li>Update existing content items<br>&nbsp;</li>
+                <li>Previously imported items<br>&nbsp;</li>
+                <li>Insert new content items<br>&nbsp;</li>
+                <li>Language<br>&nbsp;</li>
+                <li>Owner<br>&nbsp;</li>
+              </ul>
+              <div
+                class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                role="img" data-appearance="visible"
+                data-drupal-selector="animated">
+                <picture>
+                  <source class="sclass"
+                    srcset="/blogs/img/feed-configuration.jpg" type="image/webp"
+                    width="881" height="814">
+                  <source
+                    srcset="/sites/default/files/styles/wide/public/2023-10/feed-configuration.png?itok=mWEYI5Ft 1x"
+                    type="image/png" width="881" height="814">
+                  <img class="sclass" loading="lazy"
+                    srcset="/sites/default/files/styles/wide/public/2023-10/feed-configuration.png?itok=mWEYI5Ft 1x"
+                    width="881" height="814"
+                    src="/blogs/img/feed-configuration.jpg"
+                    alt="Feed Configuration">
+                </picture>
+              </div>
+              <h3><strong>Settings</strong></h3>
+              <p>Under the settings tab, you can schedule the import period.</p>
+              <div
+                class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                role="img" data-appearance="visible"
+                data-drupal-selector="animated">
+                <picture>
+                  <source srcset="/blogs/img/schedule-feed.jpg"
+                    type="image/webp" width="654" height="205">
+                  <source
+                    srcset="/sites/default/files/styles/wide/public/2023-10/schedule-feed.png?itok=nsWSD_GC 1x"
+                    type="image/png" width="654" height="205">
+                  <img loading="lazy"
+                    srcset="/sites/default/files/styles/wide/public/2023-10/schedule-feed.png?itok=nsWSD_GC 1x"
+                    width="654" height="205" src="/blogs/img/schedule-feed.jpg"
+                    alt="Schedule the feed">
+                </picture>
+              </div>
+            </section><br><br>
+
+            <!-- Adding Fields to the Feed Type Section -->
+            <section id="adding-fields">
+              <body>
+                <h2><strong>Enhancing Feed Type with Additional Fields</strong></h2>
+                <p>Incorporate the mapping of elements from a single feed item (<em>Sources</em>)
+                  to corresponding content components in Drupal (<em>Targets</em>).
+                  To prevent redundant imports, ensure that at least one
+                  definition includes a <em>Unique option</em> check.</p>
+                <p>Here's a guide on adding fields from a JSON file:</p>
+                <p>To begin, navigate to the <strong>Mapping</strong> tab.</p>
+                <p>Define the context as a key enclosed in square brackets [ ],
+                  as specified in the JSON file (e.g., $.array_name.*).</p>
+                <p>To introduce a new field:</p>
+                <ol>
+                  <li>Select the target field.</li>
+                  <li>Choose the desired title field.</li>
+                  <li>Click on the <strong>Select a source</strong> option.</li>
+                  <li>Opt for <strong>New JSON source</strong>.</li>
+                  <li>Provide the precise key name and save your selection.</li>
+                </ol>
+                <div
+                  class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                  role="img" data-appearance="visible"
+                  data-drupal-selector="animated">
+                  <picture>
+                    <source class="sclass" srcset="/blogs/img/feeds-mapping.jpg"
+                      type="image/webp" width="1090" height="463">
+                    <source srcset="/blogs/img/feeds-mapping.jpg"
+                      type="image/png" width="1090" height="463">
+                    <img class="sclass" loading="lazy"
+                      src="/blogs/img/feeds-mapping.jpg" width="1090"
+                      height="463" alt="Mapping the feeds">
+                  </picture>
+                </div>
+                <p>&nbsp;</p>
+                <p>Once the Import Feed Type is established, access it via
+                  <strong>admin &gt; structure &gt; Feed Types (</strong><em><strong>/admin/structure/feeds)</strong></em><strong>.</strong></p>
+              </section>
+
+              <!-- Importing Data Section -->
+              <section id="importing-data">
+                <h2><strong>Initiating Data Import</strong></h2>
+                <p>With the configuration set up, it's time to kick off the data
+                  import process using the Feed type you've established.</p>
+                <ul>
+                  <li>Head to <strong>Content &gt; Feeds.</strong><br>&nbsp;</li>
+                  <li>Click on <strong>+Add feed.</strong><br>&nbsp;</li>
+                  <li>Upon clicking <strong>Add Feed</strong>, a list of
+                    configured feeds will appear. Choose the appropriate feed
+                    type for importing data.</li>
+                </ul>
+                <div
+                  class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                  role="img" data-appearance="visible"
+                  data-drupal-selector="animated">
+                  <picture>
+                    <source srcset="/blogs/img/select-feed.jpg"
+                      type="image/webp" width="583" height="699">
+                    <source srcset="/blogs/img/select-feed.jpg" type="image/png"
+                      width="583" height="699">
+                    <img loading="lazy" src="/blogs/img/select-feed.jpg"
+                      width="583" height="699" alt="Select the feed">
+                  </picture>
+                </div>
+                <ul>
+                  <li>Choose the feed to import data from.<br>&nbsp;</li>
+                </ul>
+                <p>To commence the import, provide the title value, select a
+                  file for import, and then click Save and Import.</p>
+                <p>Following a successful import, the content will be generated
+                  for the specific processor.</p>
+                <div
+                  class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+                  role="img" data-appearance="visible"
+                  data-drupal-selector="animated">
+                  <picture>
+                    <source srcset="/blogs/img/json-data-import.jpg"
+                      type="image/webp" width="852" height="483">
+                    <source srcset="/blogs/img/json-data-import.jpg"
+                      type="image/png" width="852" height="483">
+                    <img loading="lazy" src="/blogs/img/json-data-import.jpg"
+                      width="852" height="483" alt="Json Data Import the feed">
+                  </picture>
+                </div>
+                <p>And there you have it! Your comprehensive guide to seamlessly
+                  importing data into our Drupal website using the versatile
+                  Drupal Feeds module.</p>
+              </section>
+
+              <!-- Conclusion Section -->
+              <section id="conclusion">
+
+                <h2>Conclusion</h2>
+                <p>Embarking on your journey with Drupal Feeds opens up a world
+                  of possibilities for effortlessly importing data into your
+                  Drupal site. With the guidance provided in this comprehensive
+                  beginner's guide, you've gained the foundational knowledge
+                  needed to harness the full potential of the Feeds module.</p>
+                <p>By following the step-by-step instructions outlined here, you
+                  can seamlessly integrate external data sources, enriching your
+                  website's content and functionality. Whether you're importing
+                  content from JSON files, RSS feeds, or other sources, Drupal
+                  Feeds empowers you to manage your data efficiently.</p>
+                <p>As you continue to explore Drupal Feeds and delve deeper into
+                  its features, you'll discover even more ways to optimize your
+                  data import processes and enhance your site's performance.
+                  With its user-friendly interface and robust capabilities,
+                  Drupal Feeds remains an invaluable tool for Drupal site
+                  administrators and content managers alike.</p>
+                <p>Take the knowledge you've gained from this guide and apply it
+                  to your projects, experimenting with different configurations
+                  and workflows to suit your specific needs. With Drupal Feeds
+                  as your ally, you're well-equipped to conquer data import
+                  challenges and elevate your Drupal site to new heights of
+                  excellence.</p>
+                <p>Ready to embark on your data import journey? Dive into Drupal
+                  Feeds and unlock the full potential of your Drupal site!</p>
+                <p>For more insightful guides, tutorials, and tips on Drupal and
+                  web development, explore our blogs page. Stay updated with the
+                  latest trends and techniques to keep your digital presence
+                  ahead of the curve!</p></section>
+
+            </article>
+          </div>
+        </div>
+
+        <!-- End blog eontent-->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn"
+          data-wow-delay="0.1s">
+          <div class="container py-5 px-lg-5">
+            <div class="row g-5">
+              <div class="col-md-6 col-lg-4">
+                <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park
+                  Plaza,
+                  office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                <p><i class="fa fa-phone-alt me-3"></i><a
+                    href="tel:+919922611550"
+                    style="color: #fff;">+919922611550</a></p>
+                <p><i class="fa fa-envelope me-3"></i><a
+                    href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                <div class="d-flex pt-2">
+                  <a class="btn btn-outline-light btn-social" href><i
+                      class="fab fa-twitter"></i></a>
+                  <a class="btn btn-outline-light btn-social" href><i
+                      class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-outline-light btn-social" href><i
+                      class="fab fa-instagram"></i></a>
+                  <a class="btn btn-outline-light btn-social" href><i
+                      class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                <a class="btn btn-link" href>About Us</a>
+                <a class="btn btn-link" href>Contact Us</a>
+                <a class="btn btn-link" href>Privacy Policy</a>
+                <a class="btn btn-link" href>Terms & Condition</a>
+                <a class="btn btn-link" href>Career</a>
+              </div>
+
+              <div class="col-md-6 col-lg-4">
+                <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                <p>Stay informed with our latest news, updates, and offerings
+                  delivered straight to your inbox.</p>
+                <div class="position-relative w-100 mt-3">
+                  <input
+                    class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                    type="text" placeholder="Your Email" style="height: 48px;">
+                  <button type="button"
+                    class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                      class="fa fa-paper-plane text-primary fs-4"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container px-lg-5">
+            <div class="copyright">
+              <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+                  Reserved.
+
+                  <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                  Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <div class="footer-menu">
+                    <a href>Home</a>
+                    <a href>Cookies</a>
+                    <a href>Help</a>
+                    <a href>FQAs</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+      </div>
+
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../lib/wow/wow.min.js"></script>
+      <script src="../lib/easing/easing.min.js"></script>
+      <script src="../lib/waypoints/waypoints.min.js"></script>
+      <script src="../lib/counterup/counterup.min.js"></script>
+      <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+      <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+      <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+      <!-- Template Javascript -->
+      <script src="../js/main.js"></script>
+    </body>
+  </html>
