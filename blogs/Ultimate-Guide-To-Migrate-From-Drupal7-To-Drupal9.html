@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Guide to Migrating from Drupal 7 to Drupal 9: Step-by-Step Instructions</title>
+    <meta name="description" content="Learn how to seamlessly migrate from Drupal 7 to Drupal 9 with this ultimate guide. Discover essential steps, best practices, and expert tips for a smooth migration process.">
+    <meta name="keywords" content="Drupal 7 to Drupal 9 migration, Drupal upgrade guide, Drupal migration tips, Drupal best practices, Drupal 9 installation, Drupal migration tutorial">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Ultimate Guide to Migrating from Drupal 7 to Drupal 9: Step-by-Step Instructions</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Drupal's Paragraphs Module</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container">
+            <header>
+                <h1>Ultimate Guide to Migrating from Drupal 7 to Drupal 9: Step-by-Step Instructions</h1>
+            </header>
+            <div class="row mt-5 pt-6">
+                <nav class="col-md-3">
+                    <ul style="list-style: circle;">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#what-is-drupal-9">What Is Drupal 9?</a></li>
+                        <li><a href="#why-was-the-code-deprecated">Why Was The Code Deprecated?</a></li>
+                        <li><a href="#why-upgrade-to-drupal-9">Why Upgrade To Drupal 9?</a></li>
+                        <li><a href="#how-to-prepare-for-drupal-9-upgrade">How To Prepare For Drupal 9 Upgrade?</a></li>
+                        <li><a href="#d7-to-d9-migration">Drupal 7 To Drupal 9 Migration - The Big Leap</a></li>
+                        <li><a href="#handling-content-types-taxonomy-and-modules-first">Handling The Content types, Taxonomy And Modules First</a></li>
+                        <li><a href="#bringing-the-roles-and-content-workflow-to-work-together">Bringing the Roles and Content Workflow to work together</a></li>
+                        <li><a href="#how-are-we-going-to-manage-the-media">How are we going to manage the media?</a></li>
+                        <li><a href="#how-does-this-affect-my-site">How Does This Affect My Site?</a></li>
+                        <li><a href="#business-value">Business Value</a></li>
+                        <li><a href="#a-good-time-to-do-some-field-re-engineering">A good time to do some field re-engineering</a></li>
+                        <li><a href="#expected-drupal-9-1-features">Expected Drupal 9.1 Features</a></li>
+                        <li><a href="#interesting-final-notes">Interesting Final Notes</a></li>
+                        <!-- <li><a href="#faqs">FAQ'S</a></li> -->
+                    </ul>
+                </nav>
+                <article class="col-md-9">
+                    <section id="introduction">
+                        <h2>Introduction</h2>
+                        <p>The Open Source CMS, Drupal, is approaching its 20th birthday and has evolved significantly over the years. When Drupal 8 was introduced in 2015, the migration process wasn't easy. Upgrading was as complex as building a site from scratch, and migrating content added another layer of complexity. These challenges raised concerns for developers and businesses about the launch of Drupal 9. Fortunately, managing upgrades will be easier in the future. This means that migrating from Drupal 7 to Drupal 9 will be similar in effort to migrating from Drupal 7 to Drupal 8. This shift promises a more stable update process and manageable development. But what's the hype around Drupal 9, and why should you consider upgrading? Let’s find out!</p>
+                        <!-- Rest of the introduction content goes here -->
+                    </section>
+                    <section id="what-is-drupal-9">
+                        <h2>What Is Drupal 9?</h2>
+                        <p>Drupal 9 is essentially Drupal 8.9 with deprecated code removed. It remains familiar to everyone, including editors, site builders, and developers. Drupal 8.8.0 was the last release to deprecate code for Drupal 9. Developed with an API-first approach, Drupal 9 offers structural tools to define editorial workflows.</p>
+                    </section>
+                    <section id="why-was-the-code-deprecated">
+                        <h2>Why Was The Code Deprecated?</h2>
+                        <p>Deprecating code during Drupal 8's development allowed issues to be worked out even before Drupal 9's release. It avoided the need for extensive refactoring, simplifying the migration process. However, migrating from Drupal 7 to Drupal 9 can still be a significant task for sites running different versions of Drupal.</p>
+                    </section>
+                    <section id="why-upgrade-to-drupal-9">
+                        <h2>Why Upgrade To Drupal 9?</h2>
+                        <p>The big questions are whether it's time to consider Drupal again and how urgent this migration is. Drupal 8.9, the final version of Drupal 8, will receive bug fixes and security coverage only until November 2021. Drupal 9's development and security updates will continue beyond that timeline. This means you can stick with Drupal 8.9 until the end of 2021. However, it's important to note that Drupal 9 is ideal for sites looking for forward compatibility with later releases. While not all Drupal 8 code is compatible with Drupal 9, it offers an excellent opportunity for businesses considering a migration from other CMSs to leverage Drupal 9's features.</p>
+                    </section>
+                    <section id="how-to-prepare-for-drupal-9-upgrade">
+                        <h2>How To Prepare For Drupal 9 Upgrade?</h2>
+                        <p> Primarily, check the status of your favorite contributed modules if they are Drupal 9 compatible or not because eventually, you would want your site to be migrated to Drupal 9. For more, below is the checklist to begin with the upgrade process.
+                            
+                            Drupal 9 Update Checklist
+                            Before diving into the migration process, it's essential to ensure that your favorite contributed modules are Drupal 9 compatible. Here's a checklist to help you get started:
+                            
+                            Ensure your site is up to the latest minor version, Drupal 8.9. Upgrades aren't supported beyond Drupal 8.8.
+                            Upgrade to the newest PHP requirements, PHP 7.3+.
+                            Deprecate code on your site and fix it if necessary with the help of the Upgrade Status module.
+                            Determine whether your site is based on Composer or tarballs, as this affects the upgrade process.
+                            Tools & Modules For Upgrading
+                            To assist you in the upgrade process, consider using the following tools and modules:
+                            
+                            Core Migrate Module Suite: For migrating your content and site configuration.
+                            Upgrade Status Module: Provides information about the availability of contributed projects.
+                            Upgrade Rector: Automates module updates for Drupal 8 sites with common deprecated code to the latest Drupal 9-compatible code.
+                            Drupal Module Upgrader: Scans and converts outdated code on your Drupal 7 site.
+                            </p>
+                    </section>
+                    <section id="d7-to-d9-migration">
+                        <h2>Drupal 7 To Drupal 9 Migration - The Big Leap</h2>
+                        <p> In one of our earlier blogs Picking The Right Drupal Migration Strategy, we discussed what are the different migration approaches and how this is a good chance to refactor the content structure. In this blog, we will see practical examples of the above steps in a way that would not be overwhelming for all the stakeholders.</p>
+                    </section>
+                    <section id="handling-content-types-taxonomy-and-modules-first">
+                        <h2>Handling The Content types, Taxonomy And Modules First</h2>
+                        <p>Considered as the building block in structured authoring in Drupal, a content type primarily consists of two important elements.</p>
+
+                        <h3>Content type base configuration:</h3>
+                        <p>In a content type, the base configuration defines the default behavior and properties of the content type while they permit the creation of a set of fields that are associated together in a meaningful way.</p>
+
+                        <h3>Taxonomy in Drupal:</h3>
+                        <p>It is a powerful core module that allows one to connect, relate, and classify the website’s content. Thus, the practice of classifying content i.e. Taxonomy can be used in workflow which will further customize a particular or defined sections of the website with various themes.</p>
+
+                        <h3>Content Types</h3>
+                        <p>We have highlighted the importance of handling the content when doing a migration in our earlier blogs Performing Drupal 9 Content Migration.</p>
+
+                        <p>To understand the content on our site better, it helps to look at the content with a fresh perspective. One of the ways in which it can be done is by categorizing the available content types. Some of the options are mentioned below.</p>
+
+                        <ul>
+                        <li>Rely on the body field as a primary source of information.</li>
+                        <li>Rich in fields with different data types.</li>
+                        </ul>
+
+                        <p>Categorization such as above can help us optimize the target site. For example:</p>
+
+                        <ul>
+                        <li>Merging content types that rely on body field into a basic page with a mapping field to Drupal 7 content type.</li>
+                        <li>We also need to decide which content types are not used and avoid them.</li>
+                        </ul>
+
+                        <p>Each content type can be documented through the following:</p>
+
+                        <ul>
+                        <li>Field level requirements.</li>
+                        <li>Content Retention policy (what to migrate and what not?).</li>
+                        <li>What are the aggregate pages for the content type and type of filtering required?</li>
+                        <li>What does the content view page look like and what should be displayed?</li>
+                        <li>Migration considerations specific to content type and assumptions made.</li>
+                        </ul>
+
+                        <p>A migration like this is also a good time to revisit the taxonomies, number of users, and roles used in the site and add/remove items as needed.</p>
+
+                        <h3>Modules</h3>
+                        <p>This is the area where we need to be careful not to assume that everything is needed in the new site. During a Drupal Development site, it is natural for a lot of modules to be added but not used.</p>
+
+                        <p>We recommend classifying the modules based on MoSCoW rules of prioritization.</p>
+
+                        <h4>Required Modules (Must-Haves and Should-Haves)</h4>
+                        <p>The ones that fall under this category are mentioned below.</p>
+
+                        <ul>
+                        <li>Core modules in Drupal 7 and contributed modules in Drupal 7 which are now in Drupal 9 core.</li>
+                        <li>Contributed modules in Drupal 7 which are actively used by administrators and editors. Examples include performance modules like memcache, basic utility modules like admin menu, XML sitemap, etc.</li>
+                        </ul>
+
+                        <h4>Optional Modules (Could-Haves)</h4>
+                        <p>Modules that are used in Drupal 7 but are not needed in the initial phases of the site and can be included only if needed (like Features, Rules, and Panels), fall in this category. It is because a lot can be achieved with Drupal 9 which was only possible via a contributed module in Drupal 7.</p>
+
+                        <p>It is important to validate the need for each module (contributed and custom). Besides this, try to have only the minimal modules in Drupal 9 as it eases the maintenance of the site during the longer run.</p>
+                    </section>
+                    <section id="bringing-the-roles-and-content-workflow-to-work-together">
+                        <h2>Bringing Roles and Content Workflow Together</h2>
+                        <p>Ensuring seamless collaboration between roles and content workflow is essential. Here are the suggested steps:</p>
+                        <ol>
+                        <li>Validate existing roles and redefine them based on user actions.</li>
+                        <li>Employ combinations of roles for users to replicate their actions from the Drupal 7 site.</li>
+                        <li>Utilize the Permissions by Term module if access to site content is categorized.</li>
+                        <li>Eliminate duplicate or unnecessary permissions.</li>
+                        <li>If decentralization of site control is required, consider implementing the Group module.</li>
+                        <li>Verify active users and migrate only those necessary.</li>
+                        <li>For a small user base, manual role mapping is preferable to automated migration scripts due to its one-time nature.</li>
+                        </ol>
+
+                        <p>Regarding content workflow:</p>
+
+                        <ol>
+                        <li>Clearly define content moderation states for each role.</li>
+                        <li>For sites with straightforward workflows, Drupal core’s Content Moderation module suffices.</li>
+                        <li>Sites using the Workflow module in Drupal 7 can seamlessly transition to Drupal 9, leveraging the same module with an upgrade path.</li>
+                        <li>For sites necessitating a workflow dashboard and email notifications, the Workbench suite with Workbench, Workbench Moderation, and Workbench Email offers comprehensive solutions.</li>
+                        </ol>
+                    </section>
+                    <section id="how-are-we-going-to-manage-the-media">
+                        <h2>How are we going to manage the media?</h2>
+
+                        <p>The management of media in your Drupal migration depends on various factors:</p>
+
+                        <ol>
+                        <li>Is the media in the Drupal 7 site restricted to a specific type like only images and video, or is it diverse enough, including files, audio scripts, and other custom media types specific to the site?</li>
+                        <li>What is the future scope of media in the Drupal 9 site? Are you expecting the site to be media-rich with lots of metadata?</li>
+                        <li>Do you need the same field to store different types of files?</li>
+                        </ol>
+
+                        <p>Based on the above considerations, you can decide how to manage media. One option is to use simple image and video fields to store the media. Alternatively, you can leverage the media module in Drupal core, which allows storing different types of files in the same field. Additionally, custom media types can be created with metadata.</p>
+
+                        <p>It’s worth noting that while the community has considered integrating media as part of the default Drupal installation, simple file fields are unlikely to disappear from the core in the foreseeable future. However, if you choose to use media, you're in good company.</p>
+
+                        <p>Supporting modules are available depending on the path you choose:</p>
+
+                        <ul>
+                        <li>For a simple image/video/file field path, you can use the File Entity Browser to browse files.</li>
+                        <li>For the media field in Drupal core, you can organize media with the Media Directories module. The Bulk Upload module allows uploading a large number of files at once.</li>
+                        </ul>
+
+                        <p><strong>NOTE:</strong> The Media Directories module provides only virtual directories and does not physically map to actual directories in the file system. Work is in progress for this feature. Additionally, efforts are underway to support drag and drop for the media library.</p>
+
+                    </section>
+                    <section id="how-does-this-affect-my-site">
+                        <h2>How Does This Affect My Site? </h2>
+                        <p>
+                            <p>As indicated in the list above, the migration process for Drupal 7 and Drupal 8 versions will differ. Therefore, it's important to understand how this will affect sites at different versions of Drupal. Let's break it down:</p>
+                            
+                            <h3>If Your Site Is In Drupal 8</h3>
+                            
+                            <p>The migration from Drupal 8 to 9 is akin to upgrading minor versions within Drupal 8. If your site is currently at Drupal 8.9, you can consider pausing and bypassing the upgrade hassle for now.</p>
+                            
+                            <p>However, it's crucial to note that some permissions and modules are not supported in Drupal 8.9 and require an upgrade to Drupal 9. Make sure to check if your favorite contributed modules and features are supported.</p>
+                            
+                            <p>For detailed information on upgrading your Drupal 8 site, you can refer to this video!</p>
+                            
+                            <h3>If Your Site Is In Drupal 7</h3>
+                            
+                            <p>For long-term owners of Drupal 7 sites, migrating to Drupal 9 might seem daunting. But here's some relief: community support for Drupal 7 will be available until November 2023.</p>
+                            
+                            <p>For simple sites, the Migrate Drupal module could be helpful, but migrating the "theme" will likely require custom development.</p>
+                            
+                            <p>Alternatively, you can rely on Drupal 7 Long Term Support. However, it's important to note that this is a short-term and less secure solution, and it's not recommended.</p>
+                            
+                            <p>The migration journey from Drupal 7 to Drupal 9 will be unique for each site. It might not be simple, especially for owners of more complex sites. In such cases, assistance is available. Even for site owners considering a new CMS, Drupal 9 can be a thoughtful choice.</p>
+                            </p>
+                    </section>
+                    <section id="business-value">
+                        <h2>Business Value</h2>
+
+                        <p>Regardless of whether you're currently using Drupal 7 or Drupal 8, it's advisable to begin preparations for upgrading your Drupal site as soon as possible.</p>
+                        
+                        <p>Drupal 7 was launched nine years ago, making it an opportune time for reassessing the needs of content editors and site users. It's also essential to evaluate the business continuity aspects of maintaining the software and updating your systems.</p>
+                        
+                        <p>To better understand how the migration can enhance the experience for today's audience, consider addressing the following questions:</p>
+                        
+                        <ol>
+                          <li>How relevant and secure are your existing features and modules?</li>
+                          <li>What is the scope of migration for you? How much time and budget can you allocate, and what developer skill set do you possess?</li>
+                          <li>What will be the impact of design and architecture changes after the upgrade on the existing site's content?</li>
+                        </ol>
+                        
+                        <p>With these questions to answer and a migration journey to undertake, you may find it beneficial to have experts and partners who can provide assistance and support.</p>
+                        
+                    </section>
+                    <section id="a-good-time-to-do-some-field-re-engineering">
+                        <h2>A good time to do some field re-engineering</h2>
+
+                        <p>The objective of field re-engineering is to assess the data types of each field and ensure they are appropriate.</p>
+
+                        <p>Below are some common examples of incorrect field types often found in Drupal 7:</p>
+
+                        <ul>
+                        <li>Using plain text instead of a Date field</li>
+                        <li>Using CKEditor instead of plain text</li>
+                        </ul>
+
+                        <p>At the destination site, there are two approaches:</p>
+
+                        <ol>
+                        <li>Change the field types and migrate the data (ensuring compatibility between source and destination data types)</li>
+                        <li>Move fields to the same type and migrate from the old to the new field type on a case-by-case basis</li>
+                        </ol>
+
+                        <p>This process significantly enhances the editorial experience.</p>
+
+                        <p>In addition to the above considerations, it's crucial to evaluate the different integrations available on the current site and how they will be implemented in the migrated site.</p>
+
+                        <p>If there are custom integrations, they will need to be rewritten to be compatible with Drupal 9. However, this topic extends beyond the scope of this article.</p>
+
+                    </section>
+                    <section >
+                        <h2>Expected Drupal 9.1 Features</h2>
+                        <p>Although Drupal 9 has recently been launched, the process of updating dependencies and removing deprecated code will continue in the coming months. It's anticipated that no major updates will occur until the release of Drupal 9.1.</p>
+                        <p>The community is actively working on introducing a new default frontend theme called Olivero, which is expected to become an experimental theme in the upcoming update.</p>
+                        <p>Drupal 9.1.0 is scheduled for release by the end of 2020. This release will bring new deprecations and features, setting the stage for the development of Drupal 10 within the Drupal 9 framework.</p>
+                    </section>
+                    <section id="interesting-final-notes">
+                        <h2>Interesting Final Notes</h2>
+                        <p>The end-of-life date for Drupal 7 has been extended to November 2023, providing users with more time to transition. However, Drupal 8 will reach its end-of-life on November 2, 2021, due to Symfony 3's end-of-life. It's worth noting that migrating directly from Drupal 7 to Drupal 9 is now supported with the core Migrate module.</p>
+                        <p>Regardless of your current Drupal version, preparing to upgrade your site is a proactive move. It presents an opportunity to not only meet the needs of today's audience but also to evaluate business continuity and system maintenance.</p>
+                        <p>Interested in learning more? Schedule a call with our experts.</p>
+                    </section>
+                </article>  
+            </div>
+        </div>
+    <!-- End blog eontent-->
+
+     <!-- Footer Start -->
+     <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5 px-lg-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-4">
+                    <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                    <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                    <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Career</a>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                    <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                    <div class="position-relative w-100 mt-3">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container px-lg-5">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                        
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../lib/isotope/isotope.pkgd.min.js"></script>
+<script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creating Custom Content Types in Drupal: A Step-by-Step Guide</title>
+        <meta name="description" content="Learn how to create custom content types in Drupal with this comprehensive guide. Explore the process of defining new content structures, including custom fields and settings, to tailor your Drupal site to your specific needs.">
+        <meta name="keywords" content="Drupal custom content types, Drupal content creation, Drupal customization, Drupal content management, Drupal guide, Drupal tutorial, Drupal development">
+
+        <!-- Favicon -->
+        <link href="../img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+            rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link href="../lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet">
+        <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid bg-white p-0">
+            <!-- Spinner Start -->
+            <div id="spinner"
+                class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-grow text-primary"
+                    style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Spinner End -->
+
+            <!-- Navbar & Hero Start -->
+            <div class="container-fluid position-relative p-0">
+                <nav
+                    class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                    <a href class="navbar-brand p-0">
+                        <h1 class="m-0">#Kite</h1>
+                        <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                    </a>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                    </div>
+                </nav>
+
+                <div class="container-fluid py-5 bg-primary hero-header">
+                    <div class="container my-5 py-5 px-lg-5">
+                        <div class="row g-5 py-5">
+                            <div class="col-12 text-center">
+                                <h1 class="text-white animated slideInDown">Creating Custom Content Types in Drupal</h1>
+                                <hr class="bg-white mx-auto mt-0"
+                                    style="width: 90px;">
+                                <nav aria-label="breadcrumb">
+                                    <ol
+                                        class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item"><a
+                                                class="text-white" href="/">Home</a></li>
+                                        <li class="breadcrumb-item"><a
+                                                class="text-white" href="blogs">Blog</a></li>
+                                        <li
+                                            class="breadcrumb-item text-white active"
+                                            aria-current="page">Creating Custom
+                                            Content Types in Drupa</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar & Hero End -->
+
+            <!-- Blog content-->
+            <div class="container">
+                <h2>Introduction</h2>
+                <p>Drupal provides a flexible and powerful system for creating
+                    custom content types to suit your website's specific needs.
+                    Follow this guide to learn how to create custom content
+                    types in Drupal.</p>
+
+                <h2>Steps to Create Custom Content Types</h2>
+                <ol>
+                    <li>
+                        <h3>Access the Content Type Page</h3>
+                        <p>Log in to your Drupal website and navigate to the
+                            "Structure" section in the admin menu. Click on
+                            "Content types" to access the content type
+                            management page.</p>
+                        <p>Tip: Make sure you have the necessary permissions to
+                            create new content types. If not, contact your site
+                            administrator.</p>
+                    </li>
+                    <li>
+                        <h3>Add a New Content Type</h3>
+                        <p>On the content type management page, click on the
+                            "Add content type" button. Fill in the required
+                            information such as the name and description of the
+                            content type.</p>
+                        <p>Example: If you're creating a content type for blog
+                            posts, you might name it "Blog Post" and provide a
+                            brief description.</p>
+                    </li>
+                    <li>
+                        <h3>Configure Field Settings</h3>
+                        <p>Once you've added the content type, you can configure
+                            the field settings to define the specific fields
+                            that will appear when creating content of this type.
+                            You can add fields such as text fields, image
+                            fields, taxonomy fields, etc.</p>
+                        <p>Tip: Think about the type of content you'll be adding
+                            and choose appropriate field types. For example, if
+                            you're creating a product content type, you might
+                            need fields for price, description, and image.</p>
+                    </li>
+                    <li>
+                        <h3>Manage Display Settings</h3>
+                        <p>After configuring the field settings, you can also
+                            manage how the fields will be displayed on the
+                            content creation form and the final output on the
+                            website.</p>
+                        <p>Example: You can choose to display certain fields as
+                            teasers on listing pages and show additional details
+                            on the full content view.</p>
+                    </li>
+                    <li>
+                        <h3>Save and Test</h3>
+                        <p>Once you're satisfied with the configuration, save
+                            the content type. You can then test it by creating
+                            new content of this type and checking if everything
+                            works as expected.</p>
+                        <p>Tip: It's a good practice to create a few test
+                            content items to ensure that your new content type
+                            behaves as intended across different scenarios.</p>
+                    </li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>Creating custom content types in Drupal allows you to
+                    organize and manage your website's content more effectively.
+                    By following the steps outlined in this guide, you can
+                    leverage Drupal's flexibility to tailor your content types
+                    to your specific requirements.</p>
+                <p>Remember to regularly review and refine your content types as
+                    your website evolves, ensuring they continue to meet the
+                    needs of your audience and content creators.</p>
+            </div>
+
+            <!-- End blog content-->
+
+            <!-- Footer Start -->
+            <div class="container-fluid bg-primary text-light footer wow fadeIn"
+                data-wow-delay="0.1s">
+                <div class="container py-5 px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-md-6 col-lg-4">
+                            <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                            <p><i class="fa fa-map-marker-alt me-3"></i>6th
+                                floor, Park Plaza, office no 610, Porwal Rd,
+                                Lohegaon, Pune, Maharashtra 411047</p>
+                            <p><i class="fa fa-phone-alt me-3"></i><a
+                                    href="tel:+919922611550"
+                                    style="color: #fff;">+919922611550</a></p>
+                            <p><i class="fa fa-envelope me-3"></i><a
+                                    href="mailto:dg@hashkite.com"
+                                    style="color:#fff;">dg@hashkite.com</a></p>
+                            <div class="d-flex pt-2">
+                                <a class="btn btn-outline-light btn-social" href><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-light btn-social" href><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social" href><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-light btn-social" href><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <p class="section-title text-white h5 mb-4">Quick
+                                Link<span></span></p>
+                            <a class="btn btn-link" href>About Us</a>
+                            <a class="btn btn-link" href>Contact Us</a>
+                            <a class="btn btn-link" href>Privacy Policy</a>
+                            <a class="btn btn-link" href>Terms & Condition</a>
+                            <a class="btn btn-link" href>Career</a>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                            <p>Stay informed with our latest news, updates, and
+                                offerings delivered straight to your inbox.</p>
+                            <div class="position-relative w-100 mt-3">
+                                <input
+                                    class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                                    type="text" placeholder="Your Email"
+                                    style="height: 48px;">
+                                <button type="button"
+                                    class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                        class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container px-lg-5">
+                    <div class="copyright">
+                        <div class="row">
+                            <div
+                                class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                &copy; <a class="border-bottom" href="#">#Kite</a>,
+                                All Right Reserved.
+
+                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                                Designed By <a class="border-bottom" href="/">Akshay
+                                    sargar</a>
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                <div class="footer-menu">
+                                    <a href>Home</a>
+                                    <a href>Cookies</a>
+                                    <a href>Help</a>
+                                    <a href>FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+
+            <!-- Back to Top -->
+            <a href="#"
+                class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+                    class="bi bi-arrow-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../lib/wow/wow.min.js"></script>
+        <script src="../lib/easing/easing.min.js"></script>
+        <script src="../lib/waypoints/waypoints.min.js"></script>
+        <script src="../lib/counterup/counterup.min.js"></script>
+        <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="../js/main.js"></script>
+    </body>
+</html>

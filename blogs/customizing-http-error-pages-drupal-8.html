@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizing HTTP Error Pages in Drupal 8</title>
+    <meta name="description" content="Learn how to customize HTTP error pages in Drupal 8 to enhance user experience and branding. Discover methods for creating personalized error pages that match your website's style.">
+    <meta name="keywords" content="Drupal 8, HTTP error pages, customization, web development, user experience, branding">
+
+     <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Header styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* Main content section */
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Code blocks */
+pre {
+    background-color: #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Customizing HTTP Error Pages In Drupal 8</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Customizing HTTP Error Pages In Drupal 8</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container">
+            <div class="row">
+            <section class="col-md-3">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#basics">The Basics</a></li>
+                    <li><a href="#default-settings">Out Of The Box</a></li>
+                    <li><a href="#customizing-error-messages">Customizing Error Messages</a></li>
+                    <ul>
+                        <li><a href="#method-1">Method 1: Drupal Configuration</a></li>
+                        <li><a href="#method-2">Method 2: Programmatic Approach</a></li>
+                    </ul>
+                </ul>
+            </section>
+    
+            <div class="col-md-9">
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>In web development, developers frequently encounter situations where site owners find the standard HTTP error pages (such as Access Denied or Page Not Found) too plain, particularly when competitors create visually engaging error pages. Check out these 404 pages for inspiration, and don't miss this example from Google.</p>
+                <p>Drupal also uses straightforward error pages, yet it addresses user needs effectively by allowing site builders and developers to customize these error pages out-of-the-box. Additionally, it offers ways to modify these pages.</p>
+                <p>Let's delve into customizing these pages.</p>
+            </section>
+    
+            <section id="basics">
+                <h2>The Basics</h2>
+                <p>The focus here is on the word "Page" in the phrase "HTTP error page," as an HTTP error page is essentially a page. This could be a Node page, View Page Display, Panel page, or Custom Route (URL) in Drupal.</p>
+            </section>
+    
+            <section id="default-settings">
+                <h2>Out Of The Box</h2>
+                <p>In Drupal, some custom routes (URLs) are specified in the `system.routing.yml` file:</p>
+                <pre>
+    <code>
+    system.401:
+      path: '/system/401'
+      defaults:
+        _controller: '\Drupal\system\Controller\Http4xxController:on401'
+        _title: 'Unauthorized'
+      requirements:
+        _access: 'TRUE'
+    
+    system.403:
+      path: '/system/403'
+      defaults:
+        _controller: '\Drupal\system\Controller\Http4xxController:on403'
+        _title: 'Access denied'
+      requirements:
+        _access: 'TRUE'
+    
+    system.404:
+      path: '/system/404'
+      defaults:
+        _controller: '\Drupal\system\Controller\Http4xxController:on404'
+        _title: 'Page not found'
+      requirements:
+        _access: 'TRUE'
+    </code>
+                </pre>
+                <p>These routes generate error messages whenever a user tries to access non-existent or unauthorized pages on the site.</p>
+                <p>For instance, `Http4xxController` in Drupal renders the default content for HTTP errors.</p>
+            </section>
+    
+            <section id="customizing-error-messages">
+                <h2>Customizing Error Messages</h2>
+                <p>Drupal's default options are quite basic, but it offers methods to customize error pages and express your creativity.</p>
+                <p>Here, we will explore two methods to modify error messages/pages:</p>
+    
+                <section id="method-1">
+                    <h3>Method 1: Drupal Configuration</h3>
+                    <p>1. Log in to your Drupal site as an administrator.</p>
+                    <p>2. Create a content type named "error pages" (you can use an existing type if preferred).</p>
+                    <p>3. Create a node page with the "error pages" content type, which will act as your error page.</p>
+                    <p>4. Add content and style it as needed.</p>
+                    <p>Next, specify the new node page URL as your error page:</p>
+                    <p>1. Log in to your Drupal site as an administrator.</p>
+                    <p>2. Go to `/admin/config/system/site-information`.</p>
+                    <p>3. Under the "Error Pages" section, specify the URL of your new node page.</p>
+                    <p>Now, your error pages are set up through the Drupal UI, reflecting the content and style of your Node Content.</p>
+                </section>
+    
+                <section id="method-2">
+                    <h3>Method 2: Programmatic Approach</h3>
+                    <p>Besides configuring error pages through the Drupal UI, you can use the `hook_theme_suggestions_HOOK_alter()` to suggest specific TWIG templates for error pages. Here's how you can do that:</p>
+                    <p>1. Implement the `hook_theme_suggestions_HOOK_alter()` in your theme file.</p>
+                    <p>2. This hook captures error messages and guides Drupal to use a specified TWIG template.</p>
+                    <p>3. Place the error-specific TWIG file in your theme's template directory.</p>
+                    
+                    <p>Below are two functions you can use to suggest error-specific TWIG templates to Drupal.</p>
+                    
+                    <h4>Function 1:</h4>
+                    <pre>
+    <code>
+    /**
+     * Implements hook_theme_suggestions_HOOK_alter().
+     */
+    function THEMENAME_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+        $route_name = \Drupal::routeMatch()->getRouteName();
+        switch ($route_name) {
+            case 'system.401':
+                $error = 401;
+                break;
+    
+            case 'system.403':
+                $error = 403;
+                break;
+    
+            case 'system.404':
+                $error = 404;
+                break;
+        }
+        if (isset($error)) {
+            $suggestions[] = 'page__' . $error;
+        }
+    }
+    </code>
+                    </pre>
+                    
+                    <h4>Function 2:</h4>
+                    <pre>
+    <code>
+    /**
+     * Implements hook_theme_suggestions_HOOK_alter().
+     */
+    function THEMENAME_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+        $request = \Drupal::request();
+    
+        if ($exception = $request->attributes->get('exception')) {
+            $status_code = $exception->getStatusCode();
+            if (in_array($status_code, array(401, 403, 404))) {
+                $suggestions[] = 'page__' . $status_code;
+            }
+        }
+    }
+    </code>
+                    </pre>
+                    <p>After adding one of these functions to your code, add the error-specific TWIG templates to your theme and format the HTML as desired.</p>
+                </section>
+            </section>
+    
+            <section>
+                <h2>Conclusion</h2>
+                <p>This guide shows how Drupal enables you to configure HTTP error pages through both settings and code. Get started on revamping your HTTP error pages to showcase your creativity!</p>
+            </section>
+            </div></div>
+        </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

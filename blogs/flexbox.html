@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+    <title>Mastering CSS Flexbox: An In-Depth Guide</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Discover the fundamentals of CSS Flexbox and how to use its features to create flexible and responsive web layouts. A comprehensive guide for web designers and developers.">
+    
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="CSS, Flexbox, web design, web development, layout, responsive design">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .content {
+            margin: 20px;
+        }
+        .code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre {
+            background-color: black;
+            padding: 16px;
+        }
+        .code {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Mastering CSS Flexbox: An In-Depth Guide</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Mastering CSS Flexbox: An In-Depth Guide</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container">
+            <article>
+                <p>
+                    Flexbox, or the CSS Flexible Box Layout Module, is a powerful tool for web designers and developers. It allows you to create flexible and responsive layouts quickly and efficiently. In this guide, we'll explore the basics of Flexbox and how you can leverage its features to enhance your web design projects.
+                </p>
+                <h2>
+                    What is Flexbox?
+                </h2>
+                <p>
+                    CSS Flexbox is a layout model designed to make it easier to align and distribute space among elements in a container. It provides a straightforward way to create dynamic, adaptable layouts that work well across different screen sizes and devices.
+                </p>
+                <h2>
+                    Key Concepts
+                </h2>
+                <p>
+                    Before we dive into the details of Flexbox, let's review some key concepts:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Flex Container:</strong> The parent element that contains the flex items. It is defined by setting the <code>display</code> property to <code>flex</code> or <code>inline-flex</code>.
+                    </li>
+                    <li>
+                        <strong>Flex Items:</strong> The child elements inside the flex container. These items can be positioned and sized using various flex properties.
+                    </li>
+                    <li>
+                        <strong>Flex Direction:</strong> Determines the direction in which the flex items are laid out (row or column). The default direction is <code>row</code>.
+                    </li>
+                    <li>
+                        <strong>Main Axis:</strong> The primary axis of the flex container (row or column).
+                    </li>
+                    <li>
+                        <strong>Cross Axis:</strong> The axis perpendicular to the main axis.
+                    </li>
+                </ul>
+                <h2>
+                    Flexbox Properties
+                </h2>
+                <h3>
+                    Flex Container Properties:
+                </h3>
+                <ul>
+                    <li>
+                        <p>
+                            <strong>display:</strong> Sets the flex container type (<code>flex</code> or <code>inline-flex</code>).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                display: flex;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>flex-direction:</strong> Specifies the direction of the main axis (<code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                flex-direction: row;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>justify-content:</strong> Controls alignment along the main axis (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                justify-content: center;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>align-items:</strong> Controls alignment along the cross axis (<code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                align-items: stretch;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>align-content:</strong> Aligns multiple lines along the cross axis (when items wrap).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                align-content: flex-start;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>flex-wrap:</strong> Controls whether flex items wrap onto multiple lines (<code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>).
+                        </p>
+                        <pre><code class="language-plaintext">.container {
+                                flex-wrap: wrap;
+                            }</code></pre>
+                    </li>
+                </ul>
+                <h3>
+                    Flex Item Properties:
+                </h3>
+                <ul>
+                    <li>
+                        <p>
+                            <strong>flex-grow:</strong> Specifies how much a flex item should grow relative to the other items.
+                        </p>
+                        <pre><code class="language-plaintext">.item {
+                                flex-grow: 1;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>flex-shrink:</strong> Specifies how much a flex item should shrink relative to the other items.
+                        </p>
+                        <pre><code class="language-plaintext">.item {
+                                flex-shrink: 1;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>flex-basis:</strong> Defines the initial size of a flex item.
+                        </p>
+                        <pre><code class="language-plaintext">.item {
+                                flex-basis: 100px;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>align-self:</strong> Overrides the container's <code>align-items</code> property for an individual flex item.
+                        </p>
+                        <pre><code class="language-plaintext">.item {
+                                align-self: center;
+                            }</code></pre>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>order:</strong> Controls the order in which flex items appear within the flex container.
+                        </p>
+                        <pre><code class="language-plaintext">.item {
+                                order: 1;
+                            }</code></pre>
+                    </li>
+                </ul>
+                <h2>
+                    Flexbox in Action
+                </h2>
+                <p>
+                    Let's look at a practical example of Flexbox in action:
+                </p>
+                <pre><code class="language-plaintext">&lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title&gt;Flexbox Example&lt;/title&gt;
+                    &lt;style&gt;
+                        .container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                        }
+                        .item {
+                            flex-grow: 1;
+                            padding: 10px;
+                            margin: 5px;
+                            background-color: lightblue;
+                            text-align: center;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;div class="container"&gt;
+                        &lt;div class="item"&gt;Item 1&lt;/div&gt;
+                        &lt;div class="item"&gt;Item 2&lt;/div&gt;
+                        &lt;div class="item"&gt;Item 3&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+                <strong>Output:</strong>
+                <div style="background-color: #f4f4f4;padding: 16px;">
+                    <img src="./img/flexbox.png" alt="flexbox" style="width: 100%;height: auto;"/>
+                </div>
+                <p>
+                    In this example, we create a flex container with three flex items. The container is set to display as a row, and the items are evenly spaced and aligned to the center of the container.
+                </p>
+                <h2>
+                    Conclusion
+                </h2>
+                <p>
+                    CSS Flexbox is a versatile layout tool that simplifies the creation of flexible, responsive designs. By understanding and applying the various properties available in Flexbox, you can create dynamic and visually appealing layouts with ease. Experiment with different Flexbox properties to see how they can enhance your web design projects. Happy coding!
+                </p>
+            </article>
+        </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

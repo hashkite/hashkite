@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoupled Drupal with Next.js Using Next-Drupal</title>
+    <meta name="description" content="Explore the integration of Next.js with Drupal using the Next-Drupal npm package and Drupal Next module. Learn how to quickly set up a decoupled Drupal frontend for your web applications.">
+    <meta name="keywords" content="Decoupled Drupal, Next.js, Next-Drupal, Drupal Next module, web development, JavaScript, Worklog project">
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .content {
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Decoupled Drupal with Next.js Using Next-Drupal</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Decoupled Drupal with Next.js Using Next-Drupal</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <ul class="col-md-3">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#drupal-next-module">Drupal Next Module</a></li>
+                        <li><a href="#worklog-project">Worklog Project</a></li>
+                        <li><a href="#usage-of-next-drupal">Usage Of Next-Drupal</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ul>
+                    <div class="col-md-9">
+                    <h2 id="introduction">Introduction</h2>
+                    <p>Using Drupal in a decoupled manner empowers the creation of high-performance web applications. Technologies like Next.js, React, Gatsby, and more are available today, enabling the development of blazingly fast web applications that primarily rely on content management systems as backends for their content.</p>
+            
+                    <p>Recently, we encountered the challenge of creating a decoupled Drupal frontend for our Worklog project using Next.js, with minimal time investment. The process of quickly starting with Next.js and Drupal was a daunting task until we discovered the Drupal Next module. Working seamlessly with the Next-Drupal npm package, the Drupal Next module provides enhanced integration between Next.js and Drupal, allowing us to set up and deploy our application rapidly.</p>
+            
+                    <p>In this post, I will delve into the features offered by the Drupal Next Module and provide an overview of the Worklog project. Additionally, I'll explain how we utilized the Next-Drupal npm package to seamlessly integrate data into our Next.js based Worklog application.</p>
+            
+                    <p>We'll focus solely on discussing the features of the Next Drupal Module and the Next-Drupal npm package that expedited our project. If you're interested in setting it up for your web application, the author of the Drupal Next module + Next-Drupal npm package has created an excellent guide to assist you through the setup process.</p>
+                    <h2 id="drupal-next-module">Drupal Next Module</h2>
+                    <p>The Drupal Next Module enriches Drupal with a host of features that seamlessly integrate with Next.js, simplifying web application development. When paired with the Next-Drupal npm package, these features enhance the efficiency and functionality of Drupal-powered Next.js applications.</p>
+            
+                    <h2>Key Features:</h2>
+                    <ol>
+                        <li>
+                            <strong>Incremental Static Regeneration:</strong>
+                            <p>This feature ensures real-time propagation of content changes within Next.js applications whenever new content is added or existing content is modified.</p>
+                        </li>
+                        <li>
+                            <strong>Iframe Preview:</strong>
+                            <p>Preview Drupal content conveniently within an iframe on the Drupal dashboard, facilitating visualization of content changes.</p>
+                        </li>
+                        <li>
+                            <strong>Multi-sites Preview:</strong>
+                            <p>Register multiple Next.js applications within the Drupal backend and extend iframe preview capabilities to all registered sites for efficient content management.</p>
+                        </li>
+                        <li>
+                            <strong>Support for Revision Previews, Draft Content, and Content Moderation:</strong>
+                            <p>Preview draft content using the Next.js preview mode, ensuring comprehensive content review and moderation.</p>
+                        </li>
+                        <li>
+                            <strong>Extensibility via Plugins:</strong>
+                            <p>The Drupal Next Module is highly extensible, allowing for the integration of custom site resolvers and previewers. Detailed documentation assists in the addition of custom functionalities to tailor the module to specific project requirements.</p>
+                        </li>
+                    </ol>                
+                    <h2 id="worklog-project">Worklog Project</h2>
+                    <p>We streamline the tracking of our yearly achievements, certifications, contributions, and more through various platforms. However, the scattered nature of these platforms hindered our ability to showcase our work in a unified manner. To address this issue, we developed the Worklog platform, serving as a centralized repository for all our achievements, certifications, contributions, and more.</p>
+            
+                    <p>In the Worklog project, we utilize content types, with the main Content-Type being Worklog. This main Content-Type establishes one-to-many relationships with child entities such as certifications, contributions, projects, recognitions, and certifications, all modeled as paragraphs in Drupal. If you're unfamiliar with Paragraphs, I highly recommend exploring its capabilities.</p>
+                    
+                    <p>For accessing and modifying data in our Next.js frontend, we rely on the JSON API, which provides endpoints for accessing any Drupal node and its relationships. In the Worklog project, the primary node work_log is accessed through the http://localhost/jsonapi/node/work_log endpoint. The JSON API also offers an include filter to load related entities, and for adding new data, we issue POST requests to entity-specific endpoints, linking child entities to the parent entity (work_log) as relationships.</p>
+                    
+                    <h2 id="usage-of-next-drupal">Usage Of Next-Drupal</h2>
+                    <p>The Next-Drupal npm package is specifically designed to work seamlessly with the Drupal Next module, enhancing the integration of Drupal with Next.js. It provides a set of helper methods that complement Next.js methods, such as getStaticPaths, getStaticProps, and getServerSideProps, facilitating the loading of content within Next.js applications.</p>
+        
+                    <p>Two primary methods offered by the Next-Drupal package for retrieving data from Drupal are getResourceCollectionFromContext and getResourceFromContext. The getResourceCollectionFromContext method enables querying a collection of a specified entity type from Drupal, while the getResourceFromContext method allows querying of a single entity type.</p>
+                    
+                    <h2>Example Usage:</h2>
+                    <ol>
+                        <li>
+                            <strong>getResourceFromContext:</strong>
+                            <p>Retrieve a worklog node.</p>
+                            <pre><code>import { getResourceFromContext } from "next-drupal"
+                            
+            export async function getServerSideProps(context) {
+              const worklog = await getResourceFromContext("node--work_log", context)
+              
+              return {
+                props: {
+                  worklog,
+                },
+              }
+            }</code></pre>
+                        </li>
+                        <li>
+                            <strong>getResourceCollectionFromContext:</strong>
+                            <p>Retrieve a collection of worklogs.</p>
+                            <pre><code>import { getResourceCollectionFromContext } from "next-drupal"
+                            
+            export async function getStaticProps(context) {
+              const worklogs = await getResourceCollectionFromContext(
+                "node--work_log",
+                context
+              )
+              
+              return {
+                props:{
+                  worklogs
+                },
+                revalidate: 1,
+              };
+            }</code></pre>
+                        </li>
+                    </ol>
+                    
+                    <p>In addition to these methods, the Next-Drupal package handles authorization automatically, simplifying development. For a comprehensive understanding of all available methods, refer to the package documentation.</p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p>The purpose of this post was to provide an overview of how we efficiently integrated Next.js with Drupal. We achieved this by utilizing the Drupal Next module in conjunction with the Next-Drupal npm package, enabling seamless communication between Drupal and Next.js.</p>
+        
+            <p>To delve deeper into the integration process, you can explore the source code of the example application used in this post. By examining the code, you can gain further insights into the implementation details and understand how the integration was accomplished.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

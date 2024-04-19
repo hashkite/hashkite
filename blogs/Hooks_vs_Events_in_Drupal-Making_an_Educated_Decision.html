@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hooks vs. Events in Drupal: Making an Educated Decision</title>
+    <meta
+      content="Drupal hooks, Drupal events, Drupal development, hooks vs events, Drupal programming, Drupal best practices, Drupal decision-making, Drupal performance optimization"
+      name="keywords">
+    <meta
+      content="Discover the key differences between hooks and events in Drupal, and learn how to make the right choice for your project. Find insights to guide your decision-making process and improve your Drupal development."
+      name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>.sclass{
+         
+   
+    margin-top: 20px;
+    padding-bottom: 200px;
+  
+    max-width: 100%;
+
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-fluid position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href class="navbar-brand p-0">
+            <h1 class="m-0">#Kite</h1>
+            <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0 me-0">
+              <a href="/" class="nav-item nav-link">Home</a>
+              <a href="/#about-us" class="nav-item nav-link">About</a>
+              <a href="/#service" class="nav-item nav-link">Service</a>
+              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+              <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-fluid py-5 bg-primary hero-header">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+              <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">Hooks vs Events in
+                  Drupal - Making an Educated Decision </h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white"
+                        href="/blogs">Blog</a></li>
+                    <li class="breadcrumb-item text-white active"
+                      aria-current="page">Hooks vs Events in Drupal - Making an
+                      Educated Decision</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Blog content-->
+      <div class="container">
+        <header>
+          <h1>Hooks vs Events in Drupal - Making an Educated Decision</h1>
+        </header>
+        <div class="row mt-5 pt-6">
+          <nav class="col-md-3">
+            <ul style="list-style: circle;">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#hooks">Hooks</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#comparison">Comparing</a></li>
+              <li><a href="#best-practices">Best Practices</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+          </nav>
+          <article class="col-md-9">
+            <section id="introduction">
+              <h2>Introduction</h2>
+              <p>Drupal offers developers two primary methods, hooks and events,
+                for extending its functionality.
+                Understanding the differences between them and knowing when to
+                utilize each can significantly
+                impact the quality and performance of your Drupal projects.</p>
+            </section>
+            <section id="hooks">
+              <h2>Hooks</h2>
+              <p>Drupal's foundational concept, hooks, enables modules to
+                interact with and modify various aspects
+                of Drupal's functionality. Hooks are predefined PHP functions
+                that Drupal core or other modules
+                call at specific points during a request's execution, allowing
+                modules to alter data, modify
+                forms, and react to system events.</p>
+                <div><h3>Characteristics</h3>
+<ul>
+<li>Drupal's traditional approach to facilitating module interactions within the system.</li>
+<li>Allows for independent and incremental enhancements or modifications to code.</li>
+<li>Relies on hooks, which are predefined functions with specific names invoked by Drupal core or modules at different stages of execution.</li>
+<li>Developers implement these functions within their modules to extend or modify default functionalities.</li>
+<li>Known for its efficiency and straightforward implementation.</li>
+</ul>
+
+<p>Drupal's hook system is integral to its extensibility and flexibility. Below is an example of how a hook is defined in a module:</p>
+
+<pre><code class="language-php">// Implements hook_menu().
+function mymodule_menu() {
+  $items['mymodule/foo'] = array(
+    'title' => 'My Module Foo Page',
+    'page callback' => 'mymodule_foo_page',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function mymodule_foo_page() {
+  return 'Hello from My Module!';
+}
+</code></pre>
+
+In this example, the `mymodule_menu()` function defines a new path (`mymodule/foo`) and associates it with a callback function (`mymodule_foo_page()`). When a user navigates to this path, the callback function is invoked, rendering the corresponding content.
+
+This demonstrates how developers can leverage hooks to extend Drupal's functionality and add custom features.
+
+<h3>Categories of Hooks</h3>
+<ol>
+<li>Event-triggered Hooks: These hooks respond to specific events, such as a user logging in, and trigger associated actions. They bear resemblance to Events and are invoked upon particular actions. For instance, <strong>hook_user_cancel()</strong>.</li>
+<li>
+<p>Information-providing Hooks: These hooks function akin to "info hooks," activated when a component requires details about a specific topic. These hooks typically return arrays with predefined structures and values determined by the hook definition. For example, refer to the user module's hook <a href="https://api.drupal.org/api/drupal/core!modules!user!user.module/function/user_toolbar" rel="nofollow">user_toolbar()</a>, which appends links to the Toolbar on the common user account page.</p>
+<p>Note: In Drupal 8 and later versions, this functionality is generally managed by the <a href="https://www.drupal.org/docs/drupal-apis/plugin-api/plugin-api-overview" rel="nofollow">plugin system</a>, resulting in fewer conventional hooks compared to Drupal 7.</p>
+</li>
+<li>Data Modification Hooks: Alteration <a href="https://www.specbee.com/blogs/drupal-coding-standards-with-git-hooks" rel="nofollow">hooks</a>, typically suffixed with "alter," are invoked to enable modules to modify existing code. For example: <strong>hook_form_alter()</strong>.</li>
+</ol>
+<h3>Illustration:</h3>
+<ul>
+<li>Drupal core hook: hook_form_alter()</li>
+<li>Scenario: Adjusting a form defined by another module.</li>
+</ul>
+<pre><code class="language-plaintext">// my_module.module
+function my_module_form_alter(&amp;$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+&nbsp; // Custom logic to modify the form. // Additional code to alter the form...
+if ($form_id == 'my_form_id') {
+  // Add or modify form elements.
+  $form['new_element'] = [
+    '#type' => 'textfield',
+    '#title' => t('New Element'),
+    // Additional properties...
+  ];
+}
+}
+</code></pre>
+}</code></pre><h3>Exploring Existing Hooks</h3>
+<p>Hooks can be defined by any contributed or custom modules. While some hooks are invoked by Drupal core subsystems, such as the <a href="https://www.specbee.com/blogs/enhancing-user-experience-with-drupals-form-api" rel="nofollow">Form API</a>, others are always present. However, discovering available hooks and deciding which ones to implement can sometimes be challenging.</p>
+<p>There are various methods to uncover existing hooks:</p>
+<ol>
+<li>Inspect hook definitions in <strong>*.api.php</strong> files within Drupal core or contributed modules.</li>
+<li>Utilize your IDE to search for functions beginning with <strong>hook_</strong>.</li>
+<li>Access a <a href="https://api.drupal.org/api/drupal/core!core.api.php/group/hooks" rel="nofollow">comprehensive list of hooks here</a>.</li>
+<li>Alternatively, employ Drush commands to obtain a list of all implementations of a specific hook.</li>
+</ol>
+<pre><code class="language-plaintext">drush fn-hook help #Shortcut for drush devel:hook</code></pre>
+<h3>Triggering a New Hook</h3>
+<ol>
+<li>To enable other developers to modify or extend our feature, it's important to trigger a hook or dispatch an event.</li>
+<li>This can be initiated during any action, such as creating, deleting, updating, or when receiving or pushing data through an API.</li>
+<li>Hooks are triggered using the module handler service <strong>\Drupal::moduleHandler()</strong>.</li>
+<li>Hooks can be triggered in various manners:</li>
+</ol>
+<ul>
+<li>Execute the hook across all modules that implement it: <strong>\Drupal::moduleHandler()->invokeAll()</strong></li>
+<li>Trigger the hook per-module, typically by iterating over a list of enabled modules: <strong>\Drupal::moduleHandler()->invoke()</strong></li>
+<li>Invoke an alter hook, allowing for the modification of existing data structures using <strong>\Drupal::moduleHandler()->alter()</strong>.</li>
+</ul>
+<h3>Defining a New Hook</h3>
+<p>To define a new hook, follow these steps:</p>
+<ol>
+<li>Choose a unique name for your hook.</li>
+<li>Document your hook.</li>
+</ol>
+<p>Hooks are typically documented in a <strong>{MODULE_NAME}.api.php</strong> file:</p>
+<pre><code class="language-plaintext">// custom_hooks.api.php
+/**
+* Defines a custom hook for reacting to specific events.
+*
+* This hook is invoked when a certain event occurs in the system.
+* Modules can implement this hook to perform additional actions in response to the event.
+*
+* @param string $param1
+*    An example parameter for the hook.
+* @param array $param2
+*    Another example parameter for the hook.
+*
+* @ingroup custom_hooks_hooks
+*/
+function hook_custom_event($param1, array $param2) {
+    // Your custom hook logic here.
+}
+</code></pre>
+<p>Invoke your hook in your module's code:</p>
+<pre><code class="language-plaintext">
+/**
+* Implements hook_ENTITY_TYPE_view().
+*/
+function hooks_example_node_view(array &amp;$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+    // Invoke a hook to alert other modules that the count was updated.
+    $module_handler = \Drupal::moduleHandler();
+    // In this example, we're invoking hook_custom_event().
+    $module_handler->invokeAll('custom_event', [$entity]);
+}
+</code></pre>
+
+<h2>Choosing Between Events and Hooks</h2>
+<ul>
+<li>Events: Opt for events when you need to decouple actions or integrate with Symfony components.</li>
+<li>Hooks: Use hooks for simpler modifications or when interacting with Drupal core and <a href="https://www.specbee.com/blogs/improving-drupals-layout-builder-experience" rel="nofollow">contributed modules</a>.</li>
+</ul>
+<h2>Advantages and Disadvantages of Events vs. Hooks</h2>
+<p>Events:</p>
+<ul>
+<li>Advantages: Decoupling, better organization, and integration with Symfony.</li>
+<li>Disadvantages: Slightly higher learning curve, especially for those unfamiliar with Symfony.</li>
+</ul>
+<p>Hooks:</p>
+<ul>
+<li>Advantages: Simplicity, well-established in Drupal, and easier for Drupal-specific tasks.</li>
+<li>Disadvantages: Tighter coupling, less organization in larger projects.</li>
+</ul></div>
+            </section>
+            <section id="events">
+              <h2>Events</h2>
+              <p>Introduced in Drupal 8, events provide a more object-oriented
+                approach to extending Drupal's
+                functionality compared to hooks. In this event-driven
+                architecture, event listeners or
+                subscribers respond to specific events dispatched by other
+                system components, executing custom
+                logic when triggered.</p>
+              <div>
+                <h3>Illustration</h3>
+                <ul>
+                  <li>Core Drupal event: KernelEvents::REQUEST</li>
+                  <li>Use case: Creating a bespoke module to intercept the
+                    REQUEST event for executing tailored operations prior to request
+                    processing.</li>
+                </ul>
+                <pre><code class="language-plaintext">// MyModuleEventSubscriber.php
+namespace Drupal\my_module\EventSubscriber;
+
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+
+class MyModuleEventSubscriber implements EventSubscriberInterface {
+
+&nbsp; public static function getSubscribedEvents() {
+&nbsp; &nbsp; $events[KernelEvents::REQUEST][] = ['onRequestEvent'];
+&nbsp; &nbsp; return $events;
+&nbsp; }
+&nbsp; public function onRequestEvent(RequestEvent $event) {
+&nbsp; &nbsp; // Custom logic to be executed on every request.
+&nbsp; }
+}</code></pre><h3>Exploring Existing Events</h3>
+                <p>There are various approaches to discovering existing events:</p>
+                <p>1. Utilizing the <a
+                    href="https://www.drupal.org/project/webprofiler"
+                    rel="nofollow">WebProfiler</a> module:</p>
+                <ol>
+                  <li>Download and activate the WebProfiler module, along with the Devel module since WebProfiler relies on Devel.</li>
+                  <li>Proceed to Manage &gt; Configuration &gt; Devel Settings &gt; WebProfiler, then select the checkbox to enable the “Events” toolbar item.</li>
+                  <li>Upon visiting any page on your site, you'll notice the WebProfiler toolbar at the bottom. Clicking on the events toolbar icon will display a list of all event subscribers and associated information triggered during that request.</li>
+                </ol>
+                <div
+                  class="align-center media media--type-image media--view-mode-original is-animated is-animated--slide-up"
+                  role="img" data-appearance="hidden"
+                  data-drupal-selector="animated">
+
+                  <img loading="lazy" class="sclass" loading="lazy"
+                    src="/blogs/img/web-profile.png"
+                    width="1517" height="1600" alt="web profile">
+
+                </div>
+                <p>2. Utilize Devel to inspect an event class:</p>
+                <pre><code class="language-plaintext">drush devel:event
+
+&nbsp;Enter the number for which you want to get information.:
+&nbsp;&nbsp;[0] kernel.controller
+&nbsp;&nbsp;[1] kernel.exception
+&nbsp;&nbsp;[2] kernel.request
+&nbsp;&nbsp;[3] kernel.response
+&nbsp;&nbsp;[4] kernel.terminate
+&nbsp;&nbsp;[5] kernel.view
+&nbsp;&gt; 0
+
+&nbsp;Enter the number to view the implementation.:
+&nbsp;&nbsp;[0] Drupal\path_alias\EventSubscriber\PathAliasSubscriber::onKernelController
+&nbsp;&nbsp;[1] Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber::onController
+&nbsp;&nbsp;[2] Drupal\webprofiler\DataCollector\RequestDataCollector::onKernelController
+&nbsp;&gt; 0</code></pre>
+<p>3. Look through your codebase for occurrences of @Event:&nbsp;</p>
+                <p>Using your preferred editor like Visual Studio or PHPStorm, conduct
+                  a search for the text @Event with the file mask option set to: *.php.</p>
+                <h3>Registering for an Event</h3>
+                <p>Drupal operates on an event-driven architecture, enabling various components to interact by dispatching and registering for events.</p>
+                <p>Below is an example of registering for an event in Drupal 9/10.</p>
+                <p>1. Define an Event subscriber service&nbsp;</p>
+                <pre><code class="language-plaintext"># MyModule/my_module.services.yml
+services:
+&nbsp; my_module.event_subscriber:
+&nbsp; &nbsp; class: Drupal\my_module\EventSubscriber\MyModuleEventSubscriber
+&nbsp; &nbsp; tags:
+&nbsp; &nbsp; &nbsp; - { name: event_subscriber }</code></pre><p>2. Define an
+                  Event subscriber class</p>
+                <pre><code class="language-plaintext">// MyModule/src/EventSubscriber/MyModuleEventSubscriber.php
+
+namespace Drupal\my_module\EventSubscriber;
+
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\Event;
+
+/**
+* Class MyModuleEventSubscriber.
+*/
+class MyModuleEventSubscriber implements EventSubscriberInterface {
+
+&nbsp; /**
+&nbsp; * {@inheritdoc}
+&nbsp; */
+&nbsp; public static function getSubscribedEvents() {
+&nbsp; &nbsp; // Specify the event(s) to subscribe to and the method to call when the event occurs.
+&nbsp; &nbsp; $events = [
+&nbsp; &nbsp; &nbsp; 'node.insert' =&gt; 'onNodeInsert',
+&nbsp; &nbsp; &nbsp; 'user.login' =&gt; 'onUserLogin',
+&nbsp; &nbsp; ];
+&nbsp; &nbsp; return $events;
+&nbsp; }
+
+&nbsp; /**
+&nbsp; * React to a node insert event.
+&nbsp; */
+&nbsp; public function onNodeInsert(Event $event) {
+&nbsp; &nbsp; // Your logic here.
+&nbsp; &nbsp; \Drupal::logger('my_module')-&gt;notice('Node inserted!');
+&nbsp; }
+&nbsp; /**
+&nbsp; * React to a user login event.
+&nbsp; */
+&nbsp; public function onUserLogin(Event $event) {
+&nbsp; &nbsp; // Your logic here.
+&nbsp; &nbsp; \Drupal::logger('my_module')-&gt;notice('User logged in!');
+&nbsp; }
+
+  }</code></pre>
+<p>In this scenario:</p>
+                  <ul>
+                    <li>The class MyModuleEventSubscriber implements the
+                      EventSubscriberInterface.</li>
+                    <li>The getSubscribedEvents method specifies the events to which the
+                      subscriber is subscribed and the corresponding methods to invoke when
+                      each event occurs.</li>
+                    <li>The onNodeInsert and onUserLogin methods contain the logic
+                      to execute when the respective events are triggered.</li>
+                  </ul>
+                  <h3>Triggering an Event</h3>
+                  <p>To enable another developer to subscribe to these events and react accordingly, you can trigger an event within your modules or submodules. Before triggering an event, it's important to determine when to do so. You might trigger an event to extend your module's functionality without modifying existing code. Events can be triggered at various points such as during data creation, updating, loading, or deletion managed by your module.</p>
+                  <p>Let's illustrate this with an example.</p>
+                  <p>Consider a scenario where we want other developers to take action
+                    when a new entity (specifically a node) is created after
+                    submitting a custom form.</p>
+                  <p>1. Create a custom module (if don’t have):</p>
+                <pre># Create the module directory
+mkdir modules/custom/custom_logger
+
+# Create the module file
+touch modules/custom/custom_logger/custom_logger.info.yml
+<p>2. Inside custom_logger.info.yml, add the following content:</p>
+```plaintext
+name: 'Custom Logger'
+type: module
+description: 'Custom module for logging events.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+```
+<p>3. Establish an Event:</p>
+```plaintext
+// modules/custom/custom_logger/src/Event/CustomLoggerEvent.php
+namespace Drupal\custom_logger\Event;
+use Symfony\Component\EventDispatcher\Event;
+
+/**
+
+Defines the custom event for the custom_logger module.
+*/
+class CustomLoggerEvent extends Event {
+
+/**
+
+The node that triggered the event.
+@var \Drupal\node\Entity\Node
+/
+protected $node;
+/*
+CustomLoggerEvent constructor.
+@param \Drupal\node\Entity\Node $node
+The node that triggered the event.
+/
+public function __construct($node) {
+$this->node = $node;
+}
+/*
+Get the node object.
+@return \Drupal\node\Entity\Node
+The node.
+*/
+public function getNode() {
+return $this->node;
+}
+}</pre>
+              </div>
+            </section>
+            <section id="comparison">
+              <h2>Comparing</h2>
+              <table>
+                <tr>
+                  <th>Aspect</th>
+                  <th>Hooks</th>
+                  <th>Events</th>
+                </tr>
+                <tr>
+                  <td>Flexibility</td>
+                  <td>Less flexible</td>
+                  <td>More flexible</td>
+                </tr>
+                <tr>
+                  <td>Performance</td>
+                  <td>Potential performance impact due to execution of all hook
+                    implementations</td>
+                  <td>Generally better performance as only relevant listeners
+                    are triggered</td>
+                </tr>
+                <tr>
+                  <td>Complexity</td>
+                  <td>May lead to complex code if not managed properly</td>
+                  <td>Requires understanding of Symfony's event dispatcher and
+                    object-oriented programming
+                  </td>
+                </tr>
+              </table>
+            </section>
+            <section id="best-practices">
+              <h2>Best Practices</h2>
+              <ul>
+                <li>Use hooks for simple modifications or alterations to Drupal's
+                  core functionality.</li>
+                <li>Use events for more complex and decoupled functionality that
+                  requires modularity and
+                  flexibility.</li>
+                <li>Adhere to Drupal coding standards and best practices to
+                  maintain code consistency and
+                  readability.</li>
+              </ul>
+            </section>
+            <section id="conclusion">
+              <h2>Conclusion</h2>
+              <p>When deciding between hooks and events in Drupal development,
+                consider the specific needs of your
+                project. Both approaches offer advantages and disadvantages, and
+                making an informed choice can
+                lead to more maintainable and scalable Drupal applications.</p>
+            </section>
+          </article>
+        </div>
+      </div>
+
+      <!-- End blog eontent-->
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-primary text-light footer wow fadeIn"
+        data-wow-delay="0.1s">
+        <div class="container py-5 px-lg-5">
+          <div class="row g-5">
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Address<span></span></p>
+              <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza,
+                office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+              <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550"
+                  style="color: #fff;">+919922611550</a></p>
+              <p><i class="fa fa-envelope me-3"></i><a
+                  href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-social" href><i
+                    class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+              <a class="btn btn-link" href>About Us</a>
+              <a class="btn btn-link" href>Contact Us</a>
+              <a class="btn btn-link" href>Privacy Policy</a>
+              <a class="btn btn-link" href>Terms & Condition</a>
+              <a class="btn btn-link" href>Career</a>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+              <p>Stay informed with our latest news, updates, and offerings
+                delivered straight to your inbox.</p>
+              <div class="position-relative w-100 mt-3">
+                <input
+                  class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                  type="text" placeholder="Your Email" style="height: 48px;">
+                <button type="button"
+                  class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+                Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href>Home</a>
+                  <a href>Cookies</a>
+                  <a href>Help</a>
+                  <a href>FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+          class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

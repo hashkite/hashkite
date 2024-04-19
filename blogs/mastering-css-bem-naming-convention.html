@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Title -->
+    <title>Mastering CSS with BEM Naming Convention</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Discover the BEM (Block Element Modifier) naming convention and how it can help you write cleaner, more maintainable, and more scalable CSS code.">
+    
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="CSS, BEM, naming convention, web development, web design">
+
+     <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        p.code {
+            background-color: #000;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Mastering CSS with BEM Naming Convention</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Mastering CSS with BEM Naming Convention</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container">
+            <h2>
+                <strong>Mastering CSS with BEM Naming Convention</strong>
+            </h2>
+            <p>
+                As web applications grow more complex, maintaining a clean and efficient codebase becomes increasingly important. The BEM (Block Element Modifier) naming convention provides a structured approach to organizing CSS and HTML code. In this blog post, we'll explore what BEM is, how it works, and why it benefits developers.
+            </p>
+            <h3>
+                <strong>What is BEM?</strong>
+            </h3>
+            <p>
+                BEM stands for Block Element Modifier, a methodology for writing CSS code in a systematic way. It provides a clear structure for naming classes and organizing styles in your projects. By following BEM, you create maintainable and scalable code that is easy to understand and work with.
+            </p>
+            <h3>
+                <strong>BEM Naming Structure</strong>
+            </h3>
+            <p>
+                BEM class names follow a specific format, which consists of three parts:
+            </p>
+            <ul>
+                <li>
+                    <strong>Block</strong>: A standalone component of the user interface, such as a button, card, or form. Block names are prefixed with a period (<code><strong>.</strong></code>) in CSS.
+                </li>
+                <li>
+                    <strong>Element</strong>: A part of a block that performs a specific function, such as a button's icon or text. Elements are named by appending two underscores (<code><strong>__</strong></code>) and the element's name to the block name.
+                </li>
+                <li>
+                    <strong>Modifier</strong>: A variant of a block or element, which modifies its appearance or behavior. Modifiers are named by appending two hyphens (<code><strong>--</strong></code>) and the modifier's name to the block or element name.
+                </li>
+            </ul>
+            <p>
+                Here's an example of how BEM class names are constructed:
+            </p>
+            <ul>
+                <li>
+                    Block: <code><strong>.button</strong></code>
+                </li>
+                <li>
+                    Element: <code><strong>.button__icon</strong></code>
+                </li>
+                <li>
+                    Modifier: <code><strong>.button--primary</strong></code>
+                </li>
+            </ul>
+            <h3>
+                <strong>BEM in Action</strong>
+            </h3>
+            <p>
+                To better understand BEM, let's look at a practical example:
+            </p>
+            <p>
+                <strong>HTML</strong>:
+            </p>
+            <p class="code">
+                <code>&lt;div class="button button--primary"&gt;&nbsp;</code></br>
+            
+                <code>&nbsp;&nbsp;&lt;span class="button__icon"&gt;&lt;/span&gt; &nbsp; &nbsp;</code></br>
+            
+                <code>&nbsp;&nbsp;&lt;span class="button__text"&gt;Click Me&lt;/span&gt;&nbsp;</code></br>
+            
+                <code>&lt;/div&gt;</code>
+            </p>
+            <p>
+                In this HTML code, we have a block element <code><strong>button</strong></code> with a primary modifier (<code><strong>button--primary</strong></code>). The button contains two elements: an icon (<code><strong>button__icon</strong></code>) and text (<code><strong>button__text</strong></code>).
+            </p>
+            <p>
+                <strong>CSS</strong>:
+            </p>
+            <p class="code">
+                <code>/* Block styles */&nbsp;</code><br>
+                <code>.button { &nbsp; &nbsp;</code><br>
+                <code>padding: 10px; &nbsp;&nbsp;</code><br>
+                <code>border: 1px solid #ccc; &nbsp; &nbsp;</code><br>
+                <code>display: inline-flex; &nbsp; &nbsp;</code><br>
+                <code>align-items: center; &nbsp;</code><br>
+                <code>}&nbsp;</code><br>
+
+                <code>/* Element styles */ &nbsp; &nbsp;</code><br>
+                <code>.button__icon { &nbsp; &nbsp;</code><br>
+                <code>margin-right: 5px;&nbsp;</code><br>
+                <code>}&nbsp;</code><br>
+
+                <code>.button__text { &nbsp; &nbsp;</code><br>
+                <code>font-size: 14px;&nbsp;</code><br>
+                <code>}&nbsp;</code><br>
+
+                <code>/* Modifier styles */&nbsp;</code><br>
+                <code>.button--primary { &nbsp; &nbsp;</code><br>
+                <code>background-color: blue; &nbsp; &nbsp;</code><br>
+                <code>color: white;&nbsp;</code><br>
+                <code>}</code>
+            </p>
+            <p>
+                In the CSS, we style the button block, its elements, and the primary modifier according to the BEM naming convention.
+            </p>
+            <h3>
+                <strong>Benefits of BEM</strong>
+            </h3>
+            <p>
+                Using BEM offers several benefits for web developers:
+            </p>
+            <ol>
+                <li>
+                    <strong>Readability and Clarity</strong>: BEM class names clearly express the relationship between HTML and CSS, making the code easier to read and understand.
+                </li>
+                <li>
+                    <strong>Modularity</strong>: BEM promotes the separation of concerns and modularization of code, allowing developers to create self-contained components.
+                </li>
+                <li>
+                    <strong>Reusability</strong>: With BEM, blocks and elements can be easily reused across different parts of the application.
+                </li>
+                <li>
+                    <strong>Maintainability</strong>: Consistent naming conventions and organized code make maintaining and updating styles easier over time.
+                </li>
+                <li>
+                    <strong>Avoids CSS Conflicts</strong>: By isolating styles using block and element names, BEM reduces the risk of unintended style conflicts.
+                </li>
+            </ol>
+            <h3>
+                <strong>Conclusion</strong>
+            </h3>
+            <p>
+                The BEM naming convention is a powerful tool for managing CSS in modern web development. By following BEM's structure, you can create cleaner, more maintainable, and more scalable code. Whether you're working on a small project or a large-scale application, adopting BEM can streamline your CSS development process and improve your overall code quality. Start implementing BEM today to experience its benefits firsthand!
+            </p>
+        </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
