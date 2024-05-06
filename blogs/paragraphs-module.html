@@ -92,46 +92,113 @@
 
         <!-- Blog content-->
         <div class="container">
-            <h1>Don't Be Boxed In: Building Dynamic Content with Drupal's Paragraphs Module</h1>
-            <p>The Drupal Paragraphs module is a powerful tool that empowers you to create flexible and reusable content components for your website. Imagine building complex pages by assembling modular building blocks, each containing specific content types like text, images, videos, or even nested paragraphs. This blog post delves into the world of Drupal Paragraphs and explores its benefits:</p>
-          
-            <h2>Building Blocks for Dynamic Content</h2>
+            <p>
+                <strong>1. Creating a Paragraph Type:</strong>
+            </p>
             <ul>
-              <li>Modular Content Creation: Break down your content into manageable and reusable paragraphs. This allows for efficient content creation and easier updates.</li>
-              <li>Flexible Page Layouts: Forget rigid layouts. Paragraphs allow you to design dynamic pages by arranging various content types in different combinations.</li>
-              <li>Effortless Reusability: The same paragraph can be used across multiple pages, saving time and ensuring consistency.</li>
-              <li>Streamlined Collaboration: Content creators can focus on building well-crafted paragraphs, while editors can assemble these components for specific pages.</li>
+                <li>
+                    Navigate to <strong>Structure &gt; Paragraphs types</strong> (admin/structure/paragraphs_type).
+                </li>
+                <li>
+                    Click <strong>Add paragraph type</strong>.
+                </li>
+                <li>
+                    Enter a descriptive name for your paragraph type (e.g., "Text with Image," "Call to Action"). This will be used for identification and organization.
+                </li>
+                <li>
+                    <p>
+                        Click <strong>Save</strong>.
+                    </p>
+                    <p>
+                        &nbsp;
+                    </p>
+                </li>
             </ul>
-          
-            <h2>Benefits for Editors and Developers</h2>
+            <img src="../blogs/img/Screenshot%202024-05-06%20at%201.38.01%20PM.png" data-align="center" data-entity-uuid="2157257f-2284-4146-a6cb-f77504ea77a8" data-entity-type="file" alt="create paragraphs" width="2782" height="776">
+            <p>
+                &nbsp;
+            </p>
+            <img src="../blogs/img/Screenshot%202024-05-06%20at%201.40.02%20PM.png" data-align="center" data-entity-uuid="3a8e4146-ce4c-48d8-b0d0-472f16049350" data-entity-type="file" alt="add paragraph" width="2080" height="1354">
+            <p>
+                <strong>2. Adding Fields to the Paragraph Type:</strong>
+            </p>
             <ul>
-              <li>Content Management Efficiency: Paragraphs streamline content creation and editing, allowing editors to focus on the content itself rather than complex layouts.</li>
-              <li>Scalability and Future-Proofing: As your content needs evolve, paragraphs enable you to adapt layouts and add new functionalities without significant code changes.</li>
-              <li>Powerful Developer Tools: Developers can leverage Paragraphs' API to create custom paragraph types with specific functionalities.</li>
+                <li>
+                    Click <strong>Manage fields</strong> on the paragraph type page.
+                </li>
+                <li>
+                    This opens the field management interface, similar to adding fields to content types.
+                </li>
+                <li>
+                    Select the desired field types (e.g., text field, image field, reference field) to build the structure of your paragraph.
+                </li>
+                <li>
+                    Configure the field settings as needed (e.g., label, cardinality, allowed file formats).
+                </li>
+                <li>
+                    Click <strong>Save field settings</strong> for each field.
+                </li>
             </ul>
-          
-            <h2>Getting Started with Paragraphs</h2>
-            <ol>
-              <li>Installation: Install the Paragraphs module from the "Extend" section of your Drupal admin panel.</li>
-              <li>Create Paragraph Types: Define different paragraph types, each with its own set of fields (e.g., "Text with Image," "Video Paragraph," etc.).</li>
-              <li>Content Creation: Create individual paragraphs of each type with the specific content you need.</li>
-              <li>Building Pages: Utilize the Paragraphs field within your desired content type (e.g., "Article") to arrange and combine paragraphs into compelling website pages.</li>
-            </ul>
-          
-            <h2>Beyond the Basics</h2>
-            <p>Here are some ways to extend the functionality of Paragraphs:</p>
-          
+            <img src="../blogs/img/Screenshot%202024-05-06%20at%201.42.37%20PM.png" data-align="center" data-entity-uuid="220f5995-8e16-408e-8a6f-838e48b57a8d" data-entity-type="file" alt="paragraph field" width="2176" height="916">
+            <p>
+                <strong>3. Adding Paragraphs to a Content Type:</strong>
+            </p>
             <ul>
-              <li>Layout Builder Integration: Combine Paragraphs with the Layout Builder to visually configure page layouts and arrange paragraphs directly within the editor.</li>
-              <li>Custom Paragraph Types: Developers can create custom paragraph types with specific functionalities and fields tailored to your website's unique needs.</li>
-              <li>Third-Party Modules: A wide range of contributed modules extend Paragraphs functionalities, offering features like drag-and-drop reordering, conditional logic, and more.</li>
+                <li>
+                    Go to <strong>Structure &gt; Content types</strong> (admin/structure/types).
+                </li>
+                <li>
+                    Select the content type where you want to use paragraphs.
+                </li>
+                <li>
+                    Click <strong>Manage fields</strong>.
+                </li>
+                <li>
+                    Click <strong>Add field</strong>.
+                </li>
+                <li>
+                    Choose <strong>Paragraphs</strong> from the "Add a new field" dropdown.
+                </li>
+                <li>
+                    Enter a label for the field (e.g., "Paragraph Sections").
+                </li>
+                <li>
+                    Click <strong>Save and continue</strong>.
+                </li>
+                <li>
+                    Configure field settings like allowed number of paragraphs and reference method.
+                </li>
+                <li>
+                    Click <strong>Save settings</strong>.
+                </li>
             </ul>
-          
-            <h2>In Conclusion</h2>
-            <p>The Drupal Paragraphs module is a game-changer for content management in Drupal. It empowers content creators and editors with flexibility and efficiency, while offering developers a powerful tool for building dynamic and scalable websites. Whether you're building a simple blog or a complex website with diverse content needs, Paragraphs can be a valuable asset in your Drupal toolkit.</p>
-          
-            <h2>Call to Action</h2>
-            <p>Have you explored the Paragraphs module? Share your experiences and ask any questions in the comments below! We'd love to hear from you.</p>          
+            <img src="../blogs/img/Screenshot%202024-05-06%20at%201.44.34%20PM.png" data-align="center" data-entity-uuid="a4fdd970-e274-4665-94f0-f84c4ebcfe74" data-entity-type="file" alt="paragraphs" width="2418" height="1452">
+            <p>
+                <strong>4. Using Paragraphs in Content Creation:</strong>
+            </p>
+            <ul>
+                <li>
+                    Open a node of the content type you added the paragraph field to.
+                </li>
+                <li>
+                    In the "Paragraph Sections" field (or your chosen label), click <strong>Add paragraph</strong>.
+                </li>
+                <li>
+                    Select the paragraph type you created earlier (e.g., "Text with Image").
+                </li>
+                <li>
+                    Fill in the fields within the paragraph according to its configuration.
+                </li>
+                <li>
+                    You can add multiple paragraphs of different types to create a dynamic layout.
+                </li>
+                <li>
+                    Click <strong>Save</strong> to save the node with your newly created paragraphs.
+                </li>
+            </ul>
+            <p>
+                By following these steps, you'll have successfully created a paragraph type and started using it to build dynamic content within your Drupal website. Remember to adapt the field types and configurations to match your specific content needs.
+            </p>    
         </div>
     <!-- End blog eontent-->
 
