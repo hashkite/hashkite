@@ -110,77 +110,149 @@
 
             <!-- Blog content-->
             <div class="container">
-                <h2>Introduction</h2>
-                <p>Drupal provides a flexible and powerful system for creating
-                    custom content types to suit your website's specific needs.
-                    Follow this guide to learn how to create custom content
-                    types in Drupal.</p>
-
-                <h2>Steps to Create Custom Content Types</h2>
-                <ol>
-                    <li>
-                        <h3>Access the Content Type Page</h3>
-                        <p>Log in to your Drupal website and navigate to the
-                            "Structure" section in the admin menu. Click on
-                            "Content types" to access the content type
-                            management page.</p>
-                        <p>Tip: Make sure you have the necessary permissions to
-                            create new content types. If not, contact your site
-                            administrator.</p>
+                <p data-sourcepos="5:1-5:20">
+                    <span>Custom content types are the foundation of Drupal's content management capabilities. They enable you to structure your website's content in a way that aligns with your specific needs and requirements. This guide will walk you through the process of creating a custom content type in Drupal 10:</span>
+                </p>
+                <p data-sourcepos="7:1-7:40">
+                    <strong>1. Accessing the Content Types Page:</strong>
+                </p>
+                <ul data-sourcepos="9:1-9:17">
+                    <li data-sourcepos="9:1-9:17">
+                        <span>Navigate to the "Structure" section of your Drupal administration panel.</span>
+                    </li>
+                    <li data-sourcepos="10:1-11:0">
+                        <span>Click on "Content types" (admin/structure/types).</span>
+                    </li>
+                </ul>
+                <p data-sourcepos="12:1-12:33">
+                    <strong>2. Adding a New Content Type:</strong>
+                </p>
+                <ul data-sourcepos="14:1-15:0">
+                    <li data-sourcepos="14:1-15:0">
+                        <span>Click the "Add content type" button.</span>
+                    </li>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%2012.44.15%20PM.png" data-align="center" data-entity-uuid="a8e7e1fa-0c4c-47e3-bc7e-0ad6bf96f030" data-entity-type="file" alt="add content type" width="1350" height="1026">
+                <p data-sourcepos="16:1-16:33">
+                    <strong>3. Defining the Content Type:</strong>
+                </p>
+                <ul data-sourcepos="18:1-20:68">
+                    <li data-sourcepos="18:1-18:109">
+                        <strong>Name:</strong><span> Provide a clear and descriptive name for your content type (e.g., "Article," "Event," "Product").</span>
+                    </li>
+                    <li data-sourcepos="19:1-19:131">
+                        <strong>Machine name:</strong><span> Enter a unique machine-readable name (e.g., "article," "event," "product"). This will be used in URLs and code.</span>
+                    </li>
+                    <li data-sourcepos="20:1-20:68">
+                        <strong>Description (optional):</strong><span> Add a brief explanation of the content type's purpose.</span>
+                    </li>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%2012.47.05%20PM.png" data-align="center" data-entity-uuid="768cc9c3-61a1-4b69-8168-79ea0f1dce2d" data-entity-type="file" alt="add content type" width="1758" height="1152">
+                <p data-sourcepos="22:1-22:44">
+                    <strong>4. Configuring Submission Form Settings:</strong>
+                </p>
+                <ul data-sourcepos="24:1-27:0">
+                    <li data-sourcepos="24:1-24:157">
+                        <strong>Fields:</strong><span> Select the fields you want to include in the content type's creation and editing forms. You can choose from existing fields or create new ones.</span>
+                    </li>
+                    <li data-sourcepos="25:1-25:83">
+                        <strong>Group fields:</strong><span> Organize fields into logical groups for better user experience.</span>
+                    </li>
+                    <li data-sourcepos="26:1-27:0">
+                        <strong>Required fields:</strong><span> Specify which fields are mandatory for content creation.</span>
+                    </li>
+                </ul>
+                <p>
+                    <img src="../blogs/img/Screenshot%202024-05-06%20at%2012.56.42%20PM.png" data-entity-uuid="d2926927-31bf-4ce9-b61c-dbfbf6b04c94" data-entity-type="file" alt="Submission Form Settings" width="3242" height="1158">
+                </p>
+                <p data-sourcepos="28:1-28:34">
+                    <strong>5. Setting Publishing Options:</strong>
+                </p>
+                <ul data-sourcepos="30:1-33:0">
+                    <li data-sourcepos="30:1-30:117">
+                        <strong>Revisioning:</strong><span> Decide whether content revisions should be enabled, allowing users to revert to previous versions.</span>
+                    </li>
+                    <li data-sourcepos="31:1-31:96">
+                        <strong>Promotion:</strong><span> Determine if content can be promoted to the front page or other featured areas.</span>
+                    </li>
+                    <li data-sourcepos="32:1-33:0">
+                        <strong>Moderation:</strong><span> Set up moderation workflows if content requires review before publication.</span>
+                    </li>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%2012.57.29%20PM.png" data-align="center" data-entity-uuid="8902954b-71f5-4e74-ad06-c0223901c1c1" data-entity-type="file" alt="Setting publishing options" width="3308" height="928">
+                <p data-sourcepos="34:1-34:33">
+                    <strong>6. Defining Display Settings:</strong>
+                </p>
+                <ul data-sourcepos="36:1-39:0">
+                    <li data-sourcepos="36:1-36:100">
+                        <strong>Default view mode:</strong><span> Choose how content will be displayed by default (e.g., full view, summary).</span>
+                    </li>
+                    <li data-sourcepos="37:1-37:98">
+                        <strong>Teaser view mode:</strong><span> Select how content will be displayed in teasers, lists, or search results.</span>
                     </li>
                     <li>
-                        <h3>Add a New Content Type</h3>
-                        <p>On the content type management page, click on the
-                            "Add content type" button. Fill in the required
-                            information such as the name and description of the
-                            content type.</p>
-                        <p>Example: If you're creating a content type for blog
-                            posts, you might name it "Blog Post" and provide a
-                            brief description.</p>
+                        <strong>Custom view modes:</strong><span> Create additional view modes for specific display requirements.</span>
                     </li>
-                    <li>
-                        <h3>Configure Field Settings</h3>
-                        <p>Once you've added the content type, you can configure
-                            the field settings to define the specific fields
-                            that will appear when creating content of this type.
-                            You can add fields such as text fields, image
-                            fields, taxonomy fields, etc.</p>
-                        <p>Tip: Think about the type of content you'll be adding
-                            and choose appropriate field types. For example, if
-                            you're creating a product content type, you might
-                            need fields for price, description, and image.</p>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%2012.58.17%20PM.png" data-align="center" data-entity-uuid="d3f9c915-3eab-4207-9c63-80d78a14fec5" data-entity-type="file" alt="Display settings" width="3246" height="924">
+                <p data-sourcepos="40:1-40:36">
+                    <strong>7. Configuring Comment Settings:</strong>
+                </p>
+                <ul data-sourcepos="42:1-42:28">
+                    <li data-sourcepos="42:1-42:28">
+                        <strong>Allow comments:</strong><span> Enable or disable comments for this content type.</span>
                     </li>
-                    <li>
-                        <h3>Manage Display Settings</h3>
-                        <p>After configuring the field settings, you can also
-                            manage how the fields will be displayed on the
-                            content creation form and the final output on the
-                            website.</p>
-                        <p>Example: You can choose to display certain fields as
-                            teasers on listing pages and show additional details
-                            on the full content view.</p>
+                    <li data-sourcepos="43:1-44:0">
+                        <strong>Moderation:</strong><span> Set up comment moderation if needed.</span>
                     </li>
-                    <li>
-                        <h3>Save and Test</h3>
-                        <p>Once you're satisfied with the configuration, save
-                            the content type. You can then test it by creating
-                            new content of this type and checking if everything
-                            works as expected.</p>
-                        <p>Tip: It's a good practice to create a few test
-                            content items to ensure that your new content type
-                            behaves as intended across different scenarios.</p>
+                </ul>
+                <p data-sourcepos="45:1-45:32">
+                    <strong>8. Specifying Menu Settings:</strong>
+                </p>
+                <ul data-sourcepos="47:1-49:0">
+                    <li data-sourcepos="47:1-47:72">
+                        <strong>Menu link:</strong><span> Create a menu link for the content type's listing page.</span>
                     </li>
-                </ol>
-
-                <h2>Conclusion</h2>
-                <p>Creating custom content types in Drupal allows you to
-                    organize and manage your website's content more effectively.
-                    By following the steps outlined in this guide, you can
-                    leverage Drupal's flexibility to tailor your content types
-                    to your specific requirements.</p>
-                <p>Remember to regularly review and refine your content types as
-                    your website evolves, ensuring they continue to meet the
-                    needs of your audience and content creators.</p>
+                    <li data-sourcepos="48:1-49:0">
+                        <strong>Parent menu:</strong><span> Choose the parent menu where the link will be placed.</span>
+                    </li>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%201.01.39%20PM.png" data-align="center" data-entity-uuid="c19b8977-525a-46e2-8805-95aad88d8efd" data-entity-type="file" alt="Menu settings" width="3268" height="960">
+                <p data-sourcepos="50:1-50:34">
+                    <strong>9. Saving and Managing Fields:</strong>
+                </p>
+                <ul data-sourcepos="52:1-54:0">
+                    <li data-sourcepos="52:1-52:33">
+                        <span>Click "Save and manage fields."</span>
+                    </li>
+                    <li data-sourcepos="53:1-54:0">
+                        <span>This will take you to the field management page where you can add, edit, or remove fields as needed.</span>
+                    </li>
+                </ul>
+                <p data-sourcepos="55:1-55:30">
+                    <strong>Additional Considerations:</strong>
+                </p>
+                <ul data-sourcepos="57:1-60:38">
+                    <li data-sourcepos="57:1-57:163">
+                        <strong>Field Types:</strong><span> Drupal 10 offers a wide range of field types to accommodate various content requirements (e.g., text, image, reference, date, entity reference).</span>
+                    </li>
+                    <li data-sourcepos="58:1-58:112">
+                        <strong>Field Groups:</strong><span> Grouping fields into logical sections enhances the user experience and content organization.</span>
+                    </li>
+                    <li data-sourcepos="59:1-59:113">
+                        <strong>Revisioning:</strong><span> Enabling revisions allows users to track changes and revert to previous versions if necessary.</span>
+                    </li>
+                    <li data-sourcepos="60:1-60:38">
+                        <strong>Moderation:</strong><span> Moderation workflows ensure content quality by requiring review before publication.</span>
+                    </li>
+                    <li data-sourcepos="61:1-62:0">
+                        <strong>Views:</strong><span> Create custom views to display content in different ways throughout your site.</span>
+                    </li>
+                </ul>
+                <img src="../blogs/img/Screenshot%202024-05-06%20at%201.03.05%20PM.png" data-entity-uuid="058c563e-6a85-455a-9071-d8dab239508a" data-entity-type="file" alt="field type" width="3320" height="898">
+                <p data-sourcepos="63:1-63:203">
+                    <span>By following these steps and considering the additional factors, you can effectively create custom content types in Drupal 10 that cater to your website's unique content structure and presentation needs.</span>
+                </p>
             </div>
 
             <!-- End blog content-->

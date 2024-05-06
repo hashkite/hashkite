@@ -627,6 +627,8 @@ img.img-fluid.w-100 {
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
+    max-width: 100%;
+    height: auto;
     /* margin-left: 150px; */
 }
 .align-center {
