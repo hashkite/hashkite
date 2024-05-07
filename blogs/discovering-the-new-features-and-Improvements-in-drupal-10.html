@@ -106,99 +106,219 @@
             </div>
             <!-- Navbar & Hero End -->
 
-            <!-- Blog content-->
-            <div class="container">
+        <!-- Blog content-->
+        <div class="container content">
                 <div class="row">                    
-                    <ul class="col-md-3">
-                        <li><a href="#introduction">Introduction</a></li>
-                        <li><a href="#drupal-10-release">Drupal 10 Release</a></li>
-                        <li><a href="#drupal-10-features">Drupal 10 Features</a></li>
-                        <li><a href="#be-drupal-10-ready">Be Drupal 10 Ready</a></li>
-                        <li><a href="#exciting-features-lined-up-for-drupal-10-1-and-further-releases">Exciting Features Lined Up For Drupal 10.1 And Further Releases</a></li>
-                        <li><a href="#the-conclusion">The Conclusion</a></li>
-                        <!-- <li><a href="#faqs">FAQ's</a></li> -->
+                    <p>
+                        <strong>What's New in Drupal 10</strong>
+                    </p>
+                    <p>
+                        Drupal 10 is a significant release that introduces several new and improved features, making it an even more user-friendly platform for both experienced developers and those just starting with it. Here are some of the key highlights:
+                    </p>
+                    <p>
+                        <strong>New and Improved User Interfaces</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Claro Administration Theme:</strong> Drupal 10 introduces Claro, a modern and user-friendly administration theme designed to provide a visually appealing and intuitive experience for managing your Drupal website. It features accessibility in mind, making it easier for users with disabilities to navigate the interface. Additionally, Claro aligns with the Olivero default theme, offering a consistent look and feel across the front-end and back-end.<br>
+                                &nbsp;
+                            </p>
+                            <p>
+                                <img src="https://www.cloudways.com/blog/wp-content/uploads/image12-184-1024x905.png" alt="Claro Administration Theme" width="1024" height="905">
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Olivero Default Theme:</strong> Olivero is a new fully responsive and accessible default theme that provides a clean, fast-loading, and lightweight foundation for customizing your website. It adheres to the highest accessibility standards and delivers an optimal viewing experience on various devices.
+                            </p>
+                            <p>
+                                <img src="https://www.cloudways.com/blog/wp-content/uploads/image1-481-1024x1005.png" alt="Olivero Default Theme" width="1024" height="1005">
+                            </p>
+                        </li>
                     </ul>
-                    
-                    <div class="col-md-9">
-                        <h2 id="introduction">Introduction</h2>
-                        <p>Drupal is in a constant state of evolution, meeting the demands of web application development. As a leading open source CMS, Drupal is one of the leading choices for building web applications. With the recent transition from Drupal 9 to Drupal 10, read the following pointers to stay informed about all the significant Drupal 10 features.</p>
-                        
-                        <h2 id="drupal-10-release">Drupal 10 Release</h2>
-                        <p>Drupal 10 made its debut on December 14, 2022 adhering to the community's tradition of unveiling major updates on Wednesdays. For those eager to explore Drupal 10, a beta release is also available for experimentation.</p>
-                        
-                        <h2 id="drupal-10-features">Drupal 10 Features</h2>
-                            <p>Drupal 10 introduces several notable features, including:</p>
-
-                            <h4>Olivero Default Theme</h4>
-                            <p>One of the prominent upgrades in Drupal 10 is the inclusion of the Olivero default theme. This theme, which has been in development for some time, significantly enhances the visual appearance of websites. Compared to previous core themes, Olivero offers a more modern and visually appealing design.</p>
-
-                            <p>With Olivero, developers no longer need to create themes from scratch for their websites. This default theme serves as an excellent starting point for creating custom themes. Additionally, for headless projects, Olivero allows developers to preview staged content in a structured manner before integrating it into the final application.</p>
-
-                            <p>The inclusion of Olivero as the default theme not only improves the initial impression of Drupal websites but also serves as a tribute to the former community member Rachel Olivero.</p>                        
-                        
-                            <h4>Claro Administration Theme</h4>
-
-                                <p>The administrative and editorial experience is crucial for any CMS. For a long time, Drupal relied on the clean administrative theme 'Seven,' which served most users well and integrated nicely with various contributed modules.</p>
-
-                                <p>However, Seven's compatibility with recent improvements, particularly the introduction of modern JavaScript concepts, became a concern. This led community members to develop a new administrative theme with a highly accessible user interface: 'Claro.'</p>
-
-                                <p>Claro enhances the administrative experience and provides Drupal's editorial UI with a modern feel while preserving the core functionality of the CMS to prevent confusion among experienced users.</p>
-
-                                <p>Starting with Drupal 10, Claro will be the default admin theme and will receive updates bundled with Drupal core releases. For a detailed comparison between Seven and Claro, refer to our comprehensive guide.</p>
-    
-                            <h4>CKEditor 5</h4>
-
-                                <p>CKEditor 5 has established itself as a prominent tool for managing text data, undergoing a comprehensive overhaul to align with modern JavaScript application development practices. This enhancement has been widely adopted across various frameworks and CMS platforms, significantly improving the editorial experience for content management.</p>
-                                
-                                <p>The successful integration of CKEditor 5 with Drupal has led to its adoption as the default editor in Drupal 10, ensuring a seamless text editing experience. Many CKEditor plugins available on Drupal.org have been upgraded to be compatible with CKEditor 5.</p>
-                                
-                            <h4>Modern JavaScript Components To Replace Some Uses Of jQuery</h4>
-                                
-                                <p>The JavaScript development community is increasingly embracing ES6 standards and favoring pure JavaScript over jQuery for tasks such as DOM manipulation and AJAX requests. This shift is driven by factors including the integration of jQuery-like functionality into web browsers and the popularity of advanced frameworks like React and Vue.js.</p>
-                                
-                                <p>The Drupal community has closely observed this trend and initiated the replacement of jQuery with modern JavaScript throughout the core codebase. In Drupal 10, jQuery libraries like jQuery.once and jQuery.cookie have been completely removed, and many contributed modules are transitioning away from jQuery and its libraries. This results in a cleaner front-end output for Drupal websites.</p>
-                                
-                            <h4>Theme Starterkit Tools For Bespoke Theme Creation</h4>
-                                
-                                <p>Theming is a crucial aspect of Drupal development, as it determines the appearance of an application. To make theming easier, more efficient, and aligned with the latest trends, the Drupal community has introduced the Theme Starterkit for Drupal 10. This tool provides developers with commands to effortlessly generate a theme with all the necessary files and configurations.</p>
-                                
-                            <h4>Symfony 6</h4>
-                                
-                                <p>Drupal 10 will adopt Symfony 6 as its foundation, requiring a minimum of PHP 8.1 support. This strategic decision ensures that the backend processing enhancements offered by Symfony 6 are seamlessly integrated into all Drupal projects upgrading to Drupal 10.</p>
-                                
-                                <p>Symfony 6 brings significant improvements in areas such as routing, services, locales, and multilingual support. These enhancements will gradually be considered for integration into Drupal.</p>
-                                
-                        <h2 id="be-drupal-10-ready">Be Drupal 10 Ready</h2>
-                            <p>To get ready for Drupal 10, follow these essential steps:</p>
-                            <ol>
-                            <li><strong>Update From Drupal 9:</strong> If you're currently using Drupal 9, ensure that you update the core codebase and all contributed modules to their latest releases. This is crucial for a smooth transition to Drupal 10.</li>
-                            
-                            <li><strong>Drupal 8 Upgrade:</strong> Drupal 8 reached its end of life in November 2021. If you're still on Drupal 8, initiate the upgrade process to Drupal 9 as soon as possible. Many vital contributed modules have already released versions compatible with Drupal 10.</li>
-                            
-                            <li><strong>PHP 8.1:</strong> Make the switch to PHP 8.1, as it is the minimum supported version for Drupal 10. Detailed PHP-related requirements can be found <a href="#">here</a>.</li>
-                            
-                            <li><strong>Identify Deprecated Code:</strong> Utilize the Upgrade Status module to identify deprecated code in your custom modules and start rectifying them. The Drupal Rector tool can expedite this task.</li>
-                            
-                            <li><strong>Test And Plan:</strong> Create a new instance and upgrade the Drupal core to a 10-beta release for testing and planning purposes. This provides developers and testers with the necessary resources for a smooth transition to Drupal 10.</li>
-                            </ol>
-                        
-                        <h2 id="exciting-features-lined-up-for-drupal-10-1-and-further-releases">Exciting Features Lined Up For Drupal 10.1 And Further Releases</h2>
-                        
-                            <h4>Automatic Updates</h4>
-                            <p>One of the upcoming features is the Automatic Updates module, which simplifies the process of applying critical Drupal core updates. It automates the update process, generates a sandbox instance, and deploys necessary patches, all without the need for extensive development efforts. The module also offers detailed progress reporting and an API for customization.</p>
-
-                            <h4>Project Browser</h4>
-                            <p>The Project Browser streamlines the search for contributed modules and themes on Drupal.org. Administrators can conveniently browse, access essential information, and even install these modules directly from the website's user interface. This approach provides a more user-friendly alternative to the previous module search and installation methods.</p>
-
-                        <h2 id="the-conclusion">The Conclusion</h2>
-
-                            <p>Drupal 10 introduces a diverse range of features and improvements. It actively addresses bug fixes and feature requests on a daily basis, ensuring their integration into the inaugural Drupal 10 release. This release significantly enhances existing websites and presents compelling reasons for users of other Drupal versions to transition to Drupal 10.</p>
-
-                            <p>If you're a developer, be sure to explore the straightforward upgrade procedures to Drupal 10 and stay informed about the progress of contributed projects.</p>
-
-                        
-                        <!-- <h2 id="faqs">FAQ's</h2>     -->
-                    </div>   
+                    <p>
+                        <strong>Enhanced Development Tools</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Theme Starterkit:</strong> The Theme Starterkit streamlines the creation of custom themes by providing tools and templates. It supports Sass, a popular CSS preprocessor, and prioritizes accessibility, offering templates and tools that make it easier to create user-friendly themes.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Improved Multilingual Support</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Language Type Entity:</strong> Drupal 10 introduces the language type entity, enabling the creation and direct management of new languages within the administrative interface. It also features improved language detection mechanisms and a more flexible language switcher for users to navigate between languages.
+                            </p>
+                            <p>
+                                <img src="https://www.cloudways.com/blog/wp-content/uploads/image9-235-1024x410.png" alt="Theme Starterkit Tools" width="1024" height="410">
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Advanced Security Features</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Stronger Password Policies:</strong> Drupal 10 enforces stricter password requirements by default, along with better security measures for third-party modules to address potential vulnerabilities. Regular security updates are also provided to keep websites secure.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Performance and Scalability Enhancements</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Improved Caching Mechanisms:</strong> Drupal 10 offers better caching mechanisms to speed up website performance, particularly beneficial for high-traffic sites.
+                        </li>
+                        <li>
+                            <strong>Efficient Content Delivery:</strong> Optimized content delivery mechanisms ensure content is delivered to users quickly and reliably.
+                        </li>
+                        <li>
+                            <strong>Database Performance Optimization:</strong> Enhanced database performance reduces the load on the database server.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Content Management Refinements</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Intuitive Content Authoring:</strong> Drupal 10 provides a more user-friendly content authoring experience for content editors, including improved tools for content migration.
+                        </li>
+                        <li>
+                            <strong>Better Media Management:</strong> Integrated media tools and an improved media library streamline media management tasks.
+                        </li>
+                        <li>
+                            <strong>Enhanced Content Preview:</strong> A refined content preview mechanism allows users to visualize changes before publishing.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Powerful Editing Experience</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Upgraded WYSIWYG Editor:</strong> A new WYSIWYG editor offers a more modern and intuitive interface for content editing, featuring an improved toolbar, responsive layout, and simpler design.
+                        </li>
+                        <li>
+                            <strong>Inline Editing:</strong> The new inline editing feature enables direct content editing from the site's front-end, eliminating the need to switch to the back-end.
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Content Creation Enhancements:</strong> Improved media management tools, a new media library, and more intuitive content creation forms contribute to a better overall experience.
+                            </p>
+                            <p>
+                                <img src="https://www.cloudways.com/blog/wp-content/uploads/image17-100.png" alt="Powerful Editing Experience" width="512" height="318">
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Enhanced Collaboration Features</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Real-time Collaboration:</strong> Drupal 10 introduces features that allow multiple users to work on content simultaneously, including tracking changes, reviewing and approving content, and managing workflows.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Deprecations and Changes</strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Decoupled Menus:</strong> Decoupled menus separate the menu presentation layer from the back-end management, enabling greater flexibility and improved front-end performance. To implement them, you'll need a decoupled menu module or a custom solution using Drupal's menu management API.
+                        </li>
+                        <li>
+                            <strong>Removed Deprecated Code:</strong> Drupal 10 eliminates old, unused code to enhance performance, stability, and security, simplifying maintenance and updates for developers.
+                        </li>
+                        <li>
+                            <strong>Removed Core Modules:</strong> Some core modules with limited use cases or replaceable functionalities have been removed to streamline the platform and improve performance. These include Overlay, Workspaces, and PHP Filter modules.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Upgrading to Drupal 10</strong>
+                    </p>
+                    <p>
+                        Upgrading to Drupal 10 requires careful planning, preparation, testing, and optimization. However, the benefits, including improved performance, security, and content management tools, make it worthwhile. Here's a brief overview of the process:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Planning:</strong> Carefully plan the upgrade, considering modules, themes, content migration strategies, and potential site modifications.
+                        </li>
+                        <li>
+                            <strong>Website Backup:</strong> Create a complete backup of your website, including content, files, and databases, as a safety measure.
+                        </li>
+                        <li>
+                            <strong>Module and Theme Upgrades:</strong> Ensure all modules and themes are compatible with Drupal 10 and upgrade them if necessary.
+                        </li>
+                        <li>
+                            <strong>Drupal Core Upgrade:</strong> Upgrade Drupal to version 10 using the built-in update mechanism or manual codebase updates.
+                        </li>
+                        <li>
+                            <strong>Performance Testing:</strong> Test your website thoroughly after the upgrade to ensure everything functions as expected and content integrity.
+                        </li>
+                        <li>
+                            <strong>Performance Optimization:</strong> Optimize your site's performance by ensuring proper configuration and enabling performance-related modules.
+                        </li>
+                    </ol>
+                    <p>
+                        <strong>Cloudways and Drupal 10</strong>
+                    </p>
+                    <p>
+                        Cloudways offers a robust hosting platform optimized for Drupal websites, providing the resources and support you need to build, maintain, and manage high-performance, secure, and user-friendly Drupal 10 websites. Here are some key benefits:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Optimized Performance:</strong> Cloudways ensures fast load times and top-notch performance through its optimized hosting environment.
+                        </li>
+                        <li>
+                            <strong>Easy Deployment:</strong> Deploying a Drupal website is effortless with Cloudways' user-friendly platform.
+                        </li>
+                        <li>
+                            <strong>High-Level Security:</strong> Cloudways prioritizes website security with firewalls, managed backups, and real-time security monitoring.
+                        </li>
+                        <li>
+                            <strong>24/7 Expert Support:</strong> Cloudways provides round-the-clock expert support via live chat, email, and ticketing systems to address any issues.
+                        </li>
+                        <li>
+                            <strong>Customizable Server:</strong> Tailor your server to your specific Drupal website needs by choosing a data center location and selecting server resources.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>How to Deploy Drupal 10 on Cloudways</strong>
+                    </p>
+                    <p>
+                        Here's a quick guide to deploying Drupal 10 on Cloudways:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Launch a New Server:</strong> Sign up for Cloudways, choose DigitalOcean as your IaaS provider, select your server size and location, and launch a new server with a Custom PHP Application.
+                        </li>
+                        <li>
+                            <strong>Launch SSH Terminal:</strong> Access the server's SSH terminal to navigate to the public_html folder and download the Drupal framework using the <code>composer create-project drupal/recommended-project drupal-10</code> command.
+                        </li>
+                        <li>
+                            <strong>Install Drupal 10:</strong> Execute the following command in the terminal to install Drupal automatically, including libraries and dependencies: <code>composer create-project drupal/recommended-project drupal-10</code>
+                        </li>
+                        <li>
+                            <strong>Setup Details:</strong> Access the Drupal installer by adding <code>/drupal-10/web/core/install.php</code> to your server's URL. Configure your desired profile and proceed with the installation.
+                        </li>
+                        <li>
+                            <strong>Database Details:</strong> Access your Cloudways platform, navigate to your application, and click Access Details under Application Management to obtain database access details. Use the <code>cp</code> command to copy the <code>default.settings.php</code> file and rename it to <code>settings.php</code>. Enter your database details into the Drupal setup and continue.
+                        </li>
+                        <li>
+                            <strong>Site Information:</strong> Provide your site's name, email address, and administrative login details to complete the installation.
+                        </li>
+                    </ol>
+                    <p>
+                        Once you see the success message, your Drupal 10 website is successfully installed on your Cloudways server.
+                    </p>
+                    <p>
+                        <strong>Summary</strong>
+                    </p>
+                    <p>
+                        Drupal 10 presents a significant upgrade with its array of new features and benefits. The enhanced multilingual support, improved accessibility, advanced security measures, and better performance and scalability make it a compelling choice for web development projects. Upgrading to Drupal 10 is highly recommended to leverage its advancements and create modern, secure, and user-friendly websites.
+                    </p>  
                 </div>
             </div>
 
