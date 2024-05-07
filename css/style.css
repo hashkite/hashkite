@@ -646,3 +646,8 @@ img {
 }
 .img1{
     margin-left: 150px;}
+.content {
+    h2,h3,h4,h5 {
+        font-family: "Heebo",sans-serif;
+    }
+}
