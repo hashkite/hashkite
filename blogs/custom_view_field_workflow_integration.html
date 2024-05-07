@@ -49,9 +49,6 @@
             text-align: center;
             padding: 20px 0;
         }
-        .content {
-            margin: 20px;
-        }
         .code {
             background-color: #f4f4f4;
             padding: 10px;
@@ -128,109 +125,191 @@
 
         <!-- Blog content-->
         <div class="container content">
-            <div class="content">
-                <h2>Description:</h2>
-                <p>Integrating a custom view field in Drupal 8 for workflow states is straightforward with the workflow module. However, there are scenarios where custom functionality is necessary in the query or options. This article guides you through the process of creating a simple view field in Drupal 8, focusing on integrating workflow states as phases of a node.</p>
-                <h2>Definition in custom_module.module:</h2>
-                <div class="code">
-                    <pre><code>
-        /**
-         * Implements hook_views_data().
-         */
-        function custom_module_views_data() {
-          $data['views']['table']['group'] = t('Custom Global');
-          $data['views']['table']['join'] = [
-            // #global is a special flag which allows a table to appear all the time.
-            '#global' => [],
-          ];
-        
-          $data['views']['phase_views_field'] = [
-            'title' => t('Phase'),
-            'help' => t('The phase in which the current project is.'),
-            'field' => [
-              'id' => 'phase_views_field',
-            ],
-          ];
-          return $data;
+            <p data-sourcepos="3:1-3:337">
+                Drupal 8's Views module offers a powerful way to display and manage your content. But what if you want to integrate information from your workflows directly into your views? This is where custom view fields come in. In this blog, we'll walk you through creating a custom view field that displays the current workflow state of your nodes.
+            </p>
+            <h2 data-sourcepos="5:1-5:32">
+                Why Use a Custom View Field?
+            </h2>
+            <p data-sourcepos="7:1-7:90">
+                There are several reasons why a custom view field for workflow states might be beneficial:
+            </p>
+            <ul data-sourcepos="9:1-12:0">
+                <li data-sourcepos="9:1-9:177">
+                    <strong>Enhanced View Clarity:</strong> By displaying the workflow state directly in your views, you can gain a quick understanding of the content's current stage in the workflow process.
+                </li>
+                <li data-sourcepos="10:1-10:197">
+                    <strong>Improved Filtering:</strong> You can filter your views based on specific workflow states, allowing you to focus on content at particular stages (e.g., unpublished drafts or content ready for review).
+                </li>
+                <li data-sourcepos="11:1-12:0">
+                    <strong>Streamlined Workflows:</strong> Having workflow states readily available in views can improve collaboration and streamline your content management processes.
+                </li>
+            </ul>
+            <h2 data-sourcepos="13:1-13:34">
+                Building the Custom View Field
+            </h2>
+            <h4>
+                Module Creation:
+            </h4>
+            <ol>
+                <li>
+                    Open your terminal and navigate to your Drupal project's root directory.
+                </li>
+                <li>
+                    Run the following command to create a new custom module named my_workflow_view_field:
+                </li>
+            </ol>
+<code class="language-plaintext"><pre>cd core/modules
+drush gen module my_workflow_view_field</pre></code>
+            <p>
+                This creates the basic module structure with a .info.yml and .module file.
+            </p>
+            <h4>
+                .module File Configuration:
+            </h4>
+            <ol>
+                <li>
+                    Open the my_workflow_view_field.module file in your code editor.
+                </li>
+                <li>
+                    Add the following code snippet inside the file to implement the <code>hook_views_data</code> function:
+                </li>
+            </ol>
+            <code class="language-plaintext">
+                <pre>
+/**
+* Implements hook_views_data().
+*/
+function my_workflow_view_field_views_data(&amp;$data) {
+    // Define our custom field.
+    $data['my_workflow_state'] = [
+        'title' =&gt; t('Current Workflow State'),
+        'help' =&gt; t('This field displays the current workflow state of the node.'),
+        'field' =&gt; [
+            'handler' =&gt; 'my_workflow_view_field_handler',
+        ],
+    ];
+}
+        </pre></code>
+            <p>
+                This code defines a new field named <code>my_workflow_state</code> with a human-readable title and help text. It also specifies <code>my_workflow_view_field_handler</code> as the handler class responsible for rendering the field.
+            </p>
+            <h4>
+                Custom Field Handler Class:
+            </h4>
+            <ol>
+                <li>
+                    Create a new file named <code>MyWorkflowViewFieldHandler.php</code> inside your module directory (<code>my_workflow_view_field</code>).
+                </li>
+                <li>
+                    Paste the following code snippet into the file:
+                </li>
+            </ol>
+            <code class="language-plaintext"><pre>
+<!--?php
+namespace Drupal\my_workflow_view_field;
+use Drupal\views\Field\FieldHandler;
+use Drupal\node\Entity\Node;
+use Drupal\workflow_module\Entity\WorkflowState; // Adjust namespace based on your workflow module
+/**
+    * Custom field handler class for workflow state.
+    */
+class MyWorkflowViewFieldHandler extends FieldHandler {
+    /**
+    * {@inheritdoc}
+    */
+    public function defineOptions() {
+    $options = parent::defineOptions();
+    $options['hide_alter_empty'] = TRUE; // Optional: Hide field if empty
+    return $options;
+    }
+    /**
+    * {@inheritdoc}
+    */
+    public function render(array $values) {
+    $node = $values['entity'];
+    if ($node instanceof Node) {
+        $workflow_state = $node--->getWorkflowState(); // Get current workflow state
+        if ($workflow_state) {
+        return $workflow_state-&gt;label(); // Return the state label
         }
-                    </code></pre>
-                </div>
-                <p>After defining the field, clear the cache and locate the 'Phase' label in the view. Although selecting it won’t yield results yet, the next step addresses this.</p>
-                <h2>Definition in PhaseViewsField.php:</h2>
-                <div class="code">
-                    <pre><code>
-        <?php
-        
-        namespace Drupal\custom_module\Plugin\views\field;
-        
-        use Drupal\views\Plugin\views\field\FieldPluginBase;
-        use Drupal\views\ResultRow;
-        use Drupal\views\Plugin\views\display\DisplayPluginBase;
-        use Drupal\views\ViewExecutable;
-        
-        /**
-         * A handler to provide a completely custom field.
-         *
-         * @ingroup views_field_handlers
-         *
-         * @ViewsField("phase_views_field")
-         */
-        class PhaseViewsField extends FieldPluginBase {
-        
-          /**
-           * The current display.
-           *
-           * @var string
-           *   The current display of the view.
-           */
-          protected $currentDisplay;
-        
-          /**
-           * {@inheritdoc}
-           */
-          public function init(ViewExecutable $view, DisplayPluginBase $display, array &$options = NULL) {
-            parent::init($view, $display, $options);
-            $this->currentDisplay = $view->current_display;
-          }
-        
-          /**
-           * {@inheritdoc}
-           */
-          public function usesGroupBy() {
-            return FALSE;
-          }
-        
-          /**
-           * {@inheritdoc}
-           */
-          public function query() {
-            // Do nothing -- to override the parent query.
-          }
-        
-          /**
-           * {@inheritdoc}
-           */
-          protected function defineOptions() {
-            $options = parent::defineOptions();
-            // Check whether the field should be hidden if the value is empty.
-            $options['hide_alter_empty'] = ['default' => FALSE];
-            return $options;
-          }
-        
-          /**
-           * {@inheritdoc}
-           */
-          public function render(ResultRow $values) {
-            $node = $values->_entity;
-            $states = workflow_get_workflow_state_names();
-            return $states[$node->get('field_phase')->getValue()[0]['value']];
-          }
-        
-        }
-                    </code></pre>
-                </div>
-                <p>With the custom view field implemented, clear the cache once again and add the field to the view. This field can also be used to integrate a custom filter as needed.</p>
-            </div>
+    }
+    return []; // Return empty value if no state found
+    }
+}
+        </pre></code>
+            <p>
+                This code defines a class named <code>MyWorkflowViewFieldHandler</code> extending the <code>views_field</code> base class. It includes:
+            </p>
+            <ul>
+                <li>
+                    <code>defineOptions:</code> This method allows you to define additional options for your field (here, we optionally hide the field if the value is empty).
+                </li>
+                <li>
+                    <code>render:</code> This method is responsible for retrieving and formatting the field's output. It retrieves the current node, checks if it's a valid entity, and then gets the workflow state using the <code>getWorkflowState</code> method (adjust the namespace based on your workflow module). If a state is found, its label is returned. Otherwise, an empty value is returned.
+                </li>
+            </ul>
+            <h3>
+                Enable the Module:
+            </h3>
+            <ol>
+                <li>
+                    Visit the "Extensions" page in your Drupal admin panel (<code>admin/modules</code>).
+                </li>
+                <li>
+                    Locate your <code>my_workflow_view_field</code> module and check the box next to it.
+                </li>
+                <li>
+                    Click the "Install" button to activate the module.
+                </li>
+            </ol>
+            <h3>
+                Create a View and Add Your Custom Field:
+            </h3>
+            <ol>
+                <li>
+                    Navigate to the "Views" section (<code>admin/structure/views</code>).
+                </li>
+                <li>
+                    Create a new view or edit an existing one.
+                </li>
+                <li>
+                    In the "Fields" section, search for "Current workflow state" and add the <code>my_workflow_state</code> field to your view.
+                </li>
+            </ol>
+            <h4>
+                (Optional) Customize Field Output:
+            </h4>
+            <ul>
+                <li>
+                    You can modify the <code>render</code> method in your handler class to format the output further (e.g., adding a badge or color-coding based on workflow state).
+                </li>
+            </ul>
+            <p>
+                With these steps, you've created a custom view field that displays the current workflow state of your nodes within your Drupal 8 views. This allows for better organization and management of your content based on its workflow stage.
+            </p>
+            <p data-sourcepos="15:1-15:76">
+                Here's a breakdown of the steps involved in creating your custom view field:
+            </p>
+            <h4 data-sourcepos="29:1-29:29">
+                Additional Considerations
+            </h4>
+            <ul data-sourcepos="31:1-34:0">
+                <li data-sourcepos="31:1-32:0">
+                    <p data-sourcepos="31:3-31:223">
+                        <strong>Empty Value Handling:</strong> Consider how you want to handle cases where a node might not have a defined workflow state. You can choose to hide the field, display a default message, or provide an alternative representation.
+                    </p>
+                </li>
+                <li data-sourcepos="33:1-34:0">
+                    <p data-sourcepos="33:3-33:131">
+                        <strong>Security:</strong> Ensure your custom field handler adheres to Drupal's security best practices to prevent potential vulnerabilities.
+                    </p>
+                </li>
+            </ul>
+
+            <p data-sourcepos="37:1-37:218">
+                By following these steps and leveraging the provided resources, you can create a custom view field that seamlessly integrates your workflow states into your Drupal 8 views, enhancing your content management experience.
+            </p>
         </div>
         <!-- End blog content-->
 
