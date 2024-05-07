@@ -52,13 +52,46 @@
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
     <style>.sclass{
-          
-    
       margin-top: 20px;
-    
       max-width: 100%;
-
       }
+      h2{
+    text-align: justify;
+    padding-top: 20px;
+    /* padding-bottom: 15px; */
+  }
+    h3{
+      
+      font-size: 20px;
+      padding-top: 10px;
+    } 
+      .code-snippet {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+
+  .code-snippet code {
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .function-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .function-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .code-comment {
+    color: #888;
+    font-style: italic;
+  }
       </style>
   </head>
   <body>
@@ -285,65 +318,77 @@
                   identifying a source row.</li>
               </ul>
               <p>These functions should contain:</p>
-              <h4>query() function</h4>
-              <pre><code class="language-plaintext">/**
-* {@inheritdoc}
-*/
-public function query() {
-$query = $this-&gt;select('job_details', 'c')
-  -&gt;fields('c', array(
-    'id',
-    'title',
-    'description',
-    'position',
-    'company',
-    'criteria',
-  ));
-return $query;
-}</code></pre>
-              <h4>fields() function</h4>
-              <pre><code class="language-plaintext">/**
-* {@inheritdoc}
-*/
-public function fields() {
-$fields = array(
-  'id' =&gt; $this-&gt;t('Autoincrement ID'),
-  'title' =&gt; $this-&gt;t('Job Title'),
-  'description' =&gt; $this-&gt;t('Job Description'),
-  'position' =&gt; $this-&gt;t('Job Position'),
-  'company' =&gt; $this-&gt;t('Company'),
-  'criteria' =&gt; $this-&gt;t('Job Criteria'),
-);
-return $fields;
-}</code></pre>
-              <h4>getIds() function</h4>
-              <pre><code class="language-plaintext">/**
-* {@inheritdoc}
-*/
-public function getIds() {
-return [
-  'id' =&gt; [
-    'type' =&gt; 'integer',
-    'alias' =&gt; 'j'
-  ]
-];
-}</code></pre>
-              <p>In addition, you can customize your SQL results using the
-                prepareRow() function and even introduce new source properties
-                to your migration.</p>
-              <pre><code class="language-plaintext">/**
-* {@inheritdoc}
-*/
-public function prepareRow(Row $row) {
-$company = $row-&gt;getSourceProperty('company');
-
-$row-&gt;setSourceProperty('job_type', 'on-site');
-if ($company == 'specbee') {
-  $row-&gt;setSourceProperty('job_type', 'remote');
-}
-
-return parent::prepareRow($row);
-}</code></pre>
+              <div class="code-snippet">
+                <h4 class="function-heading">query() function</h4>
+                <pre><code class="language-plaintext">/**
+              * {@inheritdoc}
+              */
+              public function query() {
+              $query = $this-&gt;select('job_details', 'c')
+                -&gt;fields('c', array(
+                  'id',
+                  'title',
+                  'description',
+                  'position',
+                  'company',
+                  'criteria',
+                ));
+              return $query;
+              }</code></pre>
+              </div>
+              
+              <div class="code-snippet">
+                <h4 class="function-heading">fields() function</h4>
+                <pre><code class="language-plaintext">/**
+              * {@inheritdoc}
+              */
+              public function fields() {
+              $fields = array(
+                'id' =&gt; $this-&gt;t('Autoincrement ID'),
+                'title' =&gt; $this-&gt;t('Job Title'),
+                'description' =&gt; $this-&gt;t('Job Description'),
+                'position' =&gt; $this-&gt;t('Job Position'),
+                'company' =&gt; $this-&gt;t('Company'),
+                'criteria' =&gt; $this-&gt;t('Job Criteria'),
+              );
+              return $fields;
+              }</code></pre>
+              </div>
+              
+              <div class="code-snippet">
+                <h4 class="function-heading">getIds() function</h4>
+                <pre><code class="language-plaintext">/**
+              * {@inheritdoc}
+              */
+              public function getIds() {
+              return [
+                'id' =&gt; [
+                  'type' =&gt; 'integer',
+                  'alias' =&gt; 'j'
+                ]
+              ];
+              }</code></pre>
+              </div>
+              
+              <p class="function-description">In addition, you can customize your SQL results using the prepareRow() function and even introduce new source properties to your migration.</p>
+              
+              <div class="code-snippet">
+                <h4 class="function-heading">prepareRow() function</h4>
+                <pre><code class="language-plaintext">/**
+              * {@inheritdoc}
+              */
+              public function prepareRow(Row $row) {
+              $company = $row-&gt;getSourceProperty('company');
+              
+              $row-&gt;setSourceProperty('job_type', 'on-site');
+              if ($company == 'specbee') {
+                $row-&gt;setSourceProperty('job_type', 'remote');
+              }
+              
+              return parent::prepareRow($row);
+              }</code></pre>
+              <p class="function-description code-comment">Note: This is a sample comment.</p>
+              </div>
               <p>These source properties will be incorporated into your
                 migration YAML files, and you can also utilize your own
                 processor for additional processing on source data.</p>
