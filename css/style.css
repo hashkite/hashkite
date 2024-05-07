@@ -652,3 +652,9 @@ img {
 .content h5 {
     font-family: "Heebo",sans-serif;
 }
+.content img {
+    padding: 16px;
+    margin: 16px;
+    border: 1px solid #d7d7d7;
+    border-radius: 6px;
+}
