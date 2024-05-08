@@ -1,412 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
-    <script>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-5QCELFQHDH');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehending Drupal Configuration Synchronization.</title>
-    <meta
-      content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
-      name="keywords">
-    <meta
-      content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
-      name="description">
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehending Drupal Configuration Synchronization.</title>
+  <meta
+    content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
+    name="keywords">
+  <meta
+    content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
+    name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-      rel="stylesheet">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="../lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="../lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <style>.sclass{
-         
-   
-    margin-top: 20px;
-  
-    max-width: 100%;
+  <!-- Template Stylesheet -->
+  <link href="../css/style.css" rel="stylesheet">
+  <style>
+    .sclass {
+
+
+      margin-top: 20px;
+
+      max-width: 100%;
 
     }
-    </style>
-  </head>
-  <body>
-    <div class="container-fluid bg-white p-0">
-      <!-- Spinner Start -->
-      <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary"
-          style="width: 3rem; height: 3rem;" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </div>
-      <!-- Spinner End -->
 
-      <!-- Navbar & Hero Start -->
-      <div class="container-fluid position-relative p-0">
-        <nav
-          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-          <a href class="navbar-brand p-0">
-            <h1 class="m-0">#Kite</h1>
-            <!-- <img src="img/logo.png" alt="Logo"> -->
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto py-0 me-0">
-              <a href="/" class="nav-item nav-link">Home</a>
-              <a href="/#about-us" class="nav-item nav-link">About</a>
-              <a href="/#service" class="nav-item nav-link">Service</a>
-              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
-              <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+    /* Styles for the configuration sync code */
+    #config-sync-code {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    #config-sync-code code {
+      font-family: Consolas, monospace;
+      color: #333;
+    }
+
+    .code-block {
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href class="navbar-brand p-0">
+          <h1 class="m-0">#Kite</h1>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto py-0 me-0">
+            <a href="/" class="nav-item nav-link">Home</a>
+            <a href="/#about-us" class="nav-item nav-link">About</a>
+            <a href="/#service" class="nav-item nav-link">Service</a>
+            <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+            <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid py-5 bg-primary hero-header">
+        <div class="container my-5 py-5 px-lg-5">
+          <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+              <h1 class="text-white animated slideInDown">Comprehending Drupal
+                Configuration Synchronization.</h1>
+              <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                  <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                  <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">Comprehending Drupal Configuration
+                    Synchronization.</li>
+                </ol>
+              </nav>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Blog content-->
+    <div class="container content">
+      <div class="row mt-5 pt-6">
+        <nav class="col-md-3">
+          <!-- Navigation Links -->
+          <ul style="list-style: circle;">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#terminology">Drupal's Configuration Management System</a></li>
+            <li><a href="#sync-methods">Managing Configuration Workflow</a></li>
+            <li><a href="#workflow">Exporting Configuration</a></li>
+            <li><a href="#best-practices">Recommendations for Effective Configuration Synchronization</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <!-- Additional navigation links can be added here if required -->
+          </ul>
         </nav>
+        <article class="col-md-9">
+          <!-- Introduction Section -->
+          <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Prior to delving into Configuration Synchronization, it's
+              essential to grasp the concept of "configuration" in Drupal.
+              Configuration encompasses site settings, content types, views,
+              fields, and other elements defining the structure and behavior
+              of a Drupal site. This segregation of configuration and <a
+                href="https://www.specbee.com/blogs/customizing-content-display-in-drupal-guide-to-display-modes"
+                rel="nofollow">content</a> streamlines site management.</p>
+          </section>
 
-        <div class="container-fluid py-5 bg-primary hero-header">
-          <div class="container my-5 py-5 px-lg-5">
-            <div class="row g-5 py-5">
-              <div class="col-12 text-center">
-                <h1 class="text-white animated slideInDown">Comprehending Drupal
-                  Configuration Synchronization.</h1>
-                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white"
-                        href="/blogs">Blog</a></li>
-                    <li class="breadcrumb-item text-white active"
-                      aria-current="page">Comprehending Drupal Configuration
-                      Synchronization.</li>
-                  </ol>
-                </nav>
+          <!-- Configuration Fundamentals Section -->
+          <section id="terminology">
+            <h2>Drupal's Configuration Management System</h2>
+            <p>The Configuration Management System in Drupal serves as the central mechanism for handling configuration
+              alterations. It streamlines the process of exporting, importing, and deploying configurations across
+              various instances of a Drupal site, guaranteeing smooth migration of settings and structures across
+              different environments, such as from development to staging or production.</p>
+            <p>In Drupal, configuration file paths are configured within the <strong>settings.php</strong> file. Best
+              practices dictate that configuration files should be stored outside the root directory.</p>
+            <pre
+              id="config-sync-code"><code class="language-plaintext">$settings['config_sync_directory'] = '../config/sync';</code></pre>
+
+          </section>
+
+          <!-- Synchronization Methods Section -->
+          <section id="sync-methods">
+            <h2>Managing Configuration Workflow</h2>
+            <p>The workflow for managing configuration typically entails initiating modifications on a development site,
+              exporting those alterations, and subsequently importing them into other environments. The goal is to
+              ensure uniform configuration across all environments, thereby fostering a seamless user experience.</p>
+          </section>
+
+          <!-- Configuration Export Section -->
+
+          <section id="workflow">
+            <h2>Exporting Configuration</h2>
+            <p>Exporting configuration changes can be achieved through the Drupal admin interface or Drush (Drupal
+              Shell). The exported configuration is stored in YAML files, which are both human-readable and
+              version-controlled.</p>
+            <pre class="code-block"><code class="language-plaintext">drush cex</code></pre>
+
+            <p>Running the aforementioned command generates YAML files containing the configurations you've modified.
+              Subsequently, these configurations need to be added and pushed to the staging environment using Git or
+              other version control tools.</p>
+          </section>
+          <!-- Image -->
+          <img src="/blogs/img/yml.jpg" alt="YML Configuration Export">
+          </section>
+
+          <!-- Configuration Import Section -->
+          <section id="sync-methods">
+
+            <h2>Importing Configuration</h2>
+            <p>Bringing configuration into another Drupal instance, like a staging or production site, ensures alignment
+              across different environments. This import process can occur through the admin interface or Drush.</p>
+            <pre class="code-block"><code class="language-plaintext">drush cim</code></pre>
+            <p>Executing the command above imports configurations from the development environment to the staging or
+              production environment.</p>
+            <!-- Image -->
+            <img src="/blogs/img/config coll.jpg" alt="Configuration Import">
+          </section>
+
+          <!-- Review and Deployment Section -->
+          <section id="workflow">
+
+            <h2>Configuration Review and Deployment</h2>
+            <p>Make use of the Configuration Management Interface to thoroughly assess and selectively roll out
+              configuration modifications. This stage is pivotal in maintaining precise control over alterations made in
+              each environment.</p>
+            <p>Drupal furnishes robust tools for monitoring and overseeing configuration adjustments. Through the
+              Configuration Management Interface, you can meticulously review and implement configuration updates as
+              needed.</p>
+            <p>The image below depicts the discrepancies in configuration across distinct environments, conveniently
+              accessible at <strong>/admin/config/development/configuration</strong>.</p>
+            <!-- Image -->
+            <img src="/blogs/img/viewext.jpg" alt="Configuration Differences">
+          </section>
+
+          <!-- Configuration Synchronization Strategies Section -->
+          
+<section id="sync-methods">
+  <h2>Approaches to Configuration Synchronization</h2>
+  <p>Depending on your project's needs, you have several options for synchronizing configuration. You might choose a centralized master environment where all changes originate and then propagate to other environments. Alternatively, you could opt for a decentralized approach, allowing each environment to manage and synchronize its configuration independently.</p>
+  <h3>Centralized Master Environment</h3>
+  <p>Establish a single master environment as the central hub for all configuration adjustments. From this central point, changes are distributed to other environments, ensuring consistency and coherence.</p>
+  <h3>Distributed Development</h3>
+  <p>Empower each environment to autonomously handle and synchronize its configuration changes. This decentralized approach gives individual teams the freedom to manage specific project aspects according to their needs.</p>
+  </section>
+<!-- Best Practices Section -->
+<section id="best-practices">
+
+<h2>Recommendations for Effective Configuration Synchronization</h2>
+<p>To ensure smooth configuration synchronization, follow these best practices:</p>
+<h3>Utilize Version Control:</h3>
+<p>Use version control systems like Git to track and manage configuration modifications. This promotes collaboration among developers and maintains a detailed history of changes.</p>
+<h3>Thorough Documentation:</h3>
+<p>Document configuration changes extensively. Comprehensive documentation helps developers understand the purpose behind each change, facilitating collaboration and troubleshooting.</p>
+<h3>Regular Testing:</h3>
+<p>Conduct frequent testing to ensure modifications don't disrupt the live site and to identify potential issues early on. Regular testing is crucial for maintaining site stability.</p>
+<h3>Opt for Selective Synchronization:</h3>
+<p>Prioritize selective synchronization during configuration deployment to avoid unintended consequences. This approach allows for a more deliberate and targeted implementation of changes, reducing the risk of disruptions.</p>
+<h3>Automated Deployment:</h3>
+<p>Implement automated deployment processes to streamline configuration synchronization across environments. Automation minimizes manual errors and enhances efficiency in managing configurations.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>In summary, mastering Drupal Configuration Synchronization is crucial for efficient website management and development. By synchronizing configuration settings effectively across different environments, developers can ensure consistency, streamline deployment processes, and minimize errors.</p>
+<p>Configuration synchronization facilitates collaborative work on Drupal projects, enabling smoother workflows and reducing conflicts between development, staging, and production environments.</p>
+<p>With careful planning, adherence to best practices, and the use of tools like version control systems and automated testing, Drupal developers can optimize configuration synchronization to deliver high-quality websites that meet client requirements and user expectations.</p>
+<p>Overall, understanding and implementing Drupal Configuration Synchronization contribute to improved site performance, enhanced development efficiency, and better user experiences.</p>
+</section>  
+
+        </article>
+      </div>
+    </div>
+
+    <!-- End blog eontent-->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Address<span></span></p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park
+              Plaza,
+              office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+            <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a>
+            </p>
+            <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com"
+                style="color:#fff;">dg@hashkite.com</a></p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+            <a class="btn btn-link" href>About Us</a>
+            <a class="btn btn-link" href>Contact Us</a>
+            <a class="btn btn-link" href>Privacy Policy</a>
+            <a class="btn btn-link" href>Terms & Condition</a>
+            <a class="btn btn-link" href>Career</a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+            <p>Stay informed with our latest news, updates, and offerings
+              delivered straight to your inbox.</p>
+            <div class="position-relative w-100 mt-3">
+              <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email"
+                style="height: 48px;">
+              <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                  class="fa fa-paper-plane text-primary fs-4"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+              Reserved.
+
+              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+              Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href>Home</a>
+                <a href>Cookies</a>
+                <a href>Help</a>
+                <a href>FQAs</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Navbar & Hero End -->
+    </div>
+    <!-- Footer End -->
 
-        <!-- Blog content-->
-        <div class="container content">
-        <header>
-          <h1>Understanding Drupal Configuration</h1>
-        </header>
-        <div class="row mt-5 pt-6">
-          <nav class="col-md-3">
-            <!-- Navigation Links -->
-            <ul style="list-style: circle;">
-              <li><a href="#introduction">Introduction</a></li>
-              <li><a href="#terminology">Configuration Fundamentals</a></li>
-              <li><a href="#sync-methods">Synchronization Methods</a></li>
-              <li><a href="#workflow">Configuration Workflow</a></li>
-              <li><a href="#best-practices">Best Practices</a></li>
-              <li><a href="#conclusion">Conclusion</a></li>
-              <!-- Additional navigation links can be added here if required -->
-            </ul>
-          </nav>
-          <article class="col-md-9">
-            <!-- Introduction Section -->
-            <section id="introduction">
-              <h2>Introduction</h2>
-              <p>Prior to delving into Configuration Synchronization, it's
-                essential to grasp the concept of "configuration" in Drupal.
-                Configuration encompasses site settings, content types, views,
-                fields, and other elements defining the structure and behavior
-                of a Drupal site. This segregation of configuration and <a
-                  href="https://www.specbee.com/blogs/customizing-content-display-in-drupal-guide-to-display-modes"
-                  rel="nofollow">content</a> streamlines site management.</p>
-            </section>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
 
-            <!-- Configuration Fundamentals Section -->
-            <section id="terminology">
-              <h2>Configuration Management System in Drupal</h2>
-              <p>Drupal's Configuration Management System serves as the backbone
-                for managing configuration changes. It facilitates the export,
-                import, and deployment of configurations across different
-                instances of a Drupal site, ensuring seamless transition of
-                settings and structures between environments (e.g., from
-                development to staging or production).</p>
-              <p>Configuration file locations are specified in the <strong>settings.php</strong>
-                file. It's recommended to store configuration files outside the
-                root directory.</p>
-              <pre><code class="language-plaintext">$settings['config_sync_directory'] = '../config/sync';</code></pre>
-            </section>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/wow/wow.min.js"></script>
+  <script src="../lib/easing/easing.min.js"></script>
+  <script src="../lib/waypoints/waypoints.min.js"></script>
+  <script src="../lib/counterup/counterup.min.js"></script>
+  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="../lib/lightbox/js/lightbox.min.js"></script>
 
-            <!-- Synchronization Methods Section -->
-            <section id="sync-methods">
-              <h2>Configuration Workflow</h2>
-              <p>The configuration <a
-                  href="https://www.specbee.com/blogs/managing-editorial-workflows-content-moderation-module-drupal-9"
-                  rel="nofollow">workflow</a> typically involves making changes
-                on a development site, exporting those changes, and then
-                importing them into other environments. The objective is to
-                maintain consistent configuration across all environments for a
-                seamless user experience.</p>
-            </section>
+  <!-- Template Javascript -->
+  <script src="../js/main.js"></script>
+</body>
 
-            <!-- Configuration Export Section -->
-            <section id="workflow">
-              <h2>Configuration Export</h2>
-              <p>Configuration changes can be exported using the Drupal admin
-                interface or <a
-                  href="https://www.specbee.com/blogs/writing-your-own-custom-drush-9-and-10-commands"
-                  rel="nofollow">Drush</a> (Drupal Shell). The exported
-                configuration is stored in YAML files, which are human-readable
-                and version-controlled.</p>
-              <pre><code class="language-plaintext">drush cex</code></pre>
-              <p>Executing the above command generates YAML files for the
-                configurations you've worked on. Afterwards, these
-                configurations need to be added and pushed to the staging
-                environment via <a
-                  href="https://www.specbee.com/blogs/how-create-and-apply-patch-git-diff-and-git-apply-commands-your-drjupal-website"
-                  rel="nofollow">Git</a> or other version control tools.</p>
-              <!-- Image -->
-              <img src="/blogs/img/yml.jpg" alt="YML Configuration Export">
-            </section>
-
-            <!-- Configuration Import Section -->
-            <section id="sync-methods">
-              <h2>Configuration Import</h2>
-              <p>Configuration can be imported into another Drupal instance,
-                such as a staging or production site. This ensures
-                synchronization of configuration across different environments.
-                Importing configuration can be done via the admin interface or
-                Drush.</p>
-              <pre><code class="language-plaintext">Drush cim:</code></pre>
-              <p>Executing the above command imports configurations from the
-                development environment to the staging or production
-                environment.</p>
-              <!-- Image -->
-              <img src="/blogs/img/config coll.jpg" alt="Configuration Import">
-            </section>
-
-            <!-- Review and Deployment Section -->
-            <section id="workflow">
-              <h2>Review and Deployment</h2>
-              <p>Utilize the Configuration Management Interface to review and
-                selectively deploy configuration changes. This step is crucial
-                for maintaining control over changes applied to each
-                environment.</p>
-              <p>Drupal provides tools for tracking and managing configuration
-                changes. The Configuration Management Interface allows selective
-                review and deployment of configuration changes.</p>
-              <p>This image illustrates the configuration differences between
-                respective environments, accessible at <strong>/admin/config/development/configuration</strong>.</p>
-              <!-- Image -->
-              <img src="/blogs/img/viewext.jpg" alt="Configuration Differences">
-            </section>
-
-            <!-- Configuration Synchronization Strategies Section -->
-            <section id="sync-methods">
-              <h2>Strategies for Configuration Synchronization</h2>
-              <p>Depending on the requirements of your project, you have the
-                flexibility to adopt various strategies for synchronizing
-                configuration. For instance, you might opt for a centralized
-                master environment where all configuration modifications are
-                initiated and subsequently propagated to other environments.
-                Alternatively, you could embrace a decentralized approach,
-                allowing each environment to independently manage and
-                synchronize its configuration changes.</p>
-              <h3>Centralized Master Environment</h3>
-              <p>Establish a single master environment as the hub for all
-                configuration adjustments. From this central point, changes are
-                disseminated to other environments, ensuring uniformity and
-                coherence throughout.</p>
-              <h3>Distributed Development</h3>
-              <p>Empower each environment to autonomously handle and synchronize
-                its configuration modifications. This decentralized approach
-                grants individual teams the freedom to manage specific aspects
-                of the project according to their requirements.</p
-              </section>
-
-              <!-- Best Practices Section -->
-              <section id="best-practices">
-
-                <h2>Guidelines for Effective Configuration Synchronization</h2>
-                <p>To ensure seamless configuration synchronization, adhere to
-                  these best practices:</p>
-                <h3>Utilize Version Control:</h3>
-                <p>Employ version control systems such as <a
-                    href="https://www.specbee.com/blogs/drupal-coding-standards-with-git-hooks"
-                    rel="nofollow">Git</a> to monitor and manage configuration
-                  modifications. This fosters collaboration among developers and
-                  maintains a comprehensive history of alterations.</p>
-                <h3>Thorough Documentation:</h3>
-                <p>Document configuration changes meticulously. Comprehensive
-                  documentation aids in comprehending the purpose behind each
-                  alteration, simplifying collaboration and troubleshooting for
-                  developers.</p>
-                <h3>Regular Testing:</h3>
-                <p>Conduct frequent testing to ensure that modifications do not
-                  disrupt the live site and to detect potential issues at an
-                  early stage in the process. <a
-                    href="https://www.specbee.com/blogs/continuous-integration-and-testing-in-drupal"
-                    rel="nofollow">Regular testing</a> is essential for
-                  maintaining site stability.</p>
-                <h3>Opt for Selective Synchronization:</h3>
-                <p>During configuration deployment, prioritize selective
-                  synchronization to prevent unintended consequences. This
-                  approach enables a more deliberate and targeted implementation
-                  of changes, minimizing the risk of disruptions.</p>
-                <h3>Automated Deployment:</h3>
-                <p>Implement automated deployment processes to streamline
-                  configuration synchronization across environments. Automation
-                  reduces manual errors and enhances efficiency in managing
-                  configurations.</p>
-              </section>
-              <section id="conclusion">
-                <h2>Conclusion</h2>
-                <p>In conclusion, mastering Drupal Configuration Synchronization
-                  is essential for efficient website management and development.
-                  By effectively synchronizing configuration settings across
-                  different environments, developers can ensure consistency,
-                  streamline deployment processes, and minimize errors.</p>
-                <p>Configuration synchronization enables teams to work
-                  collaboratively on Drupal projects, facilitating smoother
-                  workflows and reducing the risk of conflicts between
-                  development, staging, and production environments.</p>
-                <p>Through careful planning, adherence to best practices, and
-                  the use of tools like version control systems and automated
-                  testing, Drupal developers can optimize configuration
-                  synchronization to deliver high-quality websites that meet
-                  client requirements and user expectations.</p>
-                <p>Overall, understanding and implementing Drupal Configuration
-                  Synchronization contribute to improved site performance,
-                  enhanced development efficiency, and better user experiences.</p>
-              </section>
-
-            </article>
-          </div>
-        </div>
-
-        <!-- End blog eontent-->
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn"
-          data-wow-delay="0.1s">
-          <div class="container py-5 px-lg-5">
-            <div class="row g-5">
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park
-                  Plaza,
-                  office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
-                <p><i class="fa fa-phone-alt me-3"></i><a
-                    href="tel:+919922611550"
-                    style="color: #fff;">+919922611550</a></p>
-                <p><i class="fa fa-envelope me-3"></i><a
-                    href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
-                <div class="d-flex pt-2">
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-twitter"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-facebook-f"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-instagram"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                <a class="btn btn-link" href>About Us</a>
-                <a class="btn btn-link" href>Contact Us</a>
-                <a class="btn btn-link" href>Privacy Policy</a>
-                <a class="btn btn-link" href>Terms & Condition</a>
-                <a class="btn btn-link" href>Career</a>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                <p>Stay informed with our latest news, updates, and offerings
-                  delivered straight to your inbox.</p>
-                <div class="position-relative w-100 mt-3">
-                  <input
-                    class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
-                    type="text" placeholder="Your Email" style="height: 48px;">
-                  <button type="button"
-                    class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                      class="fa fa-paper-plane text-primary fs-4"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container px-lg-5">
-            <div class="copyright">
-              <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                  &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
-                  Reserved.
-
-                  <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
-                  Designed By <a class="border-bottom" href="/">Akshay sargar</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                  <div class="footer-menu">
-                    <a href>Home</a>
-                    <a href>Cookies</a>
-                    <a href>Help</a>
-                    <a href>FQAs</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
-            class="bi bi-arrow-up"></i></a>
-      </div>
-
-      <!-- JavaScript Libraries -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="../lib/wow/wow.min.js"></script>
-      <script src="../lib/easing/easing.min.js"></script>
-      <script src="../lib/waypoints/waypoints.min.js"></script>
-      <script src="../lib/counterup/counterup.min.js"></script>
-      <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-      <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-      <script src="../lib/lightbox/js/lightbox.min.js"></script>
-
-      <!-- Template Javascript -->
-      <script src="../js/main.js"></script>
-    </body>
-  </html>
+</html>
