@@ -651,6 +651,7 @@ img {
 .content h4,
 .content h5 {
     font-family: "Heebo",sans-serif;
+    color: #744ac0;
 }
 .content img {
     padding: 16px;

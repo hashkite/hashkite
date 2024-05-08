@@ -93,77 +93,159 @@
 
         <!-- Blog content-->
         <div class="container content">
-            <p>Setting up a Drupal website involves several steps. Here's a breakdown of the process:</p>
-
-            <ol style="list-style-type: none;">
-                <li>
-                    <h2>Preparing your environment:</h2>
-                    <p>There are two main approaches to setting up Drupal:</p>
+            <div class="row">
+                <ul class="col-md-3">
+                    <li>
+                        <a href="#why-drupal">Why Drupal?</a>
+                    </li>
+                    <li>
+                        <a href="#gear-up">Gear Up for Launch: Essential Pre-Requisites</a>
+                    </li>
+                    <li>
+                        <a href="#installation">Installation Avenues: Exploring Your Options</a>
+                    </li>
+                    <li>
+                        <a href="#platform-specific">Platform-Specific Tips: Tailoring the Installation to Your Web Host</a>
+                    </li>
+                    <li>
+                        <a href="#beyond-installation">Beyond Installation: Building Your Drupal Dream</a>
+                    </li>
+                </ul>
+                <div class="col-md-9">
+                    <h2 id="why-drupal">
+                        Why Drupal?
+                    </h2>
+                    <p>
+                        Drupal stands tall amongst Content Management Systems (CMS) for its versatility and robust features. Here's why it should be your top contender:
+                    </p>
                     <ul>
                         <li>
-                            <strong>Local development environment:</strong>
-                            <p>This is ideal for development and testing purposes. You'll need to install a web server (like Apache), a database server (like MySQL), and PHP on your local machine. Alternatively, you can use tools like Docker with DDEV or Lando, which bundle all the necessary components into a containerized environment.</p>
+                            <strong>Open-Source Power:</strong> Embrace the freedom and community support that comes with open-source software.
                         </li>
                         <li>
-                            <strong>Web hosting environment:</strong>
-                            <p>For a publicly accessible website, you'll need to sign up for a web hosting service that supports PHP and a database (usually MySQL). Many web hosting providers offer one-click Drupal installations, simplifying the process.</p>
+                            <strong>Scalability Supreme:</strong> As your website grows, Drupal can adapt, handling complex functionalities with ease.
+                        </li>
+                        <li>
+                            <strong>Security First:</strong> Drupal prioritizes security, giving you peace of mind knowing your website is protected.
+                        </li>
+                        <li>
+                            <strong>Customization Galore:</strong> Tailor your website to your exact needs with a vast library of themes and modules.
                         </li>
                     </ul>
-                </li>
-
-                <li>
-                    <h2>Installing Drupal:</h2>
-                    <p>There are a few ways to install Drupal depending on your chosen environment:</p>
+                    <h2 id="gear-up">
+                        Gear Up for Launch: Essential Pre-Requisites
+                    </h2>
+                    <p>
+                        Before embarking on your Drupal adventure, ensure you have these essentials:
+                    </p>
                     <ul>
                         <li>
-                            <strong>Manual installation:</strong>
-                            <p>Download the latest Drupal core files from <a href="https://www.drupal.org/download">https://www.drupal.org/download</a> and upload them to your web server's document root directory. Then, run the installation script by accessing your website URL followed by "/core/install.php" in your web browser.</p>
+                            <strong>Domain Name:</strong> This is your website's unique address on the internet, like "yourwebsite.com".
                         </li>
                         <li>
-                            <strong>Web hosting with one-click installation:</strong>
-                            <p>Many web hosting providers offer one-click Drupal installations through their control panel. This simplifies the process by automating the file upload and database creation steps.</p>
+                            <p>
+                                <strong>Web Hosting:</strong> This acts as your website's home on the web. Choose a provider that supports Drupal.
+                            </p>
+                            <p>
+                                Here are some popular options:
+                            </p>
+                            <ul>
+                                <li>
+                                    Shared Hosting: Affordable and a good starting point for smaller websites. (e.g., Bluehost, HostGator)
+                                </li>
+                                <li>
+                                    Virtual Private Server (VPS): Offers more control and resources compared to shared hosting. (e.g., DigitalOcean, Linode)
+                                </li>
+                                <li>
+                                    Cloud Hosting: Highly scalable and ideal for websites with fluctuating traffic. (e.g., AWS, GCP)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 id="installation">
+                        Installation Avenues: Exploring Your Options
+                    </h2>
+                    <p>
+                        <strong>1. Manual Installation (For the Tech-Savvy)</strong>
+                    </p>
+                    <p>
+                        This method provides more control but requires some technical knowledge. Here's a breakdown:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Download Drupal Core Files:</strong> Head over to <a href="https://www.drupal.org/download">Drupal.org</a> and grab the latest stable version.
                         </li>
                         <li>
-                            <strong>Docker-based environments:</strong>
-                            <p>Tools like DDEV and Lando provide pre-configured Docker containers with all the necessary components for running Drupal. Follow the specific instructions for your chosen tool to set up and launch the containerized Drupal environment.</p>
+                            <strong>Create a Database:</strong> Your web hosting provider will likely offer tools to create a database for your website.
+                        </li>
+                        <li>
+                            <strong>Run the Installation Script:</strong> Upload the downloaded files to your web hosting space and follow the on-screen instructions to complete the installation.
+                        </li>
+                        <li>
+                            <strong>Drupal Documentation is Your Friend:</strong> Feeling lost? The comprehensive Drupal installation guide will be your savior: <a href="https://www.drupal.org/docs/getting-started/installing-drupal">Installing Drupal</a>
                         </li>
                     </ul>
-                </li>
-
-                <li>
-                    <h2>Configuration:</h2>
-                    <p>During the installation process, you'll be prompted to configure Drupal by providing details like:</p>
+                    <p>
+                        <strong>2. Quick-Start Installation (For the Time-Conscious)</strong>
+                    </p>
+                    <p>
+                        Many web hosting providers offer a simplified installation process for Drupal. They handle the technical aspects, allowing you to focus on building your website. Here's what to expect:
+                    </p>
                     <ul>
-                        <li>Database settings: Specify the database name, username, and password for Drupal to connect to your database server.</li>
-                        <li>Site information: Enter your website name, email address, and desired administrative username and password.</li>
-                        <li>Settings: Configure additional settings like language, time zone, and default content types.</li>
+                        <li>
+                            <strong>Locate the Drupal Installer:</strong> Look for a "one-click" installer or similar option offered by your web hosting provider.
+                        </li>
+                        <li>
+                            <strong>Follow the On-Screen Prompts:</strong> Provide your domain name, database details (if needed), and any other requested information.
+                        </li>
+                        <li>
+                            <strong>Sit Back and Relax:</strong> Let the web hosting platform do the heavy lifting while you prepare to unleash your creativity!
+                        </li>
                     </ul>
-                </li>
-
-                <li>
-                    <h2>Exploring and customizing your Drupal website:</h2>
-                    <p>Once Drupal is installed and configured, you can access your website's administration panel using the username and password you created during installation. The admin panel allows you to:</p>
+                    <h2 id="platform-specific">
+                        Platform-Specific Tips: Tailoring the Installation to Your Web Host
+                    </h2>
+                    <p>
+                        Here's a quick peek at installation specifics on some popular platforms:
+                    </p>
                     <ul>
-                        <li>Create content: Add pages, blog posts, and other content types using the built-in content creation tools.</li>
-                        <li>Manage users: Create user accounts for administrators, editors, and contributors if you want others to contribute content.</li>
-                        <li>Install modules: Extend Drupal's functionalities by installing modules from the extensive Drupal module library.</li>
-                        <li>Customize themes: Change the look and feel of your website by installing and configuring themes.</li>
+                        <li>
+                            <strong>Bluehost:</strong> Bluehost offers a user-friendly "Marketplace" installer for Drupal. Search for "Drupal" and follow the on-screen instructions.
+                        </li>
+                        <li>
+                            <strong>SiteGround:</strong> SiteGround provides a one-click installer within their control panel. Look for the "Website" section and locate the "Applications" option where you'll find Drupal.
+                        </li>
+                        <li>
+                            <strong>DreamHost:</strong> DreamHost offers a user-friendly "Installatron" tool within their panel. Find the "WordPress/Other Apps" section and locate Drupal for a smooth installation.
+                        </li>
                     </ul>
-                </li>
-            </ol>
-
-            <h2>Resources:</h2>
-            <ul>
-                <li><a href="https://www.drupal.org/docs/getting-started/installing-drupal">Drupal Getting Started Guide</a></li>
-                <li><a href="https://www.drupal.org/docs/getting-started/installing-drupal">Installing Drupal</a></li>
-                <li><a href="https://www.drupal.org/docs/develop/local-server-setup">Local server setup</a> (covers various environments like Windows, Mac, and Linux)</li>
-                <li>DDEV: <a href="INSTALL DDEV drupal ON drupal.org">INSTALL DDEV drupal ON drupal.org</a></li>
-                <li>Lando: <a href="LANDO drupal development server ON Lando landoop.github.io">LANDO drupal development server ON Lando landoop.github.io</a></li>
-            </ul>
-
-            <p>Remember, the specific steps may vary depending on your chosen environment and web hosting provider. Don't hesitate to consult the provided resources for detailed instructions and troubleshooting tips.</p>
-    </div>
-    <!-- End blog eontent-->
+                    <h2 id="beyond-installation">
+                        Beyond Installation: Building Your Drupal Dream
+                    </h2>
+                    <p>
+                        Once your Drupal website is up and running, it's time to explore the exciting world of content creation and customization:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Craft Compelling Content:</strong> Easily create and manage various content types like blog posts, articles, images, and more.
+                        </li>
+                        <li>
+                            <strong>Organize for Success:</strong> Categorize your content with categories and tags for a user-friendly experience.
+                        </li>
+                        <li>
+                            <strong>Design with Flair:</strong> Choose a theme that reflects your style, with a vast selection of free and premium options available on the Drupal.org theme directory.
+                        </li>
+                        <li>
+                            <strong>Embrace the Power of Modules:</strong> Modules are downloadable extensions that add functionalities like forums, e-commerce capabilities, and more. Explore the vast library at <a href="https://www.drupal.org/project/project_module">Drupal Project Module</a>
+                        </li>
+                    </ul>
+                    <p>
+                        With Drupal, the possibilities are endless. So, dive in, explore, and build the website of your dreams!
+                    </p> 
+                </div>    
+            </div>      
+        </div>
+        <!-- End blog eontent-->
 
      <!-- Footer Start -->
      <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
