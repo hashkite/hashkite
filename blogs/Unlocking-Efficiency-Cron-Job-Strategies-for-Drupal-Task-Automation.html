@@ -1,184 +1,304 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
-    <script>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-5QCELFQHDH');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unlocking Efficiency: Cron Job Strategies for Drupal Task Automation</title>
-    <meta
-      content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
-      name="keywords">
-    <meta
-      content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
-      name="description">
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlocking Efficiency: Cron Job Strategies for Drupal Task Automation</title>
+  <meta
+    content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
+    name="keywords">
+  <meta
+    content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
+    name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-      rel="stylesheet">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="../lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="../lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <style>.sclass{
+  <!-- Template Stylesheet -->
+  <link href="../css/style.css" rel="stylesheet">
+  <style>
+    .sclass {
       margin-top: 20px;
       height: auto;
       max-width: 100%;
 
-      }
-      </style>
-  </head>
-  <body>
-    <div class="container-fluid bg-white p-0">
-      <!-- Spinner Start -->
-      <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary"
-          style="width: 3rem; height: 3rem;" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      </div>
-      <!-- Spinner End -->
+    }
+    /* Styles for the code snippet */
+    .cron-instructions {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
 
-      <!-- Navbar & Hero Start -->
-      <div class="container-fluid position-relative p-0">
-        <nav
-          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-          <a href class="navbar-brand p-0">
-            <h1 class="m-0">#Kite</h1>
-            <!-- <img src="img/logo.png" alt="Logo"> -->
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto py-0 me-0">
-              <a href="/" class="nav-item nav-link">Home</a>
-              <a href="/#about-us" class="nav-item nav-link">About</a>
-              <a href="/#service" class="nav-item nav-link">Service</a>
-              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
-              <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+    .cron-instructions ul {
+      margin-bottom: 10px;
+    }
+
+    .cron-instructions li {
+      list-style-type: none;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cron-instructions pre {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .cron-instructions code {
+      font-family: Consolas, monospace;
+    }
+
+    .cron-instructions p {
+      color: #666;
+      font-style: italic;
+    }
+
+    /* Styles for the cron section */
+    .cron-section {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .cron-section h2 {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cron-section p {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .cron-section pre {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .cron-section code {
+      font-family: Consolas, monospace;
+      color: #007bff;
+      /* Blue color for command text */
+    }
+
+    .cron-section ul {
+      margin-bottom: 15px;
+    }
+
+    .cron-section li {
+      list-style-type: none;
+      font-weight: bold;
+      color: #333;
+    }
+    /* Styles for installation steps */
+.installation-steps {   
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.installation-steps p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.installation-steps ol {
+    margin-bottom: 15px;
+    counter-reset: step;
+}
+
+.installation-steps ol li {
+    list-style-type: none;
+}
+
+.installation-steps ol li::before {
+    content: counter(step);
+    counter-increment: step;
+    font-weight: bold;
+    font-size: 16px;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.installation-steps pre {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.installation-steps code {
+    font-family: Consolas, monospace;
+    color: #007bff;
+}
+.path {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px; /* Adjust margin as needed */
+}
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href class="navbar-brand p-0">
+          <h1 class="m-0">#Kite</h1>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto py-0 me-0">
+            <a href="/" class="nav-item nav-link">Home</a>
+            <a href="/#about-us" class="nav-item nav-link">About</a>
+            <a href="/#service" class="nav-item nav-link">Service</a>
+            <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+            <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid py-5 bg-primary hero-header">
+        <div class="container my-5 py-5 px-lg-5">
+          <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+              <h1 class="text-white animated slideInDown">Unlocking
+                Efficiency: Cron Job Strategies for Drupal Task Automation</h1>
+              <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                  <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                  <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">Unlocking Efficiency: Cron Job
+                    Strategies for Drupal Task Automation</li>
+                </ol>
+              </nav>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Blog content-->
+    <div class="container content">
+
+      <div class="row mt-5 pt-6">
+        <nav class="col-md-3">
+          <!-- Navigation Links -->
+          <ul style="list-style: circle;">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#understanding">Understanding Cron Jobs</a></li>
+            <li><a href="#optimizing">Cron Tab</a></li>
+            <li><a href="#prioritization">Cron Expression</a></li>
+            <li><a href="#error-handling">Drupal Cron Job Overview</a></li>
+            <li><a href="#scaling">How to Set Up a Custom Ultimate Cron Job</a></li>
+            <li><a href="#integration">Integration with External Systems</a></li>
+            <li><a href="#external">Activating Cron via External Methods</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
         </nav>
+        <article class="col-md-9">
+          <!-- Introduction Section -->
+          <section id="introduction">
+            <h2>Introduction</h2>
+            <p>In the fast-evolving realm of web development, efficiency
+              stands as a cornerstone for success. With Drupal leading the
+              charge as a robust content management system, the integration of
+              Cron Jobs emerges as a pivotal feature for automating tasks
+              seamlessly. This guide embarks on an exploration of advanced
+              strategies and best practices, aiming to empower Drupal
+              enthusiasts with the knowledge to harness the full potential of
+              Cron Jobs, thereby unlocking unparalleled efficiency in the
+              management of Drupal-powered websites.</p>
+            <p>By delving into the intricacies of Cron Jobs and their
+              integration within the Drupal ecosystem, we embark on a journey
+              to streamline workflows, optimize performance, and elevate user
+              experiences to new heights. Join us as we uncover the
+              transformative power of Cron Job strategies, propelling your
+              Drupal projects towards greater efficiency and success.</p>
+          </section>
 
-        <div class="container-fluid py-5 bg-primary hero-header">
-          <div class="container my-5 py-5 px-lg-5">
-            <div class="row g-5 py-5">
-              <div class="col-12 text-center">
-                <h1 class="text-white animated slideInDown">Unlocking
-                  Efficiency: Cron Job Strategies for Drupal Task Automation</h1>
-                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white"
-                        href="/blogs">Blog</a></li>
-                    <li class="breadcrumb-item text-white active"
-                      aria-current="page">Unlocking Efficiency: Cron Job
-                      Strategies for Drupal Task Automation</li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Navbar & Hero End -->
-
-        <!-- Blog content-->
-        <div class="container content">
-        <header>
-          <h1>Unlocking Efficiency: Cron Job Strategies for Drupal Task
-            Automation</h1>
-        </header>
-        <div class="row mt-5 pt-6">
-          <nav class="col-md-3">
-            <!-- Navigation Links -->
-            <ul style="list-style: circle;">
-              <li><a href="#introduction">Introduction</a></li>
-              <li><a href="#understanding">Understanding Cron Jobs</a></li>
-              <li><a href="#optimizing">Cron Tab</a></li>
-              <li><a href="#prioritization">Cron Expression</a></li>
-              <li><a href="#error-handling">Drupal Cron Job Overview</a></li>
-              <li><a href="#scaling">How to Set Up a Custom Ultimate Cron Job</a></li>
-              <li><a href="#integration">Integration with External Systems</a></li>
-              <li><a href="#external">Activating Cron via External Methods</a></li>
-              <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
-          </nav>
-          <article class="col-md-9">
-            <!-- Introduction Section -->
-            <section id="introduction">
-              <h2>Introduction</h2>
-              <p>In the fast-evolving realm of web development, efficiency
-                stands as a cornerstone for success. With Drupal leading the
-                charge as a robust content management system, the integration of
-                Cron Jobs emerges as a pivotal feature for automating tasks
-                seamlessly. This guide embarks on an exploration of advanced
-                strategies and best practices, aiming to empower Drupal
-                enthusiasts with the knowledge to harness the full potential of
-                Cron Jobs, thereby unlocking unparalleled efficiency in the
-                management of Drupal-powered websites.</p>
-              <p>By delving into the intricacies of Cron Jobs and their
-                integration within the Drupal ecosystem, we embark on a journey
-                to streamline workflows, optimize performance, and elevate user
-                experiences to new heights. Join us as we uncover the
-                transformative power of Cron Job strategies, propelling your
-                Drupal projects towards greater efficiency and success.</p>
-            </section>
-
-            <!-- Understanding Cron Jobs Section -->
-            <section id="understanding">
-              <h2>Understanding Cron Jobs</h2>
-              <p>In the realm of computing, the term "cron" frequently surfaces,
-                especially within operating systems like Linux, where it serves
-                as a time-based task scheduling tool. In Unix systems, such as
-                Linux, "cron" operates as a scheduling utility, enabling users
-                to automate tasks effortlessly.</p>
-              <p>Functioning as a daemon, Cron silently operates in the
-                background of Unix-like operating systems, akin to a diligent
-                worker poised to spring into action upon specific triggers,
-                devoid of human interaction.</p>
-              <p>Cron jobs wield immense power, allowing users to automate
-                system maintenance, monitor disk space, and manage backups at
-                scheduled intervals, serving as an invaluable tool for system
-                administrators and web developers alike.</p>
-              <p>Although cron is typically pre-installed on systems, its
-                absence can be easily rectified through straightforward
-                installation steps:</p>
+          <!-- Understanding Cron Jobs Section -->
+          <section id="understanding">
+            <h2>Understanding Cron Jobs</h2>
+            <p>In the realm of computing, the term "cron" frequently surfaces,
+              especially within operating systems like Linux, where it serves
+              as a time-based task scheduling tool. In Unix systems, such as
+              Linux, "cron" operates as a scheduling utility, enabling users
+              to automate tasks effortlessly.</p>
+            <p>Functioning as a daemon, Cron silently operates in the
+              background of Unix-like operating systems, akin to a diligent
+              worker poised to spring into action upon specific triggers,
+              devoid of human interaction.</p>
+            <p>Cron jobs wield immense power, allowing users to automate
+              system maintenance, monitor disk space, and manage backups at
+              scheduled intervals, serving as an invaluable tool for system
+              administrators and web developers alike.</p>
+            <p>Although cron is typically pre-installed on systems, its
+              absence can be easily rectified through straightforward
+              installation steps:</p>
+            <div class="cron-instructions">
               <ul>
                 <li>Update the package repository:</li>
               </ul>
@@ -191,437 +311,398 @@
                 <li>Enable the cron service:</li>
               </ul>
               <pre><code class="language-plaintext">sudo systemctl enable cron</code></pre>
-              <p>Now, let's delve into activating and configuring custom cron
-                jobs tailored to meet specific requirements, with the aid of
-                crontab.</p>
-            </section>
-
-            <!-- Optimizing Cron Job Frequency Section -->
-            <section id="optimizing">
-              <h2>Cron Tab</h2>
-              <p>A crontab acts as a scheduler for tasks you want your computer
-                to perform at specific times, and it's also the name of the
-                command used to create and manage that schedule. Crontab is
-                short for “cron table”.</p>
-              <p>Each user in Linux has their own crontab, which they can use to
-                schedule jobs that will run under their user context. You can
-                view and update your crontab file using the crontab command.</p>
-              <p>For example:</p>
+              <p>Now, let's delve into activating and configuring custom cron jobs tailored to meet specific
+                requirements, with the aid of crontab.</p>
+            </div>
+            <div class="cron-instructions">
               <ul>
-                <li>To edit the crontab file:</li>
+                <li>Update the package repository:</li>
               </ul>
-              <pre><code class="language-plaintext">
-crontab -e</code></pre>
+              <pre><code class="language-plaintext">sudo apt update</code></pre>
               <ul>
-                <li>To display the commands stored in the crontab file:</li>
+                <li>Install cron:</li>
               </ul>
-              <pre><code class="language-plaintext">
-crontab -l</code></pre>
-            </section>
+              <pre><code class="language-plaintext">sudo apt install cron</code></pre>
+              <ul>
+                <li>Enable the cron service:</li>
+              </ul>
+              <pre><code class="language-plaintext">sudo systemctl enable cron</code></pre>
+              <p>Now, let's delve into activating and configuring custom cron jobs tailored to meet specific
+                requirements, with the aid of crontab.</p>
+            </div>
+          </section>
 
-            <!-- Task Prioritization and Sequencing Section -->
-            <section id="prioritization">
-              <h2>Cron Expression</h2>
-              <p>In simple terms, a cron expression in Linux is like setting a
-                regular alarm for your computer to perform specific tasks. It's
-                a way of telling your computer when to do things automatically.
-                A cron expression consists of five fields: minutes, hours, days
-                of the month, months, and days of the week. By adjusting these
-                fields, you can schedule tasks at precise times. Special
-                characters like asterisks (*) and slashes (/) provide
-                flexibility in scheduling. For example, a cron expression like
-                "0 * * * *" means the computer will perform a task at the
-                beginning of every hour.</p>
-              <p>Each line in a crontab file represents a job, and the syntax
-                looks like this:</p>
+          <!-- Optimizing Cron Job Frequency Section -->
+          <section id="optimizing">
+            <h2>Cron Tab</h2>
+            <p>A crontab acts as a scheduler for tasks you want your computer
+              to perform at specific times, and it's also the name of the
+              command used to create and manage that schedule. Crontab is
+              short for “cron table”.</p>
+            <p>Each user in Linux has their own crontab, which they can use to
+              schedule jobs that will run under their user context. You can
+              view and update your crontab file using the crontab command.</p>
+            <div class="cron-example">
+              <div class="cron-instructions">
+                <p>For example:</p>
+                <ul>
+                  <li>To edit the crontab file:</li>
+                </ul>
+                <pre><code class="language-plaintext">crontab -e</code></pre>
+                <ul>
+                  <li>To display the commands stored in the crontab file:</li>
+                </ul>
+                <pre><code class="language-plaintext">crontab -l</code></pre>
+              </div>
+          </section>
+
+          <!-- Task Prioritization and Sequencing Section -->
+          <section>
+            <h2>Cron Expression</h2>
+            <p>Simply put, a cron expression in Linux acts like setting a recurring alarm for your computer to carry out
+              specific tasks automatically. It serves as a way of instructing your computer on when to perform
+              designated actions. A cron expression comprises five fields: minutes, hours, days of the month, months,
+              and days of the week. By adjusting these fields, you can schedule tasks with precision. Special characters
+              such as asterisks (*) and slashes (/) provide flexibility in scheduling. For instance, a cron expression
+              like "0 * * * *" signifies that the computer will execute a task at the start of every hour.</p>
+            <p>Each line in a crontab file represents a job, and the syntax appears as follows:</p>
+            <div id="prioritization" class="cron-section">
               <pre><code class="language-plaintext">
-# ┌───── minute (0 - 59)
-# │ ┌───── hour (0 - 23)
-# │ │ ┌───── day of the month (1 - 31)
-# │ │ │ ┌───── month (1 - 12)
-# │ │ │ │ ┌───── day of the week (0 - 6) (Sunday to Saturday; 7 is also Sunday on some systems)
-# │ │ │ │ │
-# │ │ │ │ │
-# * * * * * command_to_execute
-</code></pre>
+          # ┌───── minute (0 - 59)
+          # │ ┌───── hour (0 - 23)
+          # │ │ ┌───── day of the month (1 - 31)
+          # │ │ │ ┌───── month (1 - 12)
+          # │ │ │ │ ┌───── day of the week (0 - 6) (Sunday to Saturday; 7 is also Sunday on some systems)
+          # │ │ │ │ │
+          # │ │ │ │ │
+          # * * * * * command_to_execute
+          </code></pre>
               <p>Here are some examples:</p>
               <ul>
                 <li>Every minute: <code>* * * * *</code></li>
-                <li>Every 2 minutes: <code>* /2 * * *</code></li>
-                <li>Every 15 minutes: <code>* /15 * * *</code></li>
+                <li>Every 2 minutes: <code>*/2 * * *</code></li>
+                <li>Every 15 minutes: <code>*/15 * * *</code></li>
                 <li>Every hour: <code>0 * * * *</code></li>
                 <li>Every 3 hours: <code>0 */3 * * *</code></li>
                 <li>Every 8 hours: <code>0 */8 * * *</code></li>
                 <li>Every day at midnight: <code>0 0 * * *</code></li>
               </ul>
-              <p>You can also specify ranges for hours, like this:</p>
+              <p>You can also specify hour ranges, like this:</p>
               <ul>
                 <li>Every hour between 11 am and 2 pm: <code>0 11-14 * * *</code></li>
               </ul>
-              <p>Tools like <a href="https://crontab.guru/" rel="nofollow">crontab
-                  Guru</a> offer a simple way to create cron expressions. For
-                more examples, you can refer to <a
-                  href="https://crontab.guru/examples.html" rel="nofollow">this
-                  page</a>.</p>
+            </div>
+            <p>Tools like <a href="https://crontab.guru/" rel="nofollow">Crontab Guru</a> provide a straightforward
+              method for generating cron expressions. For further examples, you can refer to <a
+                href="https://crontab.guru/examples.html" rel="nofollow">this page</a>.</p>
+          </section>
+
+
+          <!-- Error Handling and Monitoring Section -->
+          <section id="error-handling">
+            <h2>Drupal Cron Job Overview</h2>
+            <p>Drupal features a convenient capability known as <strong>Automated Cron</strong>. This automated cron job
+              acts as a scheduler for routine website maintenance tasks, including database optimization and cache
+              clearing, all executed at predetermined intervals. It ensures the seamless operation of the website and
+              maintains data accuracy, minimizing the need for manual intervention.</p>
+            <p>Key aspects of automated cron include:</p>
+            <ul>
+              <li><strong>Scheduled Maintenance Tasks:</strong> Drupal's automated cron serves as a behind-the-scenes
+                assistant, managing routine chores for your website. It handles tasks such as storage cleanup and update
+                checks, ensuring smooth website operation without requiring manual intervention.</li>
+              <li><strong>Configurable Frequency:</strong> Website administrators have the flexibility to determine how
+                often the automated cron job executes tasks. By default, it runs every three hours, but you can adjust
+                this schedule to better fit your website's requirements, similar to adjusting a sprinkler system timer
+                for your garden.</li>
+              <li><strong>Background Process:</strong> Drupal's automated cron operates as a silent worker in the
+                background. It performs tasks without disrupting the visible aspects of your website, relying on its
+                internal clock to schedule operations, much like an alarm clock that independently wakes you up at a
+                specified time.</li>
+            </ul>
+            <p><strong>Limitations of Drupal Cron:</strong></p>
+            <ul>
+              <li><strong>Simultaneous Execution of hook_cron Modules and Resource Challenges:</strong> When multiple
+                modules utilize the hook_cron function, they execute concurrently, potentially increasing resource usage
+                and surpassing memory limits on complex sites.</li>
+              <li><strong>Handling Errors in Cron Tasks and Identifying Culprits for Smooth Execution:</strong> If an
+                error occurs in one cron task, it can halt the entire cron process, impeding the execution of subsequent
+                tasks. Identifying the problematic task can be a challenge.</li>
+              <li><strong>Optimizing Cron Execution by Analyzing Task Durations:</strong> Enhancing cron efficiency
+                involves analyzing the duration of individual cron tasks and identifying areas for optimization.</li>
+            </ul>
+            <p>To mitigate these limitations, Drupal offers modules like Ultimate Cron, Super Cron (deprecated), and
+              Elysia Cron (for Drupal 7). These modules provide enhanced features to address cron-related challenges,
+              with Super Cron being unsupported due to security concerns.</p>
+          </section>
+
+          <!-- Scaling Cron Jobs for Growth Section -->
+          <section id="scaling">
+            <h2>Understanding the Benefits of Ultimate Cron</h2>
+            <ul>
+              <li><strong>Concurrent Execution of Cron Tasks: Enhanced Error Isolation and Independence:</strong></li>
+            </ul>
+            <p>Tasks are no longer executed sequentially; they now run concurrently. This means that if one cron task
+              encounters an error, it won't affect the independent execution of other tasks.</p>
+            <ul>
+              <li><strong>Custom Configuration for Cron Jobs with Different Schedules:</strong></li>
+            </ul>
+            <p>You have the flexibility to configure each cron job separately. For instance, you can set up one cron job
+              to run every hour and another (e.g., cron job B) to run every two hours.</p>
+            <ul>
+              <li><strong>Independent Logging for Each Cron Job:</strong></li>
+            </ul>
+            <p>Each cron job maintains its own logs, ensuring clear and separate tracking of activity.</p>
+            <div class="installation-steps">
+              <p>To install the Ultimate Cron module and create your initial custom cron job:</p>
+              <ol>
+                  <li>Visit <a href="https://www.drupal.org/project/ultimate_cron" rel="nofollow">https://www.drupal.org/project/ultimate_cron</a> to download the module using Composer:</li>
+              </ol>
+              <pre><code class="language-plaintext">composer require 'drupal/ultimate_cron:^2.0@alpha'</code></pre>
+              <ol start="2">
+                  <li>Enable the module either through the Drupal admin interface or using Drush:</li>
+              </ol>
+              <pre><code class="language-plaintext">drush en ultimate_cron</code></pre>
+          </div>
+            <p>After installing Ultimate Cron, predefined cron jobs become available, including tasks like cleanups
+              (cache, temp files), removal of expired log messages, and history deletion.</p>
+              <p class="path">Path: xyz.domain.name/admin/config/system/cron/jobs</p>
+            <div class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
+              role="img" data-appearance="visible" data-drupal-selector="animated">
+              <picture>
+                <source srcset="/blogs/img//cronjobs.jpg" type="image/webp" width="1090" height="615">
+                <source srcset="/blogs/img//cronjobs.jpg" type="image/png" width="1090" height="615">
+                <img class="sclass" loading="lazy" src="/blogs/img//cronjobs.jpg" width="1090" height="615"
+                  alt="cronjobs">
+              </picture>
+            </div> <br><br>
+
+          </section>
+
+          <!-- Integration with External Systems Section -->
+          <section id="integration">
+            <h3>How to Set Up a Custom Ultimate Cron Job</h3>
+            <ol>
+              <li>Start by creating a <code>config/install</code> directory
+                in your custom module’s root directory.</li>
+              <li>Within this directory, create a new file named <code>ultimate_cron.job.publish_article_job.yml</code>.
+                Be sure to replace <em>publish_article_job</em> with the
+                desired name for your job.</li>
+            </ol>
+            <p><img
+                src="https://lh7-us.googleusercontent.com/JL908G64rd1CxFZ3-7XkbIHPr-v4GzmdaXGZmVg3fMKjkrl6LOrF2jaTLSoQ0uF8mAaMk6xR6w6AuP8flBxIbZVly8rUTcd7Gky4Oe34dVoTrRyjIzvM9H0Y1RUVloB1aYqblcgSks8fIs5ZqpO2FA"
+                loading="lazy"></p>
+            <p>In our scenario, we're aiming to create a custom cron job to
+              publish all unpublished article content. Therefore, let's name
+              our job <em>publish_article_job</em>.</p>
+              <div class="installation-steps">
+                <p>3. Next, let's edit the <code>ultimate_cron.job.publish_article_job.yml</code> file.</p>
+                <p>Within <code>ultimate_cron.job.publish_article_job.yml</code>, we’ll define the details, including a callback function, cron job ID, and rules for scheduling the task.</p>
+                <pre><code class="language-plaintext">langcode: en
+            status: true
+            dependencies:
+             module:
+               - custom_cron_example
+            title: 'Custom job for publishing articles'
+            id: publish_article_job
+            module: custom_cron_example
+            callback: custom_cron_example_publish_article_job
+            scheduler:
+             id: simple
+             configuration:
+               rules:
+                 - '* * * * *'</code></pre>
+                <p>4. After editing the configuration file, proceed to define a callback function within the <strong>custom_cron_example.module</strong> file.</p>
+                <pre><code class="language-php">&lt;?php
+            use Drupal\node\Entity\Node;
+            
+            /**
+            * Custom callback function for Ultimate Cron.
+            */
+            function custom_cron_example_publish_article_job() {
+             $message = "Success! Ultimate cron is operational.";
+             \Drupal::logger("custom_cron_example")-&gt;notice($message);
+             // Query to retrieve all unpublished article nodes.
+             $query = \Drupal::entityQuery('node');
+             $query-&gt;condition('status', 0);
+             $query-&gt;condition('type', 'article');
+             $entity_ids = $query-&gt;accessCheck(FALSE)-&gt;execute();
+             foreach ($entity_ids as $entity_id) {
+               $node = Node::load($entity_id);
+               $node-&gt;setPublished(TRUE)-&gt;save();
+             }
+            }</code></pre>
+                <p class="path">Path: xyz.domain.name/admin/config/system/cron/jobs</p>
+            </div>
+            
+            <p>Once you've completed all the steps, it's time to activate
+              the module to ensure the new configurations are applied to the
+              website. Once enabled, you can view your custom cron job on
+              the cron job dashboard.</p>
+            <p><img class="sclass"
+                src="https://lh7-us.googleusercontent.com/-kZfgiCmBdaV6nykzrmhu8lM2CmjNonWpqr6YkfcnwsD8Pj-Ihn_uFZcfL2mVVICUO4rY9ynhF-ZhM3Rs63WO0ukGIbwLPdIHtNepyCEMXid88RaFCc7ew8FXDNpK7-_2Q-rwvgIeq8HiGmqz5nkVQ"
+                loading="lazy"></p>
+            <p>&nbsp;</p>
+            <p>With the provided cron expression <code>* * * * *</code>,
+              this cron job will execute every 1 minute. Feel free to adjust
+              the rule as needed. You can use crontab guru for reference; it's
+              a handy tool for scheduling tasks. There's no harm in
+              utilizing it ;)</p>
+            <p><br>Results:</p>
+            <ul>
+              <li>Before the cron run, the article remained unpublished.</li>
+            </ul>
+            <p><img class="sclass"
+                src="https://lh7-us.googleusercontent.com/r8CIqovf9IF7zu-RDj1q40aK_HtH4v_xjmOMw7jahRbK2T6CgFbpAGDOXmOQs76fSIkdUhxwtXLO3IuyoV-DnY3xRIXMmKIiGZe4S8Bug17UMGze-6b8LhVhHTdBayUnKYPiYtP0oCPD8XlKUQHZew"
+                loading="lazy"><br>&nbsp;</p>
+            <ul>
+              <li>Upon completion of the scheduled task (cron), the article
+                is successfully published on the website. Furthermore, there's
+                a database log record displaying our custom message,
+                integrated within the created callback function.</li>
+            </ul>
+            <p><img class="sclass"
+                src="https://lh7-us.googleusercontent.com/wF6skIinA4Bt1AU0BuWMOb3geH030xNxAJ1pp3T4riz7tXmgf2tf3JsSqrdTZqfdPSgjxLdG_ppg9PjAPcNcTQ8Y0lKwi87LahU6P2a-Omcx_d73OY9qnHjqzal9BFlrWnhOkm4KgJhFBohzWYSM5g"
+                loading="lazy"></p>
+            <p><br><img class="sclass"
+                src="https://lh7-us.googleusercontent.com/HYZZKP_FDIZCitRMf9IzZm11hIC41AN28l1PQIMdmprhS0tmZF-tZm9NX52z1enja8is_xs0FK1Z6bBhQ9pmmidZguVKa2z3eSVEvi2VfMjOyJwHR2kDC6gVfzaMaiqmoiqBsOzXUpgZnUp78O_Jug"
+                loading="lazy"></p>
+            <p>&nbsp;</p>
+            <section id="external">
+              <h3>Activating Cron via External Methods</h3>
+              <ol>
+                <li>Utilize crontab on your server.</li>
+                <li>
+                  <p>Employ external cron job services such as <a href="https://www.easycron.com/"
+                      rel="nofollow">Easycron</a>
+                    or <a href="https://cronless.com/" rel="nofollow">Cronless</a>.
+                    These services enable you to configure the cron job
+                    execution time according to your preferences.</p>
+                  <p><a href="https://www.easycron.com/" rel="nofollow">Easycron</a></p>
+                  <p><img
+                      src="https://lh7-us.googleusercontent.com/Cy7t8YXPQaSLDkFf0j3WyQvOYiZg-wCNzWHQOOddYFc9hqI6g_5KEpgYctHPOjvSX9SNQVjP22VvnoSi0UMmbXRLS2yjjYKreSYpMLvDx6nHnL4AivmIZs_NponYACOYHLjZSC7BihbghK5EctuwwA"
+                      loading="lazy"></p>
+                </li>
+              </ol>
+              <p><a href="https://cronless.com/" rel="nofollow">Cronless</a></p>
+              <p><img
+                  src="https://lh7-us.googleusercontent.com/zOxl6Xoh10QphvuqhpCnmutECOZtKSZPoW3hkpCLodyv1o7F-l4XjPnWYR5UjDd-SEl1GJ6lbPvsa7kbL4tk7QiR9FtikESDXFZDJbMPxkoUFzLLcKE8LWKhoeCoxiZotgBOYD0gYB38oHXrwv4kuw"
+                  loading="lazy"></p>
+                  <h3>Disabling Automated Cron</h3>
+                  <p>Disabling automated cron can offer benefits for performance optimization or when you want to limit cron execution exclusively to external triggers.</p>
+                  <p>To disable automated cron, you have a couple of options:</p>
+                  <ul>
+                    <li>Adjust the "Run cron every" setting to "Never" in your Drupal configuration.</li>
+                    <li>Alternatively, you can prevent other users from enabling automated cron by adding the following line to your settings.php file:</li>
+                  </ul>
+              <pre class="cron-instructions"><code class="language-plaintext">$config['automated_cron.settings']['interval'] = 0;</code></pre>
+
+
             </section>
 
-            <!-- Error Handling and Monitoring Section -->
-            <section id="error-handling">
-              <h2>Drupal Cron Job Overview</h2>
-              <p>Drupal comes equipped with a convenient feature known as
-                <strong>Automated Cron</strong>. This automated cron job serves
-                as a scheduler for regular website maintenance tasks, such as
-                database optimization and cache clearing, all performed at
-                preset intervals. It ensures the smooth functioning of the
-                website and maintains data accuracy, reducing the need for
-                manual intervention.</p>
-              <p>Key features of automated cron include:</p>
-              <ul>
-                <li><strong>Scheduled Maintenance Tasks:</strong></li>
-              </ul>
-              <p>Essentially, Drupal's automated cron acts as a
-                behind-the-scenes assistant, handling routine chores for your
-                website. It takes care of tasks like storage cleanup and update
-                checks, ensuring your website runs smoothly without requiring
-                manual intervention.</p>
-              <ul>
-                <li><strong>Configurable Frequency:</strong></li>
-              </ul>
-              <p>As a Drupal website administrator, you have the flexibility to
-                determine how often the automated cron job should execute its
-                tasks. By default, it operates every three hours, but you can
-                adjust this schedule to better suit your website's needs,
-                similar to adjusting a sprinkler system timer for your garden.</p>
-              <ul>
-                <li><strong>Background Process:</strong></li>
-              </ul>
-              <p>Think of Drupal's automated cron as a silent worker operating
-                in the background. It performs its duties without disrupting the
-                visible aspects of your website, relying on its internal clock
-                to schedule tasks, much like an alarm clock that functions
-                independently to wake you up at a specific time.</p>
-              <p><strong>Limitations of Drupal cron:</strong></p>
-              <ul>
-                <li><strong>Simultaneous Execution of hook_cron Modules and
-                    Resource Challenges:</strong></li>
-              </ul>
-              <p>When multiple modules utilize the hook_cron function, they
-                execute simultaneously, potentially increasing resource usage
-                and exceeding memory limits on complex sites.</p>
-              <ul>
-                <li><strong>Handling Errors in Cron Tasks and Identifying
-                    Culprits for Smooth Execution:</strong></li>
-              </ul>
-              <p>If an error occurs in one cron task, it can halt the entire
-                cron process, hindering the execution of subsequent tasks.
-                Identifying the problematic task can be challenging.</p>
-              <ul>
-                <li><strong>Optimizing Cron Execution by Analyzing Task
-                    Durations:</strong></li>
-              </ul>
-              <p>To enhance cron efficiency, it's essential to analyze the
-                duration of individual cron tasks and identify areas for
-                optimization.</p>
-              <p>To address these limitations, Drupal offers modules like
-                Ultimate Cron, Super Cron (abandoned), and Elysia Cron (for
-                Drupal 7). These modules provide enhanced features to overcome
-                cron-related challenges, with Super Cron being unsupported due
-                to security issues.</p>
-              s
+          </section>
 
-              <!-- Scaling Cron Jobs for Growth Section -->
-              <section id="scaling">
-                <h2>How does Ultimate Cron Help?</h2>
-                <ul>
-                  <li><strong>Parallel Execution of Cron Tasks: Error Isolation
-                      and Independence:</strong></li>
-                </ul>
-                <p>Tasks are no longer executed sequentially; they now run in
-                  parallel. This means that if one cron task encounters an
-                  error, it won't affect the independent execution of other
-                  tasks.</p>
-                <ul>
-                  <li><strong>Individual Configuration for Cron Jobs with
-                      Differing Schedules:</strong></li>
-                </ul>
-                <p>You can configure each cron job separately. For example, you
-                  can set up your cron job to run every hour and another cron
-                  job (cron job B) to run every two hours.</p>
-                <ul>
-                  <li><strong>Independent Logging for Each Cron Job:</strong></li>
-                </ul>
-                <p>Each cron job has separate logs.</p>
-                <p>To install the Ultimate Cron module and create your first
-                  custom cron job:</p>
-                <ol>
-                  <li>Visit <a
-                      href="https://www.drupal.org/project/ultimate_cron"
-                      rel="nofollow">https://www.drupal.org/project/ultimate_cron</a>
-                    to download the module using composer:</li>
-                </ol>
-                <pre><code class="language-plaintext">composer require 'drupal/ultimate_cron:^2.0@alpha'</code></pre>
-                <ol start="2">
-                  <li>Enable the module either through the Drupal admin
-                    interface or using Drush:</li>
-                </ol>
-                <pre><code class="language-plaintext">drush en ultimate_cron</code></pre>
-                <p>After installing Ultimate Cron, predefined cron jobs are
-                  available, such as cleanups (cache, temp files), removing
-                  expired log messages, and history deletion.</p>
-                <p>Path: xyz.domain.name/admin/config/system/cron/jobs</p>
-                <div
-                  class="align-center media media--type-image media--view-mode-default is-animated is-animated--slide-up"
-                  role="img" data-appearance="visible"
-                  data-drupal-selector="animated">
-                  <picture>
-                    <source srcset="/blogs/img//cronjobs.jpg" type="image/webp"
-                      width="1090" height="615">
-                    <source srcset="/blogs/img//cronjobs.jpg" type="image/png"
-                      width="1090" height="615">
-                    <img class="sclass" loading="lazy"
-                      src="/blogs/img//cronjobs.jpg" width="1090" height="615"
-                      alt="cronjobs">
-                  </picture>
-                </div> <br><br>
-
-              </section>
-
-              <!-- Integration with External Systems Section -->
-              <section id="integration">
-                <h3>How to Set Up a Custom Ultimate Cron Job</h3>
-                <ol>
-                  <li>Start by creating a <code>config/install</code> directory
-                    in your custom module’s root directory.</li>
-                  <li>Within this directory, create a new file named <code>ultimate_cron.job.publish_article_job.yml</code>.
-                    Be sure to replace <em>publish_article_job</em> with the
-                    desired name for your job.</li>
-                </ol>
-                <p><img
-                    src="https://lh7-us.googleusercontent.com/JL908G64rd1CxFZ3-7XkbIHPr-v4GzmdaXGZmVg3fMKjkrl6LOrF2jaTLSoQ0uF8mAaMk6xR6w6AuP8flBxIbZVly8rUTcd7Gky4Oe34dVoTrRyjIzvM9H0Y1RUVloB1aYqblcgSks8fIs5ZqpO2FA"
-                    loading="lazy"></p>
-                <p>In our scenario, we're aiming to create a custom cron job to
-                  publish all unpublished article content. Therefore, let's name
-                  our job <em>publish_article_job</em>.</p>
-                <p>3. Next, let's edit the <code>ultimate_cron.job.publish_article_job.yml</code>
-                  file.</p>
-                <p>Within <code>ultimate_cron.job.publish_article_job.yml</code>,
-                  we’ll define the details, including a callback function, cron
-                  job ID, and rules for scheduling the task.</p>
-                <pre><code class="language-plaintext">langcode: en
-status: true
-dependencies:
- module:
-   - custom_cron_example
-title: 'Custom job for publishing articles'
-id: publish_article_job
-module: custom_cron_example
-callback: custom_cron_example_publish_article_job
-scheduler:
- id: simple
- configuration:
-   rules:
-     - '* * * * *'</code></pre>
-                <p>4. After editing the configuration file, proceed to define a
-                  callback function within the <strong>custom_cron_example.module</strong>
-                  file.</p>
-                <pre><code class="language-php">&lt;?php
-use Drupal\node\Entity\Node;
-
-/**
-* Custom callback function for Ultimate Cron.
-*/
-function custom_cron_example_publish_article_job() {
- $message = "Success! Ultimate cron is operational.";
- \Drupal::logger("custom_cron_example")-&gt;notice($message);
- // Query to retrieve all unpublished article nodes.
- $query = \Drupal::entityQuery('node');
- $query-&gt;condition('status', 0);
- $query-&gt;condition('type', 'article');
- $entity_ids = $query-&gt;accessCheck(FALSE)-&gt;execute();
- foreach ($entity_ids as $entity_id) {
-   $node = Node::load($entity_id);
-   $node-&gt;setPublished(TRUE)-&gt;save();
- }
-}</code></pre>
-                <p>Once you've completed all the steps, it's time to activate
-                  the module to ensure the new configurations are applied to the
-                  website. Once enabled, you can view your custom cron job on
-                  the cron job dashboard.</p>
-                <p><img class="sclass"
-                    src="https://lh7-us.googleusercontent.com/-kZfgiCmBdaV6nykzrmhu8lM2CmjNonWpqr6YkfcnwsD8Pj-Ihn_uFZcfL2mVVICUO4rY9ynhF-ZhM3Rs63WO0ukGIbwLPdIHtNepyCEMXid88RaFCc7ew8FXDNpK7-_2Q-rwvgIeq8HiGmqz5nkVQ"
-                    loading="lazy"></p>
-                <p>&nbsp;</p>
-                <p>With the provided cron expression <code>* * * * *</code>,
-                  this cron job will execute every 1 minute. Feel free to adjust
-                  the rule as needed. You can use crontab guru for reference; it's
-                  a handy tool for scheduling tasks. There's no harm in
-                  utilizing it ;)</p>
-                <p><br>Results:</p>
-                <ul>
-                  <li>Before the cron run, the article remained unpublished.</li>
-                </ul>
-                <p><img class="sclass"
-                    src="https://lh7-us.googleusercontent.com/r8CIqovf9IF7zu-RDj1q40aK_HtH4v_xjmOMw7jahRbK2T6CgFbpAGDOXmOQs76fSIkdUhxwtXLO3IuyoV-DnY3xRIXMmKIiGZe4S8Bug17UMGze-6b8LhVhHTdBayUnKYPiYtP0oCPD8XlKUQHZew"
-                    loading="lazy"><br>&nbsp;</p>
-                <ul>
-                  <li>Upon completion of the scheduled task (cron), the article
-                    is successfully published on the website. Furthermore, there's
-                    a database log record displaying our custom message,
-                    integrated within the created callback function.</li>
-                </ul>
-                <p><img class="sclass"
-                    src="https://lh7-us.googleusercontent.com/wF6skIinA4Bt1AU0BuWMOb3geH030xNxAJ1pp3T4riz7tXmgf2tf3JsSqrdTZqfdPSgjxLdG_ppg9PjAPcNcTQ8Y0lKwi87LahU6P2a-Omcx_d73OY9qnHjqzal9BFlrWnhOkm4KgJhFBohzWYSM5g"
-                    loading="lazy"></p>
-                <p><br><img class="sclass"
-                    src="https://lh7-us.googleusercontent.com/HYZZKP_FDIZCitRMf9IzZm11hIC41AN28l1PQIMdmprhS0tmZF-tZm9NX52z1enja8is_xs0FK1Z6bBhQ9pmmidZguVKa2z3eSVEvi2VfMjOyJwHR2kDC6gVfzaMaiqmoiqBsOzXUpgZnUp78O_Jug"
-                    loading="lazy"></p>
-                <p>&nbsp;</p>
-                <section id="external">
-                  <h3>Activating Cron via External Methods</h3>
-                  <ol>
-                    <li>Utilize crontab on your server.</li>
-                    <li>
-                      <p>Employ external cron job services such as <a
-                          href="https://www.easycron.com/" rel="nofollow">Easycron</a>
-                        or <a href="https://cronless.com/" rel="nofollow">Cronless</a>.
-                        These services enable you to configure the cron job
-                        execution time according to your preferences.</p>
-                      <p><a href="https://www.easycron.com/" rel="nofollow">Easycron</a></p>
-                      <p><img
-                          src="https://lh7-us.googleusercontent.com/Cy7t8YXPQaSLDkFf0j3WyQvOYiZg-wCNzWHQOOddYFc9hqI6g_5KEpgYctHPOjvSX9SNQVjP22VvnoSi0UMmbXRLS2yjjYKreSYpMLvDx6nHnL4AivmIZs_NponYACOYHLjZSC7BihbghK5EctuwwA"
-                          loading="lazy"></p>
-                    </li>
-                  </ol>
-                  <p><a href="https://cronless.com/" rel="nofollow">Cronless</a></p>
-                  <p><img
-                      src="https://lh7-us.googleusercontent.com/zOxl6Xoh10QphvuqhpCnmutECOZtKSZPoW3hkpCLodyv1o7F-l4XjPnWYR5UjDd-SEl1GJ6lbPvsa7kbL4tk7QiR9FtikESDXFZDJbMPxkoUFzLLcKE8LWKhoeCoxiZotgBOYD0gYB38oHXrwv4kuw"
-                      loading="lazy"></p>
-                  <p>Disabling automated cron can be advantageous for
-                    performance reasons or to restrict cron execution solely to
-                    external triggers.</p>
-                  <p>To disable automated cron:</p>
-                  <ul>
-                    <li>Set the value of "Run cron every" to "Never." <br> (OR)</li>
-                    <li>Add the following line to your settings.php file to
-                      prevent other users from enabling it:</li>
-                  </ul>
-                  <pre><code class="language-plaintext">$config['automated_cron.settings']['interval'] = 0;</code></pre>
-
-                </section>
-
-              </section>
-
-              <!-- Conclusion Section -->
-              <section id="conclusion">
-                <h2>Conclusion</h2>
-                <p>In conclusion, mastering Cron Job strategies is paramount for
-                  unlocking efficiency in Drupal task automation. By optimizing
-                  frequency, prioritizing tasks, implementing robust error
-                  handling, scaling for growth, and integrating with external
-                  systems, Drupal developers can streamline operations, enhance
-                  site performance, and deliver exceptional user experiences.</p>
-                <p>With Cron Jobs as your ally, harnessing the power of
-                  automation becomes a reality, propelling your Drupal projects
-                  to new heights of efficiency and success.</p>
-              </section>
-            </article>
-          </div>
-        </div>
-
-        <!-- End blog eontent-->
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn"
-          data-wow-delay="0.1s">
-          <div class="container py-5 px-lg-5">
-            <div class="row g-5">
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Address<span></span></p>
-                <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park
-                  Plaza,
-                  office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
-                <p><i class="fa fa-phone-alt me-3"></i><a
-                    href="tel:+919922611550"
-                    style="color: #fff;">+919922611550</a></p>
-                <p><i class="fa fa-envelope me-3"></i><a
-                    href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
-                <div class="d-flex pt-2">
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-twitter"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-facebook-f"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-instagram"></i></a>
-                  <a class="btn btn-outline-light btn-social" href><i
-                      class="fab fa-linkedin-in"></i></a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
-                <a class="btn btn-link" href>About Us</a>
-                <a class="btn btn-link" href>Contact Us</a>
-                <a class="btn btn-link" href>Privacy Policy</a>
-                <a class="btn btn-link" href>Terms & Condition</a>
-                <a class="btn btn-link" href>Career</a>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
-                <p>Stay informed with our latest news, updates, and offerings
-                  delivered straight to your inbox.</p>
-                <div class="position-relative w-100 mt-3">
-                  <input
-                    class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
-                    type="text" placeholder="Your Email" style="height: 48px;">
-                  <button type="button"
-                    class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                      class="fa fa-paper-plane text-primary fs-4"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container px-lg-5">
-            <div class="copyright">
-              <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                  &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
-                  Reserved.
-
-                  <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
-                  Designed By <a class="border-bottom" href="/">Akshay sargar</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                  <div class="footer-menu">
-                    <a href>Home</a>
-                    <a href>Cookies</a>
-                    <a href>Help</a>
-                    <a href>FQAs</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
-            class="bi bi-arrow-up"></i></a>
+          <!-- Conclusion Section -->
+          <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>In conclusion, mastering Cron Job strategies is paramount for
+              unlocking efficiency in Drupal task automation. By optimizing
+              frequency, prioritizing tasks, implementing robust error
+              handling, scaling for growth, and integrating with external
+              systems, Drupal developers can streamline operations, enhance
+              site performance, and deliver exceptional user experiences.</p>
+            <p>With Cron Jobs as your ally, harnessing the power of
+              automation becomes a reality, propelling your Drupal projects
+              to new heights of efficiency and success.</p>
+          </section>
+        </article>
       </div>
+    </div>
 
-      <!-- JavaScript Libraries -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="../lib/wow/wow.min.js"></script>
-      <script src="../lib/easing/easing.min.js"></script>
-      <script src="../lib/waypoints/waypoints.min.js"></script>
-      <script src="../lib/counterup/counterup.min.js"></script>
-      <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-      <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-      <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    <!-- End blog eontent-->
 
-      <!-- Template Javascript -->
-      <script src="../js/main.js"></script>
-    </body>
-  </html>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Address<span></span></p>
+            <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park
+              Plaza,
+              office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+            <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a>
+            </p>
+            <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com"
+                style="color:#fff;">dg@hashkite.com</a></p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-light btn-social" href><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+            <a class="btn btn-link" href>About Us</a>
+            <a class="btn btn-link" href>Contact Us</a>
+            <a class="btn btn-link" href>Privacy Policy</a>
+            <a class="btn btn-link" href>Terms & Condition</a>
+            <a class="btn btn-link" href>Career</a>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+            <p>Stay informed with our latest news, updates, and offerings
+              delivered straight to your inbox.</p>
+            <div class="position-relative w-100 mt-3">
+              <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email"
+                style="height: 48px;">
+              <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                  class="fa fa-paper-plane text-primary fs-4"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+              Reserved.
+
+              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+              Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href>Home</a>
+                <a href>Cookies</a>
+                <a href>Help</a>
+                <a href>FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/wow/wow.min.js"></script>
+  <script src="../lib/easing/easing.min.js"></script>
+  <script src="../lib/waypoints/waypoints.min.js"></script>
+  <script src="../lib/counterup/counterup.min.js"></script>
+  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
