@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5QCELFQHDH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+    <title>Creating a Drupal Custom Module with Controller</title>
+    <meta name="description" content="Learn how to create a custom module with a controller in Drupal. Follow step-by-step instructions to set up the module directory, define routes, and create the controller.">
+    <meta name="keywords" content="Drupal, custom module, controller, Drupal development, web development">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Creating a Drupal Custom Module with Controller</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Creating a Drupal Custom Module with Controller</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container content">
+            <div><p data-sourcepos="1:1-1:22">
+                <span class="first-token">A custom controller in Drupal is a user-defined PHP class that acts as a middleman between user requests and the final response displayed on the website.</span><span> It essentially controls how your custom functionality works in Drupal. Here's a breakdown of what custom controllers do:</span>
+            </p>
+            <h3>
+                <strong>Responsibilities:</strong>
+            </h3>
+            <ul data-sourcepos="5:1-5:32">
+                <li data-sourcepos="5:1-5:32">
+                    <strong>Handle User Requests:</strong><span> When a user interacts with your custom feature (e.g., visiting a specific page or submitting a form), the custom controller receives the request.</span>
+                </li>
+                <li data-sourcepos="6:1-6:17">
+                    <strong>Interact with the Model:</strong><span> The controller retrieves relevant data from the model layer, which could involve querying the database or other sources. This data might be content, user information, or anything needed to fulfill the user's request.</span>
+                </li>
+                <li data-sourcepos="7:1-10:77">
+                    <strong>Prepare the Response:</strong><span> Based on the user's request and retrieved data, the controller builds a response that gets sent back to the user. This response can be:</span>
+                    <ul data-sourcepos="8:5-10:77">
+                        <li data-sourcepos="8:5-8:86">
+                            <strong>HTML Pages:</strong><span> For displaying custom content or functionalities on the website.</span>
+                        </li>
+                        <li data-sourcepos="9:5-9:98">
+                            <strong>JSON Data:</strong><span> For API interactions where data needs to be exchanged in a structured format.</span>
+                        </li>
+                        <li data-sourcepos="10:5-10:77">
+                            <strong>Other Formats:</strong><span> Depending on the specific purpose of the controller.</span>
+                        </li>
+                    </ul>
+                </li>
+                <li data-sourcepos="11:1-11:1">
+                    <strong>Utilize Services and Libraries:</strong><span> Controllers often interact with other built-in Drupal services or external libraries to perform specific tasks. This could involve tasks like user authentication, sending emails, utilizing caching mechanisms, or interacting with external APIs.</span>
+                </li>
+            </ul>
+            <h3>
+                <strong>Benefits of Using Custom Controllers:</strong>
+            </h3>
+            <ul data-sourcepos="15:1-18:0">
+                <li data-sourcepos="15:1-15:223">
+                    <strong>Organized Code:</strong><span> Controllers promote separation of concerns by isolating request handling logic from the presentation layer (templates) and the data layer (models). This makes code more maintainable and easier to test.</span>
+                </li>
+                <li data-sourcepos="16:1-16:192">
+                    <strong>Reusability:</strong><span> A single controller can be used for different parts of your website if they share similar functionalities. This reduces code duplication and improves development efficiency.</span>
+                </li>
+                <li>
+                    <strong>Testability:</strong><span> Unit testing controllers becomes easier as they encapsulate specific logic for handling requests, making it simpler to test their behavior in isolation.</span><br>
+                    &nbsp;
+                </li>
+            </ul>
+            <h3>
+                <strong>Creating a Custom Controller:</strong><br>
+            </h3>
+                <strong>Step 1: Set Up the Module Directory and Files</strong>
+            </p>
+            <p>
+                Begin by creating a new directory for your module within the <strong>modules/custom</strong> directory of your Drupal installation. Let's name it <strong>my_module</strong>.
+            </p>
+            <p>
+                Inside the <strong>my_module</strong> directory, create the following files:
+            </p>
+            <ol>
+                <li>
+                    <strong>my_module.info.yml</strong>: This file provides metadata about the module.
+                </li>
+                <li>
+                    <strong>my_module.routing.yml</strong>: This file defines the routes for the module.
+                </li>
+                <li>
+                    <strong>src/Controller/MyController.php</strong>: This file contains the controller class.
+                </li>
+            </ol>
+            <p>
+                <strong>Step 2: Define Module Information</strong>
+            </p>
+            <p>
+                Create the file <strong>my_module.info.yml</strong> with the following content:
+            </p>
+            <code class="language-plaintext"><pre>name: 'My Module'
+type: module
+description: 'A custom module to demonstrate Drupal controller functionality.'
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - drupal:system
+            </pre></code>
+            <p>
+                In this file, you specify the name, description, and dependencies of your module.
+            </p>
+            <p>
+                <strong>Step 3: Define Routes</strong>
+            </p>
+            <p>
+                Next, create the file <strong>my_module.routing.yml</strong> and add the following content:
+            </p>
+            <code class="language-plaintext"><pre>my_module.greeting:
+  path: '/my-module/greeting'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\MyController::greeting'
+    _title: 'My Module Greeting'
+  requirements:
+    _permission: 'access content'</pre></code>
+            <p>
+                This file defines a route for your module. It specifies the path, controller method to call, and the required permission to access the page.
+            </p>
+            <p>
+                <strong>Step 4: Create the Controller</strong>
+            </p>
+            <p>
+                Inside the <strong>my_module/src/Controller</strong> directory, create the file <strong>MyController.php</strong>. Then, add the following code:
+            </p>
+            <code class="language-plaintext"><pre>
+&lt;?php
+namespace Drupal\my_module\Controller;
+use Drupal\Core\Controller\ControllerBase;
+class MyController extends ControllerBase {
+  public function greeting() {
+    return ['markup',
+      '#markup' =&gt; $this-&gt;t('Hello, world! This is my first Drupal controller.'),
+    ];
+  }
+}</pre>
+            </code>
+            <p>
+                This controller class contains a method called <strong>greeting()</strong> which returns a greeting message.
+            </p>
+            <p>
+                <strong>Step 5: Enable the Module</strong>
+            </p>
+            <p>
+                Navigate to the Extend page (<strong>/admin/modules</strong>) on your Drupal site and enable the "My Module" module.
+            </p>
+            <p>
+                <strong>Step 6: Test the Controller</strong>
+            </p>
+            <p>
+                Finally, visit <strong>http://your-drupal-site.com/my-module/greeting</strong> in your web browser. You should see the greeting message displayed on the page.
+            </p>
+            <p>
+                Congratulations! You've successfully created a custom module with a controller in Drupal, allowing you to add custom functionality to your website. Feel free to expand upon this module by adding more controllers, services, or other features as needed.
+            </p>
+        </div>
+        </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
