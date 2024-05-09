@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5QCELFQHDH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">#Kite</h1>
+                    <!-- <img loading="lazy" src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0 me-0">
+                        <a href="/" class="nav-item nav-link">Home</a>
+                        <a href="/#about-us" class="nav-item nav-link">About</a>
+                        <a href="/#service" class="nav-item nav-link">Service</a>
+                        <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+                        <a href="../contact.html" class="nav-item nav-link ">Contact</a>
+                    </div>
+                </div>
+            </nav>
+
+                        <div class="container-fluid py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Custom Template suggestion Hooks in Drupal</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Custom Template suggestion Hooks in Drupal</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container content">
+            <div class="row">
+                <ul class="col-md-3">
+                    <li>
+                        <a href="#custom-template-hooks">What are Custom Template Hooks?</a>
+                    </li>
+                    <li>
+                        <a href="#benefits">Benefits of Custom Template Hooks</a>
+                    </li>
+                    <li>
+                        <a href="#create-hooks">How to Create Custom Template Hooks</a>
+                    </li>
+                    <li>
+                        <a href="#additional-considerations">Additional Considerations</a>
+                    </li>
+                </ul>
+                <div class="col-md-9">
+                <p>
+                    In Drupal, custom template hooks provide a powerful mechanism for overriding default templates and creating more tailored layouts or presentations for specific content or contexts within your theme. Here's a breakdown of the concept:
+                </p>
+                <h3>
+                    What are Custom Template Hooks?
+                </h3>
+                <p>
+                    Templates in Drupal are often defined using theme hooks, which are unique identifiers that map to template files. Core and contributed modules provide many default theme hooks for various elements like nodes, blocks, comments, etc. Custom template hooks allow you to extend this system by creating your own hooks and associating them with specific template files in your theme.
+                </p>
+                <h3>
+                    Benefits of Custom Template Hooks
+                </h3>
+                <ol>
+                    <li>
+                        <strong>Granular Control:</strong> Tailor the presentation of content based on specific criteria, such as content type, entity properties, or user roles.
+                    </li>
+                    <li>
+                        <strong>Theming Flexibility:</strong> Create unique layouts or styles for specific content elements without modifying core or contributed module templates directly.
+                    </li>
+                    <li>
+                        <strong>Maintainability:</strong> By isolating logic in custom templates, you can keep your theme cleaner and easier to manage.
+                    </li>
+                </ol>
+                <h3>
+                    How to Create Custom Template Hooks
+                </h3>
+                <ol>
+                    <li>
+                        <p>
+                            <strong>Define the Hook Function:</strong>
+                        </p>
+                        <p>
+                            In your custom module's .module file, implement a function using the naming convention <code>hook_theme_HOOK()</code>. Replace <code>HOOK</code> with a unique identifier for your custom hook.
+                        </p>
+                        <code><pre>
+function my_custom_module_theme_my_custom_hook(array $variables) {
+    // Return the theme suggestions array
+
+    return [
+        'my_custom_theme_hook__suggestion1', // Suggestion 1 template name
+        'my_custom_theme_hook__suggestion2', // Suggestion 2 template name
+    ];
+}</pre></code>
+                    </li>
+                    <li>
+                        <strong>Create Template Files:</strong><br>
+                        In your theme's directory, create template files with names matching the suggestions returned from the hook function:<br>
+                        <br>
+                        <strong>my_custom_theme_hook__suggestion1.html.twig</strong><br>
+                        <strong>my_custom_theme_hook__suggestion2.html.twig</strong><br>
+                        
+                    </li>
+                    <br>
+                    <li>
+                        <p>
+                            <strong>Implement Template Logic:</strong>
+                        </p>
+                        <p>
+                            These template files will contain the custom HTML or Twig code for your specific presentation. You can access variables passed from the context using Twig syntax.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Template Suggestion Selection:</strong>
+                        </p>
+                        <p>
+                            Drupal's theme system uses a hierarchy to determine which template to use. The most specific suggestion matching the current context takes precedence.
+                        </p>
+                    </li>
+                </ol>
+                <strong>Example:</strong><br>
+                <code>
+<pre>/**
+* Implements hook_theme().
+*/
+function MY_MODULE_theme($existing, $type, $theme, $path) {
+    return [
+    'commerce_order__admin' => [
+        'template' => 'commerce-order--admin-custom',
+    ],
+    ];
+}</pre>
+                </code>
+                <img src="../blogs/img/theme-template suggestion.png" alt="template-suggestion image">
+
+
+                <h3>
+                    Additional Considerations
+                </h3>
+                <ul>
+                    <li>
+                        You can leverage <code>hook_theme_suggestions_HOOK_alter()</code> to modify the default suggestions provided by other modules for existing theme hooks.
+                    </li>
+                    <li>
+                        Custom template hooks are often used in conjunction with preprocess functions to prepare additional data for the templates.
+                    </li>
+                    <li>
+                        Always follow Drupal's theme naming conventions for consistency and easier maintenance.
+                    </li>
+                </ul>
+                </div>
+                </div>
+                </div>
+        <!-- End blog content-->
+
+         <!-- Footer Start -->
+         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Address<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza, office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a href="tel:+919922611550" style="color: #fff;">+919922611550</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a href="mailto:dg@hashkite.com" style="color:#fff;">dg@hashkite.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <p class="section-title text-white h5 mb-4">Newsletter<span></span></p>
+                        <p>Stay informed with our latest news, updates, and offerings delivered straight to your inbox.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">#Kite</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
