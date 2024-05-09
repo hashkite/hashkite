@@ -664,3 +664,11 @@ img {
     background-color: #000;
     padding: 1rem;
 }
+
+.content .col-md-3 {
+    list-style: none;
+}
+
+.content .col-md-3 li{
+    margin: 7px 0;
+}
