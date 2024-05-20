@@ -1,182 +1,327 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--
+ created with Free Online Sitemap Generator www.xml-sitemaps.com 
+-->
 <url>
-  <loc>https://hashkite.com/</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://hashkite.com/</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/index.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/discovering-the-new-features-and-Improvements-in-drupal-10.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/contact.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Ultimate-Guide-To-Migrate-From-Drupal7-To-Drupal9.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Setting-Up-drupal-website.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://hashkite.com/blogs/paragraphs-module.html</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Setting-Up-Drupal-with-DDEV-and-Docker-on-macOS.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Essential_Drupal_Modules_for_Website_Development.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/paragraphs-module.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Top_Security_Measures_Every_Drupal_Website_Should_Implement.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Essential_Drupal_Modules_for_Website_Development.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Creating-Custom-Content-Types-in-Drupal.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Top_Security_Measures_Every_Drupal_Website_Should_Implement.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://hashkite.com/blogs/</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Creating-Custom-Content-Types-in-Drupal.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Setting-Up-drupal-website.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://hashkite.com/blogs/Setting-Up-Drupal-with-DDEV-and-Docker-on-macOS.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Ultimate-Guide-To-Migrate-From-Drupal7-To-Drupal9.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/adding-dynamic-values-into-menu-links-in-drupal.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/discovering-the-new-features-and-Improvements-in-drupal-10.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Drupal-vs-WordPress.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/adding-dynamic-values-into-menu-links-in-drupal.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/custom_view_field_workflow_integration.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Drupal-vs-WordPress.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://hashkite.com/blogs/decouple-drupal.html</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/custom_view_field_workflow_integration.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/custom_styles_in_ckeditor_drupal9.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/decouple-drupal.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/7-MOST-POPULAR-MARKETING-AUTOMATION-DRUPAL-MODULES-A-MARKETER'S-GUIDE.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/custom_styles_in_ckeditor_drupal9.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Drupal-Security-Best-Practices.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/7-MOST-POPULAR-MARKETING-AUTOMATION-DRUPAL-MODULES-A-MARKETER'S-GUIDE.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/HOW_TO_WRITE_YOUR_FIRST_TEST_CASE_USING_PHPUNIT_&_KERNEL_IN_DRUPAL.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Drupal-Security-Best-Practices.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/reasons-to-use-drupal-for-building-web-application.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/HOW_TO_WRITE_YOUR_FIRST_TEST_CASE_USING_PHPUNIT_&amp;_KERNEL_IN_DRUPAL.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/build-powerful-web-apps-advantages-using-drupal.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Powered_IEEE_ITSoc_Web_Presence.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/customizing-http-error-pages-drupal-8.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/reasons-to-use-drupal-for-building-web-application.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/drupal-lms-education.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/build-powerful-web-apps-advantages-using-drupal.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/step-by-step-drupal-content-migration-guide.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/customizing-http-error-pages-drupal-8.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://hashkite.com/blogs/webhooks-vs-apis.html</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/drupal-lms-education.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Hooks_vs_Events_in_Drupal-Making_an_Educated_Decision.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/step-by-step-drupal-content-migration-guide.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Integrating_Single_Sign-On_(SSO)_into_Drupal_via_SAML.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/webhooks-vs-apis.html</loc>
-  <lastmod>2024-04-16T06:16:41+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Boosting_E-Commerce_Revenue_with_Drupal_Commerce.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Hooks_vs_Events_in_Drupal-Making_an_Educated_Decision.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Enhancing_Page_Layouts_Using_Drupal's_CSS_Grid_Layout_Module.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Integrating_Single_Sign-On_(SSO)_into_Drupal_via_SAML.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Comprehending-Drupal-Configuration-Synchronization.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Boosting_E-Commerce_Revenue_with_Drupal_Commerce.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://hashkite.com/blogs/flexbox.html</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Enhancing_Page_Layouts_Using_Drupal's_CSS_Grid_Layout_Module.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/mastering-css-bem-naming-convention.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/Comprehending-Drupal-Configuration-Synchronization.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/Unlocking-Efficiency-Cron-Job-Strategies-for-Drupal-Task-Automation.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/flexbox.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/drupal-admin-toolbar-guide.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://hashkite.com/blogs/mastering-css-bem-naming-convention.html</loc>
-  <lastmod>2024-04-16T06:16:42+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://hashkite.com/blogs/create-landing-page-using-paragraphs.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
 </url>
-
-
+<url>
+<loc>
+https://hashkite.com/blogs/wordpress-to-drupal-migration-guide.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Beginning-Your-Journey-with-Drupal-Theming.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Getting-Started-with-Drupal-Feeds-Easy-Data-Import-for-Beginners.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Mastering-Drupal-Migrations-with-SQLBase-Best-Practices-Unveiled.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/10-Key-Questions-Regarding-the-Drupal-7-to-Drupal-10-Migration.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/When-ChatGPT-Meets-Drupal-Crafting-Smarter-Websites-Ahead.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/creating_a_drupal_custom_module_with_controller.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/webform_installation_guide.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/integrating_Third_Party_Services_with_Drupal.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/custom_template_suggestion_hooks.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Streamlining_Drupal_Development_Implementing_CI_CD_Workflows.html
+</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Managing_Media_Assets_in_Drupal_A_Comprehensive_Guide.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>
+https://hashkite.com/blogs/Architecting-Content-Types-Block-Types-&-Taxonomy-in-Drupal.html
+</loc>
+<lastmod>2024-05-20T14:04:07+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hashkite.com/blogs/user_enumeration.html</loc>
+<lastmod>2024-05-20T14:04:06+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>
