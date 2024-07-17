@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Creating Forms in Drupal 10 with Hubspot Integration: A Step-by-Step Guide
+    </title>
+    <meta
+      content="Drupal, Software Development, Web Development, Custom Solutions, Innovation, Technology, Haskite Private Limited, Drupal-based Solutions, Web Applications, Digital Solutions, IT Services"
+      name="keywords"
+    />
+    <meta
+      content="Explore innovative Drupal-based software solutions crafted by Haskite Private Limited. We specialize in delivering high-quality, tailored software products to meet your business needs."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="../lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <style>
+      .sclass {
+        margin-top: 20px;
+        max-width: 70%;
+        height: auto;
+        width: 70%;
+      }
+      h2 {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-fluid position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+        >
+          <a href class="navbar-brand p-0">
+            <h1 class="m-0">#Kite</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0 me-0">
+              <a href="/" class="nav-item nav-link">Home</a>
+              <a href="/#about-us" class="nav-item nav-link">About</a>
+              <a href="/#service" class="nav-item nav-link">Service</a>
+              <a href="/blogs/" class="nav-item nav-link active">Blogs</a>
+              <a href="../contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-fluid py-5 bg-primary hero-header">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+              <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">
+                  Creating Forms in Drupal 10 with Hubspot Integration: A
+                  Step-by-Step Guide
+                </h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px" />
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="/">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="/blogs">Blog</a>
+                    </li>
+                    <li
+                      class="breadcrumb-item text-white active"
+                      aria-current="page"
+                    >
+                      Creating Forms in Drupal 10 with Hubspot Integration: A
+                      Step-by-Step Guide
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Blog content-->
+
+      <div class="container">
+        <div class="row mt-5 pt-6">
+          <nav class="col-md-3">
+            <!-- Navigation Links -->
+            <ul style="list-style: circle">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#understanding">Understanding HubSpot Integration</a></li>
+              <li><a href="#setting-up-drupal10">Setting Up Your Drupal 10 Environment</a></li>
+              <li><a href="#module-webform">Installing Required Modules</a></li>
+              <li><a href="#hubspot-account">HubSpot Account Creation</a></li>
+              <li><a href="#hubspot-config">Configuring HubSpot API</a></li>
+              <li><a href="#webform-create">Creating a Webform</a></li>
+              <li><a href="#integrating-webform">Integrating Webform with HubSpot</a></li>
+              <li><a href="#testing">Testing the Integration</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+              <!-- Additional navigation links can be added here if required -->
+            </ul>
+          </nav>
+          <article class="col-md-9">
+            <section id="introduction">
+              <h2>Introduction</h2>
+              <p>
+                Forms are fundamental elements of any website, serving as
+                crucial touchpoints for interaction between visitors and site
+                owners. They facilitate communication, gather user data, and
+                enable businesses to capture leads effectively. In the realm of
+                content management systems (CMS), Drupal 10 stands out for its
+                robust capabilities in form creation and management.
+              </p>
+
+              <h4>Importance of Forms in Websites</h4>
+              <p>
+                Forms play a pivotal role in converting visitors into leads,
+                subscribers, or customers. They enable seamless data collection,
+                such as user inquiries, newsletter sign-ups, event
+                registrations, and more. Effective form design not only enhances
+                user experience but also contributes significantly to the
+                overall success of digital marketing strategies.
+              </p>
+
+              <h4>Drupal 10: Empowering Form Creation</h4>
+              <p>
+                As one of the leading open-source CMS platforms, Drupal 10
+                empowers website owners with powerful tools for building and
+                managing forms. Its flexible architecture, coupled with an
+                extensive array of modules and themes, makes it a preferred
+                choice for developers and marketers alike. Whether you're
+                creating simple contact forms or complex surveys, Drupal 10
+                offers the scalability and customization options needed to
+                tailor forms to specific business needs.
+              </p>
+
+              <p>
+                In this guide, we'll explore how to harness the capabilities of
+                Drupal 10 for form creation and seamlessly integrate these forms
+                with HubSpot, a leading CRM platform. By the end of this
+                step-by-step guide, you'll be equipped to leverage Drupal 10's
+                strengths alongside HubSpot's robust features to enhance your
+                website's lead generation and customer relationship management
+                efforts.
+              </p>
+            </section>
+            <section id="Understanding">
+              <h2>Understanding HubSpot Integration</h2>
+
+              <h4>What is HubSpot and why integrate it with Drupal?</h4>
+              <p>
+                HubSpot is a leading customer relationship management (CRM)
+                platform that provides tools for marketing, sales, and customer
+                service. It helps businesses manage their interactions with
+                customers and automate various tasks to streamline workflows.
+              </p>
+              <p>
+                Integrating HubSpot with Drupal allows website owners to
+                leverage HubSpot's powerful CRM capabilities directly within
+                their Drupal-powered websites. This integration enhances
+                marketing efforts by syncing customer data, automating lead
+                nurturing, and improving overall engagement with site visitors.
+              </p>
+
+              <h4>Benefits of using HubSpot for form management and CRM</h4>
+              <p>
+                HubSpot offers several benefits for form management and CRM:
+              </p>
+              <div
+                class="align-center media media--type-image media--view-mode-original is-animated is-animated--slide-up"
+                role="img"
+                data-appearance="visible"
+                data-drupal-selector="animated"
+              >
+                <img
+                  loading="lazy"
+                  src="./img/hubspot.jpeg "
+                  width="800"
+                  height="350   "
+                  alt="content tools options"
+                />
+              </div>
+              <br />
+              <ul>
+                <li>
+                  <strong>Centralized Data Management:</strong> All form
+                  submissions and customer interactions are stored centrally in
+                  HubSpot, providing a unified view of leads and customers.
+                </li>
+                <li>
+                  <strong>Automation:</strong> Automate lead nurturing workflows
+                  based on form submissions, ensuring timely follow-ups and
+                  personalized communications.
+                </li>
+                <li>
+                  <strong>Analytics and Reporting:</strong>
+                  Gain insights into form performance, conversion rates, and
+                  customer behavior through HubSpot's analytics tools.
+                </li>
+                <li>
+                  <strong>Personalization:</strong> Use data collected through
+                  forms to personalize marketing campaigns and improve customer
+                  engagement.
+                </li>
+                <li>
+                  <strong>Integration Capabilities:</strong>
+                  Easily integrate with other tools and platforms, enhancing the
+                  overall functionality and efficiency of your marketing and
+                  sales operations.
+                </li>
+              </ul>
+            </section>
+            <section id="setting_up_drupal10">
+              <h2>Step 1: Setting Up Your Drupal 10 Environment</h2>
+              <p>
+                Before we start, ensure you have a working Drupal 10
+                installation. You can download and install Drupal 10 from the
+                <a href="https://www.drupal.org/download"
+                  >official Drupal website</a
+                >.
+              </p>
+              <p>To install Drupal 10, follow these steps:</p>
+              <ol>
+                <li>
+                  Download the latest version of Drupal from the
+                  <a href="https://www.drupal.org/download" target="_blank"
+                    >official Drupal website</a
+                  >.
+                </li>
+                <li>
+                  Extract the downloaded archive and move it to your web
+                  server's root directory.
+                </li>
+                <li>
+                  Create a new database for your Drupal site using your
+                  preferred database management tool (e.g., phpMyAdmin).
+                </li>
+                <li>
+                  Open your web browser and navigate to your Drupal site's URL
+                  to start the installation process.
+                </li>
+                <li>
+                  Follow the on-screen instructions to complete the
+                  installation, providing the database details and configuring
+                  your site settings as needed.
+                </li>
+              </ol>
+
+              <h4>Configuring Basic Settings and Modules for Form Creation</h4>
+              <p>
+                Once you have installed Drupal 10, you can configure basic
+                settings and install modules to enable form creation:
+              </p>
+              <ol>
+                <li>
+                  <strong>Basic Site Configuration:</strong>
+                  <ul>
+                    <li>Log in to your Drupal site's admin panel.</li>
+                    <li>
+                      Go to
+                      <code
+                        >Configuration &gt; System &gt; Basic site
+                        settings</code
+                      >.
+                    </li>
+                    <li>
+                      Set your site name, email address, and other basic
+                      settings.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Installing Modules:</strong>
+                  <ul>
+                    <li>Go to <code>Extend</code> in the admin menu.</li>
+                    <li>
+                      Search for the <code>Webform</code>
+                      module and check the box next to it.
+                    </li>
+                    <li>Click <code>Install</code> to enable the module.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Creating a Form:</strong>
+                  <ul>
+                    <li>
+                      After installing the Webform module, go to
+                      <code>Structure &gt; Webforms</code>.
+                    </li>
+                    <li>
+                      Click <code>Add webform</code> to create a new form.
+                    </li>
+                    <li>Configure the form fields and settings as needed.</li>
+                  </ul>
+                </li>
+              </ol>
+            </section>
+            <section id="module-webform">
+              <h2>Step 2: Installing Required Modules</h2>
+              <p>
+                To integrate HubSpot with Drupal, we need to install the
+                following modules:
+              </p>
+              <ul>
+                <li>Webform</li>
+                <li>Webform HubSpot</li>
+              </ul>
+
+              <p>
+                To integrate HubSpot with Drupal, we need to install the
+                following modules:
+              </p>
+
+              <ol>
+                <li>
+                  <strong>Webform</strong>: This module allows you to create
+                  forms within Drupal, which can be integrated with HubSpot.
+                </li>
+                <li>
+                  <strong>Webform HubSpot</strong>: This module enables
+                  integration between Drupal Webforms and HubSpot, allowing form
+                  submissions to sync with HubSpot.
+                </li>
+              </ol>
+
+              <h4>Install the Webform Module</h4>
+              <p>
+                To install the
+                <a href="https://www.drupal.org/project/webform" target="_blank"
+                  >Webform module</a
+                >, follow these steps:
+              </p>
+              <code>composer require 'drupal/webform:^6.2'</code>
+              <br /><br />
+              <ol>
+                <li>Log in to your Drupal admin interface.</li>
+                <li>
+                  Navigate to <strong>Extend > Install new module</strong>.
+                </li>
+                <li>Enter <code>webform </code> in the module search field.</li>
+                <li>
+                  Click <strong>Install</strong> next to the Webform module.
+                </li>
+                <li>
+                  Once installed, enable the Webform module by checking the box
+                  next to it and clicking <strong>Install</strong>.
+                </li>
+              </ol>
+
+              <h4>Install the Webform HubSpot Module</h4>
+              <p>
+                Follow these steps to install the
+                <a href="https://www.drupal.org/project/webform" target="_blank"
+                  >HubSpot module:</a
+                >
+              </p>
+              <code>composer require 'drupal/hubspot:^3.0@alpha'</code>
+              <br /><br />
+              <ol>
+                <li>Log in to your Drupal admin interface.</li>
+                <li>
+                  Navigate to <strong>Extend > Install new module</strong>.
+                </li>
+                <li>
+                  Enter <code>webform_hubspot</code> in the module search field.
+                </li>
+                <li>
+                  Click <strong>Install</strong> next to the Webform HubSpot
+                  module.
+                </li>
+                <li>
+                  Once installed, enable the Webform HubSpot module by checking
+                  the box next to it and clicking <strong>Install</strong>.
+                </li>
+              </ol>
+            </section>
+            <section id="hubspot-install">
+              <h2>Step 3: HubSpot Account Creation</h2>
+              <p>
+                We need both a
+                <a
+                  href="https://developers.hubspot.com/get-started"
+                  target="_blank"
+                  >developer</a
+                >
+                and a regular
+                <a href="https://www.hubspot.com/products/crm" target="_blank"
+                  >HubSpot account</a
+                >
+                to integrate with the Drupal form.
+              </p>
+
+              <h4>How to Create a HubSpot Developer Account</h4>
+              <ol>
+                <li>
+                  <strong>Visit the HubSpot Developer Signup Page:</strong> Go
+                  to the <code>HubSpot Developer Signup</code> page by visiting
+                  <a href="https://developers.hubspot.com"
+                    >https://developers.hubspot.com</a
+                  >.
+                </li>
+                <li>
+                  <strong>Click on "Get started for free":</strong> Locate and
+                  click the <code>Get started for free</code> button.
+                </li>
+                <li>
+                  <strong>Sign up with your email:</strong> Enter your email
+                  address in the provided field and click <code>Next</code>.
+                </li>
+                <li>
+                  <strong>Fill in your details:</strong> Provide your first
+                  name, last name, and any other required information, then
+                  click <code>Next</code>.
+                </li>
+                <li>
+                  <strong>Create a password:</strong> Enter a secure password,
+                  confirm it, and then click <code>Next</code>.
+                </li>
+                <li>
+                  <strong>Complete the signup process:</strong> Follow the
+                  on-screen instructions to complete the signup process,
+                  including email verification if required.
+                </li>
+                <li>
+                  <strong>Access your developer account:</strong> Once you have
+                  completed the signup process, you will be redirected to your
+                  HubSpot Developer account dashboard where you can start
+                  building and managing your applications.
+                </li>
+              </ol>
+              <img
+                class="sclass"
+                src="./img/Developer-hubspot.png"
+                width="100%"
+                height="450"
+                alt="HubSpot API Key screenshot"
+              />
+
+              <h4>How to Create a HubSpot Account</h4>
+              <ol>
+                <li>
+                  <strong>Visit the HubSpot Signup Page:</strong> Go to the
+                  <code>HubSpot Signup</code> page by visiting
+                  <a href="https://www.hubspot.com">https://www.hubspot.com</a>.
+                </li>
+                <li>
+                  <strong>Click on "Get started free":</strong> Locate and click
+                  the <code>Get started free</code> button.
+                </li>
+                <li>
+                  <strong>Sign up with your email:</strong> Enter your email
+                  address in the provided field and click
+                  <code>Get started</code>.
+                </li>
+                <li>
+                  <strong>Fill in your details:</strong> Provide your first
+                  name, last name, and any other required information, then
+                  click <code>Next</code>.
+                </li>
+                <li>
+                  <strong>Create a password:</strong> Enter a secure password,
+                  confirm it, and then click <code>Next</code>.
+                </li>
+                <li>
+                  <strong>Complete the signup process:</strong> Follow the
+                  on-screen instructions to complete the signup process,
+                  including email verification if required.
+                </li>
+                <li>
+                  <strong>Access your HubSpot account:</strong> Once you have
+                  completed the signup process, you will be redirected to your
+                  HubSpot dashboard where you can start using HubSpot's tools
+                  and features.
+                </li>
+              </ol>
+            </section>
+            <section id="hubspot-config">
+              <h2>Step 4: Configuring HubSpot API</h2>
+              <p>You need to get your API key from HubSpot:</p>
+              <ol>
+                <li>Log in to your HubSpot account.</li>
+                <li>
+                  Navigate to
+                  <strong>Settings &gt; Integrations &gt; API Key</strong>.
+                </li>
+                <li>
+                  If you do not have an API key, click on
+                  <code>Create API Key</code>.
+                </li>
+                <li>Copy your API key for use in the next step.</li>
+              </ol>
+              <img
+                class="sclass"
+                src="./img/Hubspot Config.png"
+                width="100%"
+                height="450"
+                alt="HubSpot API Key screenshot"
+              />
+            </section>
+            <section id="webform_create">
+              <h2>Step 5: Creating a Webform</h2>
+              <p>Now, create a webform that will be integrated with HubSpot:</p>
+              <ol>
+                <li>Go to <strong>Structure &gt; Webforms</strong>.</li>
+                <li>Click on <strong>Add webform</strong>.</li>
+                <li>
+                  Fill in the details for your form and click
+                  <strong>Save</strong>.
+                </li>
+                <li>
+                  Add the necessary fields to your form, such as Name, Email,
+                  and Phone Number.
+                </li>
+              </ol>
+              <img
+                class="sclass"
+                src="./img/Contact-form.png"
+                width="100%"
+                height="450"
+                alt="HubSpot API Key screenshot"
+              />
+            </section>
+            <section id="">
+              <h2>Step 6: Integrating Webform with HubSpot</h2>
+              <p>To integrate the webform with HubSpot:</p>
+              <ol>
+                <li>
+                  Edit your webform and go to the <strong>Settings</strong> tab.
+                </li>
+                <li>
+                  Select <strong>Emails / Handlers</strong> and click
+                  <strong>Add handler</strong>.
+                </li>
+                <li>
+                  Choose <strong>HubSpot</strong> as the handler type and
+                  configure it to map the webform fields to HubSpot properties.
+                </li>
+                <li>Save the handler configuration.</li>
+              </ol>
+              <img
+                class="sclass"
+                src="./img/handler.png"
+                width="100%"
+                height="450"
+                alt="HubSpot API Key screenshot"
+              />
+            </section>
+            <section id="testing">
+              <h2>Step 6: Testing the Integration</h2>
+              <p>
+                Submit the form and check your HubSpot account to ensure the
+                form submissions are being captured correctly. If everything is
+                set up correctly, you should see the submissions in your HubSpot
+                contacts.
+              </p>
+              <img
+                class="sclass"
+                src="./img/Hubspot-Marketing-form.png"
+                width="100%"
+                height="450"
+                alt="HubSpot API Key screenshot"
+              />
+            </section>
+            <section id="Conclusion">
+              <br>
+              <h2>Conclusion</h2>
+              <p>
+                By following these steps, you can successfully create forms in
+                Drupal 10 and integrate them with HubSpot. This integration
+                helps you streamline your contact management and enhance your
+                marketing efforts.
+              </p>
+            </section>
+          </article>
+        </div>
+      </div>
+
+      <!-- End blog eontent-->
+
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-primary text-light footer wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5 px-lg-5">
+          <div class="row g-5">
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">
+                Address<span></span>
+              </p>
+              <p>
+                <i class="fa fa-map-marker-alt me-3"></i>6th floor, Park Plaza,
+                office no 610, Porwal Rd, Lohegaon, Pune, Maharashtra 411047
+              </p>
+              <p>
+                <i class="fa fa-phone-alt me-3"></i
+                ><a href="tel:+919922611550" style="color: #fff"
+                  >+919922611550</a
+                >
+              </p>
+              <p>
+                <i class="fa fa-envelope me-3"></i
+                ><a href="mailto:dg@hashkite.com" style="color: #fff"
+                  >dg@hashkite.com</a
+                >
+              </p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">
+                Quick Link<span></span>
+              </p>
+              <a class="btn btn-link" href>About Us</a>
+              <a class="btn btn-link" href>Contact Us</a>
+              <a class="btn btn-link" href>Privacy Policy</a>
+              <a class="btn btn-link" href>Terms & Condition</a>
+              <a class="btn btn-link" href>Career</a>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <p class="section-title text-white h5 mb-4">
+                Newsletter<span></span>
+              </p>
+              <p>
+                Stay informed with our latest news, updates, and offerings
+                delivered straight to your inbox.
+              </p>
+              <div class="position-relative w-100 mt-3">
+                <input
+                  class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                  type="text"
+                  placeholder="Your Email"
+                  style="height: 48px"
+                />
+                <button
+                  type="button"
+                  class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"
+                >
+                  <i class="fa fa-paper-plane text-primary fs-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">#Kite</a>, All Right
+                Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "//credit-removal". Thank you for your support. ***/-->
+                Designed By <a class="border-bottom" href="/">Akshay sargar</a>
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href>Home</a>
+                  <a href>Cookies</a>
+                  <a href>Help</a>
+                  <a href>FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
