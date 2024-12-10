@@ -960,3 +960,22 @@ h1.site-header .bg-dark {
     border-color: #035ea7;
     color: #035ea7;
 }
+
+.accordion-button {
+    background-color: #f7f7f7;
+}
+
+.accordion-button:focus {
+    border-color: #f9f9f9;
+    box-shadow: 0 0 0 .15rem rgba(200, 200, 204, 0.75);
+    background-color: #cdcdcd77;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #035ea7;
+    background-color: #cdcdcd55;
+}
+
+.accordion-collapse {
+    background-color: #f4f4f4;
+}
