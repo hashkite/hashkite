@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QCELFQHDH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5QCELFQHDH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to automate CSS and JavaScript minification in your Drupal theme using Gulp. This step-by-step guide walks you through the process of setting up Gulp for optimized asset management, including minification, live reloading with BrowserSync, and faster development workflows.">
+    <meta name="keywords" content="Drupal theme optimization, Gulp task runner, CSS minification, JS minification, automated asset management, BrowserSync, web development workflow, optimize CSS JavaScript, Drupal theming, front-end optimization, live reloading, automated workflow, Gulp setup tutorial, minifying assets in Drupal, Drupal development performance">
+    <title>Optimizing CSS and JavaScript in Drupal Themes with Gulp</title>
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <div w3-include-html="../components/header.html"></div>
+            <div class="container-fluid py-5 bg-primary hero-header" style="background-color: #d04446 !important;">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown mb-5">Optimizing CSS and JavaScript in Drupal Themes with Gulp</h1>
+                            <hr class="bg-white mx-auto mt-4" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="/blogs">Blog</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Optimizing CSS and JavaScript in Drupal Themes with Gulp</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Blog content-->
+        <div class="container content">
+            <div>
+                <section>                
+                    <div class="d-flex justify-content-center">
+                        <img src="../blogs/img/gulp-icon.png" alt="gulp-clean-css" style="max-height: 100%;height: 350px;"/>
+                    </div>
+
+                    <p>Optimizing CSS and JavaScript files is a crucial part of web development, and when it comes to
+                        Drupal theming, automating this process can save a lot of time. Gulp, a popular task runner, can
+                        help you achieve this by automatically minifying your assets, reloading your browser when
+                        changes are made, and improving your overall workflow. In this post, we'll walk you through how
+                        to set up Gulp in your Drupal theme for automated CSS and JS minification.</p>
+                    <h3>Prerequisites: Installing Node.js and NPM</h3>
+                    <p>
+                        Before diving into Gulp, you need to have Node.js and npm (Node Package Manager) installed on
+                        your system. These are essential for managing Gulp and its dependencies. You can download them
+                        from the Node.js website.
+                    </p>
+                    <p>
+                        After installation, check that everything is working by running the following commands:
+                    </p>
+                    <code><pre>
+node -v
+npm -v
+</pre></code>
+                    <h3>Step 1: Set Up npm in Your Drupal Theme</h3>
+                    <p>Next, navigate to your custom theme directory in the terminal and initialize npm. This will
+                        create a package.json file where your dependencies will be listed.
+                    </p>
+                    <code><pre>
+cd themes/custom/your_theme_name
+npm init -y
+</pre></code>
+                    <p>The -y flag automatically accepts the default settings, but feel free to customize the
+                        package.json file as needed.</p>
+                    <h3>Step 2: Install Gulp and Required Plugins</h3>
+                    <p>Now it's time to install Gulp and the necessary plugins to handle CSS and JS minification, along
+                        with live-reloading the browser.</p>
+                    <p>Run the following command to install the required dependencies:</p>
+
+                    <code><pre>npm install --save-dev gulp gulp-uglify gulp-clean-css browser-sync gulp-sourcemaps</pre></code>
+                    <p>Here’s a quick rundown of the packages we just installed:</p>
+
+                    <ul>
+                        <li>gulp: The core task runner.</li>
+                        <li>gulp-uglify: Minifies JavaScript files to reduce their size.</li>
+                        <li>gulp-clean-css: Minifies CSS files.</li>
+                        <li>browser-sync: Automatically reloads the browser when you make changes to files.</li>
+                        <li>gulp-sourcemaps: Generates sourcemaps to aid in debugging minified files.</li>
+                    </ul>
+                    <h3>Step 3: Create the Gulpfile</h3>
+                    <p>With the necessary dependencies installed, you now need to configure Gulp by creating a
+                        gulpfile.js in the root of your theme. This file will define the tasks that Gulp will automate,
+                        such as minifying your CSS and JavaScript and watching for file changes.</p>
+                    <p>Here’s a simple example of what your gulpfile.js might look like:</p>
+
+                    <p>
+                        javascript</p>
+                    <code><pre>
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync').create();
+
+// Paths for your theme's assets
+const paths = {
+    css: 'src/css/**/*.css',
+    js: 'src/js/**/*.js',
+    cssDest: 'dist/css',
+    jsDest: 'dist/js',
+};
+
+// Minify CSS
+gulp.task('minify-css', function () {
+    return gulp.src(paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS()) // Minifies CSS
+    .pipe(sourcemaps.write('./maps')) // Generates sourcemaps
+    .pipe(gulp.dest(paths.cssDest)) // Outputs minified CSS to the dist folder
+    .pipe(browserSync.stream()); // Injects changes into the browser
+});
+
+// Minify JS
+gulp.task('minify-js', function () {
+    return gulp.src(paths.js)
+    .pipe(sourcemaps.init())
+    .pipe(uglify()) // Minifies JavaScript
+    .pipe(sourcemaps.write('./maps')) // Generates sourcemaps
+    .pipe(gulp.dest(paths.jsDest)) // Outputs minified JS to the dist folder
+    .pipe(browserSync.stream()); // Injects changes into the browser
+});
+
+// Watch for file changes
+gulp.task('watch', function () {
+    browserSync.init({
+        proxy: 'localhost/your_drupal_site', // Replace with your local Drupal site's URL
+        open: false,
+    });
+
+    gulp.watch(paths.css, gulp.series('minify-css')); // Watches for CSS changes
+    gulp.watch(paths.js, gulp.series('minify-js')); // Watches for JS changes
+    gulp.watch('**/*.php').on('change', browserSync.reload); // Optionally reloads for PHP changes
+    gulp.watch('**/*.html').on('change', browserSync.reload); // Reloads on HTML changes
+});
+
+// Default task to run when you execute "gulp"
+gulp.task('default', gulp.series('minify-css', 'minify-js', 'watch'));
+
+                    </pre>
+                </code>
+                    <p>Explanation of the Tasks:
+                        minify-css: This task minifies your CSS files and generates sourcemaps to help with debugging.
+                        minify-js: This task minifies your JavaScript files using gulp-uglify, with sourcemaps generated
+                        for
+                        easier debugging.
+                    </p>
+                    <p>
+                        watch: The watch task monitors for changes in CSS, JS, and HTML files and triggers the
+                        appropriate
+                        task. It also uses BrowserSync to reload the browser when files change.</p>
+                    <h3>Step 4: Organize Your Theme’s Folder Structure</h3>
+                    <p>It’s a good practice to organize your theme’s assets in a clear structure. Here’s an example of
+                        how
+                        you might organize the folders:</p>
+                    <code><pre>
+your_theme/
+├── src/
+│ ├── css/
+│ │ └── style.css
+│ ├── js/
+│ │ └── script.js
+├── dist/
+│ ├── css/
+│ ├── js/
+└── gulpfile.js
+                    </pre></code>
+                    <p>The src/ folder contains your original, unminified assets.`</p>
+                    <p>The dist/ folder is where the minified versions of your assets will be placed.</p>
+                    <h3>Step 5: Running Gulp</h3>
+                    <p>With everything set up, it’s time to run Gulp. In your terminal, navigate to your theme’s
+                        directory and execute the following command:</p>
+                    <code><pre>gulp</pre></code>
+                    <br />
+                    <p>Gulp will:</p>
+                    <ul>
+                        <li>Minify your CSS and JavaScript files.</li>
+                        <li>Watch for any changes in those files.</li>
+                        <li>Automatically reload the browser when you make updates.</li>
+                    </ul>
+                    <p>
+                        How It Works:</p>
+                    <ul>
+                        <li>The link and script tags reference the minified style.min.css and script.min.js files from
+                            the dist/ folder.</li>
+                        <li>As you edit your files, Gulp will handle the minification process, ensuring your website
+                            always uses the most optimized assets.</li>
+                    </ul>
+                    <h3>Conclusion</h3>
+                    <p>With Gulp set up for your Drupal theme, you can automate the process of minifying CSS and JavaScript, saving you time and ensuring that your assets are optimized for production. By also using BrowserSync, your workflow is more efficient, as changes are immediately reflected in the browser without manual reloading. This setup enhances both the development and performance of your Drupal theme.</p>
+                </section>
+            </div>
+        </div>
+        <!-- End blog content-->
+
+        <!-- Footer Start -->
+        <div w3-include-html="../components/footer.html"></div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
